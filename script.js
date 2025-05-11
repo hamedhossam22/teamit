@@ -48,3 +48,139 @@ document.querySelectorAll('.recipe-card').forEach(card => {
     card.querySelector('.save-count span').innerText = parseInt(card.querySelector('.save-count span').innerText) + 1;
   }
 });
+document.addEventListener("DOMContentLoaded", () => {
+  // ========== Register ==========
+  const registerForm = document.getElementById("registerForm");
+
+  if (registerForm) {
+    registerForm.addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const name = registerForm.querySelector('input[placeholder="Full Name"]').value.trim();
+      const email = registerForm.querySelector('input[placeholder="Email"]').value.trim();
+      const password = registerForm.querySelectorAll('input[placeholder="Password"]')[0].value;
+      const confirmPassword = registerForm.querySelector('input[placeholder="Confirm Password"]').value;
+
+      if (!name || !email || !password || !confirmPassword) {
+        alert("Please fill in all fields.");
+        return;
+      }
+
+      if (password !== confirmPassword) {
+        alert("Passwords do not match.");
+        return;
+      }
+
+      localStorage.setItem("user", JSON.stringify({ name, email, password }));
+      alert("Registration successful!");
+      window.location.href = "login.html";
+    });
+  }
+
+  // ========== Login ==========
+  const loginForm = document.getElementById("loginForm");
+
+  if (loginForm) {
+    loginForm.addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const email = loginForm.querySelector('input[placeholder="Email"]').value.trim();
+      const password = loginForm.querySelector('input[placeholder="Password"]').value;
+
+      const storedUser = JSON.parse(localStorage.getItem("user"));
+
+      if (!storedUser || storedUser.email !== email || storedUser.password !== password) {
+        alert("Invalid email or password.");
+        return;
+      }
+
+      alert(`Welcome back, ${storedUser.name}!`);
+      window.location.href = "home.html"; // عدل المسار حسب اسم صفحة الهوم عندك
+    });
+  }
+});
+const recipes = {
+  eggsBenedict: {
+    name: "Eggs Benedict",
+    ingredients: "Eggs, English Muffin, Ham, Hollandaise Sauce",
+    nutrition: "250 kcal",
+    cookingTime: "20 mins"
+  },
+  avocadoToast: {
+    name: "Avocado Toast",
+    ingredients: "Avocado, Bread, Olive Oil, Salt, Lemon",
+    nutrition: "180 kcal",
+    cookingTime: "10 mins"
+  },
+  frenchToast: {
+    name: "French Toast",
+    ingredients: "Bread, Eggs, Milk, Sugar, Cinnamon",
+    nutrition: "290 kcal",
+    cookingTime: "15 mins"
+  },
+  lemonPancakes: {
+    name: "Lemon Pancakes",
+    ingredients: "Flour, Eggs, Milk, Lemon Zest, Sugar",
+    nutrition: "300 kcal",
+    cookingTime: "20 mins"
+  },
+  cheesyOmelette: {
+    name: "Cheesy Omelette",
+    ingredients: "Eggs, Cheese, Milk, Butter",
+    nutrition: "200 kcal",
+    cookingTime: "8 mins"
+  },
+  granolaYogurt: {
+    name: "Granola Yogurt",
+    ingredients: "Granola, Greek Yogurt, Honey, Berries",
+    nutrition: "220 kcal",
+    cookingTime: "5 mins"
+  },
+  burrito: {
+    name: "Breakfast Burrito",
+    ingredients: "Tortilla, Eggs, Beans, Cheese, Salsa",
+    nutrition: "350 kcal",
+    cookingTime: "15 mins"
+  },
+  smoothieBowl: {
+    name: "Smoothie Bowl",
+    ingredients: "Banana, Berries, Yogurt, Granola, Honey",
+    nutrition: "180 kcal",
+    cookingTime: "7 mins"
+  }
+};
+
+function compareSelected() {
+  const checkboxes = document.querySelectorAll("input[type='checkbox']:checked");
+  const comparisonDiv = document.getElementById("comparisonTable");
+
+  // If less than two recipes are selected, hide the comparison table
+  if (checkboxes.length < 2) {
+    comparisonDiv.classList.add("hidden");
+    return;
+  }
+
+  let tableHTML = `
+    <table>
+      <tr>
+        <th>Recipe</th>
+        ${Array.from(checkboxes).map(cb => `<td>${recipes[cb.value].name}</td>`).join("")}
+      </tr>
+      <tr>
+        <th>Ingredients</th>
+        ${Array.from(checkboxes).map(cb => `<td>${recipes[cb.value].ingredients}</td>`).join("")}
+      </tr>
+      <tr>
+        <th>Nutrition</th>
+        ${Array.from(checkboxes).map(cb => `<td>${recipes[cb.value].nutrition}</td>`).join("")}
+      </tr>
+      <tr>
+        <th>Cooking Time</th>
+        ${Array.from(checkboxes).map(cb => `<td>${recipes[cb.value].cookingTime}</td>`).join("")}
+      </tr>
+    </table>
+  `;
+
+  comparisonDiv.innerHTML = tableHTML;
+  comparisonDiv.classList.remove("hidden");
+}

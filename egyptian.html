@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>AllRecipes - Egyptian Cuisine</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f9f9f9;
+    }
+
+    .main-header {
+      background-color: #ff9800;
+      padding: 15px 30px;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .container {
+      padding: 30px;
+    }
+
+    h1 {
+      text-align: center;
+      color: #333;
+      margin-bottom: 40px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .card {
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .card-content {
+      padding: 15px;
+    }
+
+    .card-content h3 {
+      margin-top: 0;
+      color: #ff9800;
+    }
+
+    .card-content p {
+      margin: 10px 0 0;
+      color: #555;
+      font-size: 14px;
+    }
+
+    @media (max-width: 992px) {
+      .cards {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 600px) {
+      .cards {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="main-header">
+    <div class="logo">AllRecipes</div>
+    <div>Egyptian Cuisine</div>
+  </header>
+
+  <div class="container">
+    <h1>Traditional Egyptian Dishes</h1>
+
+    <div class="cards">
+      <div class="card">
+        <img src="images/koshari.jpg" alt="Koshari">
+        <div class="card-content">
+          <h3>Koshari</h3>
+          <p>A mix of rice, pasta, lentils, and onions.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="images/molokhia.jpg" alt="Molokhia">
+        <div class="card-content">
+          <h3>Molokhia</h3>
+          <p>Green leaves cooked with broth and garlic.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="images/mahshi.jpg" alt="Mahshi">
+        <div class="card-content">
+          <h3>Mahshi</h3>
+          <p>Stuffed vegetables with rice and herbs.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="images/taameya.jpg" alt="Taameya">
+        <div class="card-content">
+          <h3>Taameya</h3>
+          <p>Egyptian falafel made from fava beans.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="images/fatta.jpg" alt="Fatta">
+        <div class="card-content">
+          <h3>Fatta</h3>
+          <p>Rice and bread with garlic vinegar sauce.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="images/bamia.jpg" alt="Bamia">
+        <div class="card-content">
+          <h3>Bamia</h3>
+          <p>Okra stew with meat or chicken.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="images/molokhia_beef.jpg" alt="Molokhia with Beef">
+        <div class="card-content">
+          <h3>Molokhia with Beef</h3>
+          <p>Molokhia served with beef and rice.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="images/shawarma.jpg" alt="Shawarma">
+        <div class="card-content">
+          <h3>Shawarma</h3>
+          <p>Grilled meat served in bread or with rice.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
