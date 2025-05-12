@@ -184,3 +184,6 @@ function compareSelected() {
   comparisonDiv.innerHTML = tableHTML;
   comparisonDiv.classList.remove("hidden");
 }
+
+
+
