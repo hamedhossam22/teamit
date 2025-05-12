@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>View Detailed Recipe Instructions</title>
     <style>
-        body {
+               body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
@@ -135,8 +135,6 @@
             width: 150px;
             height: 150px;
             background-color: #ffecb3;
-
-
 display: flex;
             align-items: center;
             justify-content: center;
@@ -145,16 +143,55 @@ display: flex;
             border: 1px dashed #ff8c00;
             border-radius: 5px;
         }
+        .favorite-btn {
+            margin-top: 10px;
+            padding: 10px 15px;
+            background-color: #ff8c00;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .favorite-btn:hover {
+            background-color: #e65100;
+        }
+
+        .favorites-container {
+            margin-top: 30px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(255, 140, 0, 0.2);
+        }
+
+        .favorites-container h2 {
+            color: #e65100;
+        }
+
+        .favorite-list {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .favorite-list li {
+            background: #ffecb3;
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 5px;
+            font-weight: bold;
+            color: #e65100;
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>Detailed Recipe Instructions</h1>
         <div class="search-container">
-    <input type="text" id="searchInput" placeholder="ابحث عن وصفة... (مثال: بيض، فول، بانكيك)" onkeyup="searchRecipes()">
-</div>
+            <input type="text" id="searchInput" placeholder="Search for recipes" onkeyup="searchRecipes()">
+        </div>
         <h2>RECIPES</h2>
-        
         <div class="separator"></div>
         
         <!-- Product 1 -->
@@ -167,11 +204,12 @@ display: flex;
                     <div>Heat pan with a little fat. Crack egg in. Cook gently until white is set, yolk is runny. Slide onto plate. Enjoy!</div>
                     <br/>
                     <a href="https://youtu.be/neEqtzgm7Tw?si=jAQJn6Omz3CxF9oV" class="video-link">Recipe video</a>
+                    <button class="favorite-btn" onclick="addToFavorites('EGGS')">Add to Favorites</button>
                 </div>
             </div>
         </div>
         
-        <!-- Product 2 -->
+       <!-- Product 2 -->
         <div class="product">
             <div class="product-row">
                 <img class="product-image" src="https://kitchen.sayidaty.net/uploads/small/42/423203a50a85745ee5ff98ff201043f7_w750_h500.jpg" alt="Product 2">
@@ -181,6 +219,7 @@ display: flex;
                     <div>Ful medames is an Egyptian dish of slowly cooked fava beans. They are soaked, then cooked until tender, often mashed, and seasoned with olive oil, lemon, garlic, and spices. Served hot with fresh vegetables and pita bread, it's a popular and hearty meal. Enjoy!</div>
                     <br/>
                     <a href="https://www.youtube.com/watch?v=OJWkPSLzBis" class="video-link">Recipe video</a>
+                    <button class="favorite-btn" onclick="addToFavorites('EGYPTIAN FAVE BEANS')">Add to Favorites</button>
                 </div>
             </div>
         </div>
@@ -195,6 +234,7 @@ display: flex;
                     <div>Mix flour, sugar, baking powder, and salt. Add milk, egg, and melted butter. Stir until just combined (don't overmix). Pour small amounts of batter onto a hot, lightly greased pan. Cook until bubbles appear and the edges are set, then flip and cook the other side until golden brown. Serve with your favorite toppings. Enjoy!</div>
                     <br/>
                     <a href="https://www.youtube.com/watch?v=9zCVCL4V8JQ&pp=0gcJCdgAo7VqN5tD" class="video-link">Recipe video</a>
+                    <button class="favorite-btn" onclick="addToFavorites('FLUFFY PANCAKE')">Add to Favorites</button>
                 </div>
             </div>
         </div>
@@ -209,6 +249,7 @@ display: flex;
                     <div>Sauté sliced liver with seasonings (and peppers/garlic for Alexandrian style). Put cooked liver in bread. Add desired toppings. Enjoy!</div>
                     <br/>
                     <a href="https://www.instagram.com/reel/ConWTknv39R/" class="video-link">Recipe video</a>
+                    <button class="favorite-btn" onclick="addToFavorites('LIVER SANDWICHES')">Add to Favorites</button>
 
 
 </div>
@@ -225,6 +266,7 @@ display: flex;
                     <div>"Feteer Bel Gebna" is Egyptian cheese pie made with layered dough and various cheeses, baked until golden and melty. Enjoy as a meal or snack. Enjoy!</div>
                     <br/>
                     <a href="https://www.youtube.com/watch?v=IZaMlU8OjJY" class="video-link">Recipe video</a>
+                    <button class="favorite-btn" onclick="addToFavorites('CHEESE PIES')">Add to Favorites</button>
                 </div>
             </div>
         </div>
@@ -239,6 +281,7 @@ display: flex;
                     <div>Pastries are made by combining flour, fat, liquid, and sometimes sugar/leavening. Flaky types need layering fat and dough. Richer doughs with fillings are also common. Bake until golden. Enjoy!</div>
                     <br/>
                     <a href="https://www.youtube.com/watch?v=SyWMFVyHGpk" class="video-link">Recipe video</a>
+                    <button class="favorite-btn" onclick="addToFavorites('PASTRIES')">Add to Favorites</button>
                 </div>
             </div>
         </div>
@@ -253,6 +296,7 @@ display: flex;
                     <div>Croissants are buttery, crescent-shaped flaky pastries. Layering cold butter into dough creates their airy texture. Bake until golden and crisp. Enjoy!</div>
                     <br/>
                     <a href="https://m.youtube.com/watch?v=UEurw7eo3H0&pp=ygUJI2Nyb3Nzb250" class="video-link">Recipe video</a>
+                    <button class="favorite-btn" onclick="addToFavorites('CROISSANTS')">Add to Favorites</button>
                 </div>
             </div>
         </div>
@@ -267,6 +311,7 @@ display: flex;
                     <div>Feteer Meshaltet is Egyptian layered pastry made from stretched thin dough brushed with ghee. Multiple folds create many flaky layers. Bake until puffed and golden. Serve hot, plain or with toppings. Enjoy</div>
                     <br/>
                     <a href="https://www.youtube.com/watch?v=kAyexkTL9lI" class="video-link">Recipe video</a>
+                    <button class="favorite-btn" onclick="addToFavorites('FETEER MESHALTET')">Add to Favorites</button>
                 </div>
             </div>
         </div>
@@ -283,6 +328,7 @@ display: flex;
 
 <br/>
                     <a href="https://www.youtube.com/watch?v=9Ys45QLKN4M" class="video-link">Recipe video</a>
+                    <button class="favorite-btn" onclick="addToFavorites('FRUIT SALAD')">Add to Favorites</button>
                 </div>
             </div>
         </div>
@@ -297,45 +343,85 @@ display: flex;
                     <div>Toast bread and mash avocado with salt and pepper (add lemon if you like). Spread on toast and enjoy!</div>
                     <br/>
                     <a href="https://www.youtube.com/watch?v=FV3asCDsf9U" class="video-link">Recipe video</a>
+                    <button class="favorite-btn" onclick="addToFavorites('AVOCADO TOAST')">Add to Favorites</button>
                 </div>
             </div>
         </div>
     </div>
+
+        <!-- مفضلات المستخدم -->
+        <div class="favorites-container">
+            <h2>Your favorites</h2>
+            <ul id="favoriteList" class="favorite-list"></ul>
+        </div>
+    </div>
+
 <script>
-function searchRecipes() {
-    const input = document.getElementById('searchInput')?.value.toLowerCase();
-    if (!input) return; // إذا كان حقل البحث فارغًا
+    function searchRecipes() {
+        const input = document.getElementById('searchInput')?.value.toLowerCase();
+        const products = document.querySelectorAll('.product');
+        let found = false;
 
-    const products = document.querySelectorAll('.product');
-    const noResults = document.querySelector('.no-results');
-    let found = false;
+        products.forEach(product => {
+            const title = product.querySelector('.product-title')?.textContent.toLowerCase();
+            const description = product.querySelector('.product-info > div:nth-child(3)')?.textContent.toLowerCase();
 
-    products.forEach(product => {
-        const title = product.querySelector('.product-title')?.textContent.toLowerCase();
-        const desc = product.querySelector('.product-info div')?.textContent.toLowerCase();
-        
-        if (title?.includes(input) || desc?.includes(input)) {
-            product.style.display = 'flex';
-            found = true;
-        } else {
-            product.style.display = 'none';
+            if (title.includes(input) || description.includes(input)) {
+                product.style.display = 'block';
+                found = true;
+            } else {
+                product.style.display = 'none';
+            }
+        });
+
+        const noResults = document.querySelector('.no-results');
+        if (noResults) {
+            noResults.style.display = found ? 'none' : 'block';
         }
-    });
-if (noResults) {
-    noResults.style.display = found ? 'none' : 'block';
-    noResults.textContent = `لا توجد نتائج لـ "${input}"`;
-}
-
-
-}
-
-// ربط حدث البحث عند تحميل الصفحة
-document.addEventListener('DOMContentLoaded', () => {
-    const searchInput = document.getElementById('searchInput');
-    if (searchInput) {
-        searchInput.addEventListener('input', searchRecipes);
     }
-});
+
+    function addToFavorites(recipeName) {
+        let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+
+        if (!favorites.includes(recipeName)) {
+            favorites.push(recipeName);
+            localStorage.setItem('favorites', JSON.stringify(favorites));
+            displayFavorites();
+        }
+    }
+
+    function removeFromFavorites(recipeName) {
+        let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+        favorites = favorites.filter(item => item !== recipeName);
+        localStorage.setItem('favorites', JSON.stringify(favorites));
+        displayFavorites();
+    }
+
+    function displayFavorites() {
+        const favoriteList = document.getElementById('favoriteList');
+        if (!favoriteList) return;
+
+        favoriteList.innerHTML = '';
+        const favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+
+        favorites.forEach(item => {
+            const li = document.createElement('li');
+            li.textContent = item;
+
+            const removeBtn = document.createElement('button');
+            removeBtn.textContent = '❌';
+            removeBtn.style.marginLeft = '10px';
+            removeBtn.onclick = () => removeFromFavorites(item);
+
+            li.appendChild(removeBtn);
+            favoriteList.appendChild(li);
+        });
+    }
+
+    // عرض المفضلات عند التحميل
+    document.addEventListener('DOMContentLoaded', displayFavorites);
 </script>
+
+
 </body>
 </html>
