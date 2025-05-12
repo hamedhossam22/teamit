@@ -387,15 +387,16 @@ footer p {
     transform: translateX(-5px);
 }
 
-/* تعديل لعرض 3 كروت في الصف */
+
 .recipes-section {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 25px;
     padding: 0 50px;
+    margin-left: 50px;
 }
 
-/* استجابة للشاشات الصغيرة */
+
 @media (max-width: 1000px) {
     .recipes-section {
         grid-template-columns: repeat(2, 1fr);
@@ -416,8 +417,8 @@ footer p {
     transition: all 0.3s ease;
     cursor: pointer;
     position: relative;
-    width: 360px; /* تقليل العرض */
-    height: 350px; /* زيادة الطول */
+    width: 360px;
+    height: 350px; 
 }
 
 .recipe-card:hover {
@@ -673,21 +674,7 @@ nav ul li a {
 
 
 
-/* style.css */
-body {
-  font-family: Arial, sans-serif;
-  background-color: #fff8f0;
-  color: #333;
-  margin: 0;
-  padding: 0;
-}
 
-header {
-  background-color: #ff914d;
-  padding: 20px;
-  text-align: center;
-  color: white;
-}
 
 .contact-form {
   max-width: 600px;
