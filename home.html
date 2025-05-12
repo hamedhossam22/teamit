@@ -227,7 +227,40 @@
       </div>
     </div>
   </section>
+       <div class="A">
+        <header class="B">
+            <h1>Ingredients Calculator</h1>
+            <p class="C">Adjust recipe quantities for any number of servings</p>
+        </header>
 
+        <div class="D">
+            <div class="E">
+                <label for="originalServings">Original number of servings:</label>
+                <input type="number" id="originalServings" min="1" value="4" required>
+            </div>
+
+            <div class="E">
+                <label for="newServings">Desired number of servings:</label>
+                <input type="number" id="newServings" min="1" value="4" required>
+            </div>
+
+            <div class="E">
+                <label for="ingredients">Ingredients (one per line):</label>
+                <textarea id="ingredients" rows="8" required>2 cups flour
+1 tsp salt
+1 egg
+1/2 cup milk
+2 tbsp sugar
+1 tsp vanilla</textarea>
+            </div>
+
+            <button id="calculateBtn">Calculate New Quantities</button>
+
+            <div class="F" id="result">
+                <h2>Adjusted Quantities</h2>
+                <div id="resultContent"></div>
+            </div>
+        </div>
   <!-- Footer -->
   <footer>
     <p>© 2025 AllRecipes - All rights reserved</p>

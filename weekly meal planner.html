@@ -161,19 +161,19 @@
   <script>
     function savePlan() {
       const days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
-      const inputs = document.querySelectorAll(".meal-table tbody tr");
+      const rows = document.querySelectorAll(".meal-table tbody tr");
       const savedList = document.getElementById("savedPlanList");
       savedList.innerHTML = "";
 
-      inputs.forEach((row, index) => {
-        const mealInputs = row.querySelectorAll("input");
-        const breakfast = mealInputs[0].value || "—";
-        const lunch = mealInputs[1].value || "—";
-        const dinner = mealInputs[2].value || "—";
+      rows.forEach((row, index) => {
+        const inputs = row.querySelectorAll("input");
+        const breakfast = inputs[0].value || "—";
+        const lunch = inputs[1].value || "—";
+        const dinner = inputs[2].value || "—";
 
-        const listItem = document.createElement("li");
-        listItem.textContent = `${days[index]}: 🍳 ${breakfast} | 🍽️ ${lunch} | 🌙 ${dinner}`;
-        savedList.appendChild(listItem);
+        const li = document.createElement("li");
+        li.textContent = `${days[index]}: 🍳 ${breakfast} | 🍽️ ${lunch} | 🌙 ${dinner}`;
+        savedList.appendChild(li);
       });
     }
   </script>
