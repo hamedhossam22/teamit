@@ -898,7 +898,7 @@ header {
   box-shadow: 0 0 5px rgba(255, 169, 77, 0.4);
 }
 
-.save-btn {
+.savee-btn {
   margin-top: 30px;
   padding: 14px 40px;
   background-color: #ff944d;
@@ -911,7 +911,49 @@ header {
   box-shadow: 0 5px 15px rgba(255, 148, 77, 0.4);
 }
 
-.save-btn:hover {
+.savee-btn:hover {
   background-color: #e67300;
   transform: scale(1.05);
+}
+
+/* إضافة بعض التنسيق لعرض الخطة المحفوظة */
+.saved-plan {
+    margin-top: 20px;
+    background-color: #f4f4f9;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.saved-plan h3 {
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+.saved-plan ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.saved-plan li {
+    margin: 8px 0;
+    font-size: 1.1rem;
+}
+/* تنسيق الزر الجديد */
+.diet-btn {
+    display: inline-block;
+    background-color: #4CAF50;
+    color: white;
+    font-size: 1.2rem;
+    padding: 10px 20px;
+    margin-top: 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+}
+
+.diet-btn:hover {
+    background-color: #45a049;
 }

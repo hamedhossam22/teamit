@@ -186,4 +186,62 @@ function compareSelected() {
 }
 
 
+// استرجاع الخطة المحفوظة عند تحميل الصفحة
+document.addEventListener("DOMContentLoaded", loadMealPlan);
+
+function loadMealPlan() {
+    const storedMealPlan = localStorage.getItem("mealPlan");
+    if (storedMealPlan) {
+        const mealPlan = JSON.parse(storedMealPlan);
+        const inputs = document.querySelectorAll('.meal-input');
+        let index = 0;
+        for (let day of mealPlan) {
+            const dayMeals = day.split(','); // فصل الوجبات
+            inputs[index].value = dayMeals[0]; // Breakfast
+            inputs[index + 1].value = dayMeals[1]; // Lunch
+            inputs[index + 2].value = dayMeals[2]; // Dinner
+            index += 3; // الانتقال إلى اليوم التالي
+        }
+    }
+}
+
+// حفظ الخطة عند الضغط على زر الحفظ
+document.querySelector('.save-btn').addEventListener('click', saveMealPlan);
+
+function saveMealPlan() {
+    const mealPlan = [];
+    const inputs = document.querySelectorAll('.meal-input');
+    for (let i = 0; i < inputs.length; i += 3) {
+        const dayMeals = [
+            inputs[i].value,      // Breakfast
+            inputs[i + 1].value,  // Lunch
+            inputs[i + 2].value   // Dinner
+        ];
+        mealPlan.push(dayMeals.join(',')); // دمج الوجبات في نفس اليوم
+    }
+
+    // تخزين البيانات في localStorage
+    localStorage.setItem("mealPlan", JSON.stringify(mealPlan));
+    displaySavedMealPlan(mealPlan);
+}
+
+// عرض الخطة المحفوظة تحت الجدول
+function displaySavedMealPlan(mealPlan) {
+    const displaySection = document.createElement('section');
+    displaySection.classList.add('saved-plan');
+    const heading = document.createElement('h3');
+    heading.textContent = 'Saved Meal Plan';
+    displaySection.appendChild(heading);
+
+    const list = document.createElement('ul');
+    mealPlan.forEach((day, index) => {
+        const dayMeals = day.split(',');
+        const listItem = document.createElement('li');
+        listItem.textContent = `Day ${index + 1}: Breakfast - ${dayMeals[0]}, Lunch - ${dayMeals[1]}, Dinner - ${dayMeals[2]}`;
+        list.appendChild(listItem);
+    });
+
+    displaySection.appendChild(list);
+    document.querySelector('main').appendChild(displaySection);
+}
 
