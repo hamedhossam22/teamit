@@ -3,11 +3,133 @@
 <head>
   <meta charset="UTF-8">
   <title>Weekly Meal Planner</title>
-  <link rel="stylesheet" href="style.css"> <!-- لو حابب تفصله -->
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #fffaf4;
+    }
+
+    .planner {
+      padding: 40px 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .diet-btn {
+      align-self: flex-start;
+      background-color: #4CAF50;
+      color: white;
+      font-size: 1.1rem;
+      padding: 10px 20px;
+      margin-bottom: 30px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    .diet-btn:hover {
+      background-color: #45a049;
+    }
+
+    .meal-table {
+      width: 100%;
+      max-width: 900px;
+      border-collapse: collapse;
+      background-color: #fff;
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+    }
+
+    .meal-table thead th {
+      background-color: #ffa94d;
+      color: white;
+      padding: 16px;
+      font-size: 18px;
+      text-align: center;
+    }
+
+    .meal-table tbody td {
+      padding: 14px;
+      text-align: center;
+      border-bottom: 1px solid #ffe0cc;
+      background-color: #fffdfb;
+    }
+
+    .meal-input {
+      width: 90%;
+      padding: 10px;
+      font-size: 15px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      background-color: #fffefc;
+      transition: border-color 0.3s;
+    }
+
+    .meal-input:focus {
+      outline: none;
+      border-color: #ffa94d;
+      box-shadow: 0 0 5px rgba(255, 169, 77, 0.4);
+    }
+
+    .savee-btn {
+      margin-top: 30px;
+      padding: 14px 40px;
+      background-color: #ff944d;
+      color: white;
+      font-size: 17px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+      box-shadow: 0 5px 15px rgba(255, 148, 77, 0.4);
+    }
+
+    .savee-btn:hover {
+      background-color: #e67300;
+      transform: scale(1.05);
+    }
+
+    .saved-plan {
+      margin-top: 30px;
+      background-color: #f4f4f9;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 900px;
+    }
+
+    .saved-plan h3 {
+      text-align: center;
+      font-size: 1.5rem;
+      margin-bottom: 15px;
+    }
+
+    .saved-plan ul {
+      list-style-type: none;
+      padding-left: 0;
+    }
+
+    .saved-plan li {
+      margin: 8px 0;
+      font-size: 1.1rem;
+    }
+  </style>
 </head>
 <body>
 
   <main class="planner">
+    <a href="diet info.html" class="diet-btn">← Go to Diet Information</a>
+
     <table class="meal-table">
       <thead>
         <tr>
@@ -18,30 +140,43 @@
         </tr>
       </thead>
       <tbody>
-        <tr><td>Monday</td><td><input class="meal-input" type="text" placeholder="e.g., Oatmeal"></td><td><input class="meal-input" type="text" placeholder="e.g., Grilled Chicken"></td><td><input class="meal-input" type="text" placeholder="e.g., Pasta"></td></tr>
-        <tr><td>Tuesday</td><td><input class="meal-input" type="text" placeholder="e.g., Eggs"></td><td><input class="meal-input" type="text" placeholder="e.g., Sandwich"></td><td><input class="meal-input" type="text" placeholder="e.g., Rice & Veggies"></td></tr>
-        <tr><td>Wednesday</td><td><input class="meal-input" type="text" placeholder="e.g., Pancakes"></td><td><input class="meal-input" type="text" placeholder="e.g., Burger"></td><td><input class="meal-input" type="text" placeholder="e.g., Fish & Salad"></td></tr>
-        <tr><td>Thursday</td><td><input class="meal-input" type="text" placeholder="e.g., Yogurt & Fruit"></td><td><input class="meal-input" type="text" placeholder="e.g., Chicken Wrap"></td><td><input class="meal-input" type="text" placeholder="e.g., Couscous"></td></tr>
-        <tr><td>Friday</td><td><input class="meal-input" type="text" placeholder="e.g., Toast & Jam"></td><td><input class="meal-input" type="text" placeholder="e.g., Pizza"></td><td><input class="meal-input" type="text" placeholder="e.g., Steak"></td></tr>
-        <tr><td>Saturday</td><td><input class="meal-input" type="text" placeholder="e.g., Croissant"></td><td><input class="meal-input" type="text" placeholder="e.g., Pasta Salad"></td><td><input class="meal-input" type="text" placeholder="e.g., BBQ Chicken"></td></tr>
-        <tr><td>Sunday</td><td><input class="meal-input" type="text" placeholder="e.g., Waffles"></td><td><input class="meal-input" type="text" placeholder="e.g., Rice & Beans"></td><td><input class="meal-input" type="text" placeholder="e.g., Roast Dinner"></td></tr>
+        <tr><td>Monday</td><td><input class="meal-input"></td><td><input class="meal-input"></td><td><input class="meal-input"></td></tr>
+        <tr><td>Tuesday</td><td><input class="meal-input"></td><td><input class="meal-input"></td><td><input class="meal-input"></td></tr>
+        <tr><td>Wednesday</td><td><input class="meal-input"></td><td><input class="meal-input"></td><td><input class="meal-input"></td></tr>
+        <tr><td>Thursday</td><td><input class="meal-input"></td><td><input class="meal-input"></td><td><input class="meal-input"></td></tr>
+        <tr><td>Friday</td><td><input class="meal-input"></td><td><input class="meal-input"></td><td><input class="meal-input"></td></tr>
+        <tr><td>Saturday</td><td><input class="meal-input"></td><td><input class="meal-input"></td><td><input class="meal-input"></td></tr>
+        <tr><td>Sunday</td><td><input class="meal-input"></td><td><input class="meal-input"></td><td><input class="meal-input"></td></tr>
       </tbody>
     </table>
 
-    <button class="savee-btn">Save Plan</button>
+    <button class="savee-btn" onclick="savePlan()">Save Plan</button>
 
-    <!-- قسم لعرض الخطة المحفوظة -->
-    <section class="saved-plan">
-        <!-- سيتم إضافة الخطة هنا بعد حفظها -->
+    <section class="saved-plan" id="savedPlanSection">
+      <h3>Saved Plan</h3>
+      <ul id="savedPlanList"></ul>
     </section>
-
-    <!-- زر الانتقال إلى صفحة Diet Information -->
-    <a href="diet info.html">
-      <button class="diet-btn">Go to Diet Information</button>
-    </a>
   </main>
 
-  <script src="script.js"></script> <!-- ملف JavaScript -->
+  <script>
+    function savePlan() {
+      const days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
+      const inputs = document.querySelectorAll(".meal-table tbody tr");
+      const savedList = document.getElementById("savedPlanList");
+      savedList.innerHTML = "";
+
+      inputs.forEach((row, index) => {
+        const mealInputs = row.querySelectorAll("input");
+        const breakfast = mealInputs[0].value || "—";
+        const lunch = mealInputs[1].value || "—";
+        const dinner = mealInputs[2].value || "—";
+
+        const listItem = document.createElement("li");
+        listItem.textContent = `${days[index]}: 🍳 ${breakfast} | 🍽️ ${lunch} | 🌙 ${dinner}`;
+        savedList.appendChild(listItem);
+      });
+    }
+  </script>
 
 </body>
 </html>

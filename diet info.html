@@ -1,52 +1,147 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Diet Information</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Diet Information</title>
+  <style>
+    :root {
+      --primary-color: #ffa94d;
+      --secondary-color: #ffe0cc;
+      --text-color: #333;
+      --bg-color: #fffaf4;
+      --card-bg: #fffdfb;
+      --btn-color: #ff944d;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    main {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 20px;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+    }
+
+    .intro {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .intro h1 {
+      font-size: 2.5rem;
+      color: var(--primary-color);
+      margin-bottom: 10px;
+    }
+
+    .intro p {
+      font-size: 1.1rem;
+      color: #555;
+    }
+
+    .diet-types h2 {
+      font-size: 1.8rem;
+      color: var(--primary-color);
+      margin-bottom: 20px;
+      border-bottom: 2px solid var(--primary-color);
+      padding-bottom: 5px;
+    }
+
+    .diet-card {
+      background-color: var(--card-bg);
+      border-left: 6px solid var(--primary-color);
+      padding: 20px;
+      margin-bottom: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    }
+
+    .diet-card h3 {
+      font-size: 1.3rem;
+      margin-bottom: 8px;
+      color: var(--text-color);
+    }
+
+    .diet-card p {
+      font-size: 1rem;
+      color: #666;
+    }
+
+    .navigation {
+      text-align: center;
+      margin-top: 40px;
+    }
+
+    .btn {
+      display: inline-block;
+      background-color: var(--btn-color);
+      color: white;
+      padding: 12px 24px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background-color 0.3s, transform 0.2s;
+      box-shadow: 0 4px 12px rgba(255, 148, 77, 0.3);
+    }
+
+    .btn:hover {
+      background-color: #e67300;
+      transform: scale(1.05);
+    }
+
+    @media (max-width: 600px) {
+      .intro h1 {
+        font-size: 2rem;
+      }
+
+      .diet-card {
+        padding: 15px;
+      }
+
+      .diet-types h2 {
+        font-size: 1.5rem;
+      }
+    }
+  </style>
 </head>
 <body>
 
-    <main>
-        <section class="intro">
-            <h1>Diet Information</h1>
-            <p>Explore various types of diets and learn how each one can help you achieve your health and fitness goals.</p>
-        </section>
+  <main>
+    <section class="intro">
+      <h1>Diet Information</h1>
+      <p>Explore various types of diets and learn how each one can help you achieve your health and fitness goals.</p>
+    </section>
 
-        <section class="diet-types">
-            <h2>Types of Diets</h2>
+    <section class="diet-types">
+      <h2>Types of Diets</h2>
 
-            <div class="diet-card">
-                <h3>Keto Diet</h3>
-                <p>A low-carb, high-fat diet that aims to trigger ketosis in the body to burn fat efficiently.</p>
-            </div>
+      <div class="diet-card">
+        <h3>Keto Diet</h3>
+        <p>A low-carb, high-fat diet that aims to trigger ketosis in the body to burn fat efficiently.</p>
+      </div>
 
-            <div class="diet-card">
-                <h3>Mediterranean Diet</h3>
-                <p>Focuses on fruits, vegetables, whole grains, and healthy fats like olive oil. Great for heart health.</p>
-            </div>
+      <div class="diet-card">
+        <h3>Mediterranean Diet</h3>
+        <p>Focuses on fruits, vegetables, whole grains, and healthy fats like olive oil. Great for heart health.</p>
+      </div>
 
-            <div class="diet-card">
-                <h3>Intermittent Fasting</h3>
-                <p>A time-based eating pattern that alternates between periods of fasting and eating.</p>
-            </div>
+      <div class="diet-card">
+        <h3>Intermittent Fasting</h3>
+        <p>A time-based eating pattern that alternates between periods of fasting and eating.</p>
+      </div>
 
-            <div class="diet-card">
-                <h3>High-Protein Diet</h3>
-                <p>Emphasizes eating more protein-rich foods like meat, dairy, eggs, and legumes to build muscle and stay full.</p>
-            </div>
-
-        </section>
-
-        <section class="navigation">
-            <a href="nutrition-and-diet-information.html" class="btn">← Back to Nutrition</a>
-        </section>
-    </main>
-
-    <footer>
-        <p>&copy; 2025 AllRecipes. All rights reserved.</p>
-    </footer>
+      <div class="diet-card">
+        <h3>High-Protein Diet</h3>
+        <p>Emphasizes eating more protein-rich foods like meat, dairy, eggs, and legumes to build muscle and stay full.</p>
+      </div>
+    </section>
+  </main>
 
 </body>
 </html>
