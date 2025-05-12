@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>AllRecipes - Korean Cuisine</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f9f9f9;
+    }
+
+    .main-header {
+      background-color: #ff9800;
+      padding: 15px 30px;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .container {
+      padding: 30px;
+    }
+
+    h1 {
+      text-align: center;
+      color: #333;
+      margin-bottom: 40px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .card {
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .card-content {
+      padding: 15px;
+    }
+
+    .card-content h3 {
+      margin-top: 0;
+      color: #ff9800;
+    }
+
+    .card-content p {
+      margin: 10px 0 0;
+      color: #555;
+      font-size: 14px;
+    }
+
+    @media (max-width: 992px) {
+      .cards {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 600px) {
+      .cards {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="main-header">
+    <div class="logo">AllRecipes</div>
+    <div>Korean Cuisine</div>
+  </header>
+
+  <div class="container">
+    <h1>Traditional Korean Dishes</h1>
+
+    <div class="cards">
+      <div class="card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZAAfncADTmNs3cg5ZqK3sUh9TuUarLbJm9Q&s" alt="Kimchi">
+        <div class="card-content">
+          <h3>Kimchi</h3>
+          <p>Fermented spicy cabbage, a Korean staple.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGlbQauzIljIdjUr9skDTx1UsMWnvf_IJU9g&s" alt="Bibimbap">
+        <div class="card-content">
+          <h3>Bibimbap</h3>
+          <p>Rice with mixed vegetables and gochujang.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3GKFmb1_gDhdTLC3dhsGgWh-ng1xC88p72Q&s" alt="Bulgogi">
+        <div class="card-content">
+          <h3>Bulgogi</h3>
+          <p>Marinated grilled beef slices.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSULDIvH4gxWwqOmkjZZl-XrKN2A4y2IzNq-A&s" alt="Japchae">
+        <div class="card-content">
+          <h3>Japchae</h3>
+          <p>Glass noodles stir-fried with vegetables and meat.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6jahUyYakZM4I93a7T9FLTDG2KEws4Hcajg&s" alt="Tteokbokki">
+        <div class="card-content">
+          <h3>Tteokbokki</h3>
+          <p>Spicy rice cakes in gochujang sauce.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSMMDNbZJxXmCvpituTmtiSaSDYMbyhYA5g8g&s" alt="Samgyeopsal">
+        <div class="card-content">
+          <h3>Samgyeopsal</h3>
+          <p>Grilled pork belly served with dipping sauces.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSMMDNbZJxXmCvpituTmtiSaSDYMbyhYA5g8g&s" alt="Sundubu Jjigae">
+        <div class="card-content">
+          <h3>Sundubu Jjigae</h3>
+          <p>Soft tofu stew with vegetables and meat or seafood.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSMMDNbZJxXmCvpituTmtiSaSDYMbyhYA5g8g&s" alt="Gimbap">
+        <div class="card-content">
+          <h3>Gimbap</h3>
+          <p>Seaweed rice rolls with various fillings.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
