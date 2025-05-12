@@ -186,26 +186,15 @@ function compareSelected() {
 }
 
 
-// استرجاع الخطة المحفوظة عند تحميل الصفحة
-document.addEventListener("DOMContentLoaded", loadMealPlan);
 
-function loadMealPlan() {
-    const storedMealPlan = localStorage.getItem("mealPlan");
-    if (storedMealPlan) {
-        const mealPlan = JSON.parse(storedMealPlan);
-        const inputs = document.querySelectorAll('.meal-input');
-        let index = 0;
-        for (let day of mealPlan) {
-            const dayMeals = day.split(','); // فصل الوجبات
-            inputs[index].value = dayMeals[0]; // Breakfast
-            inputs[index + 1].value = dayMeals[1]; // Lunch
-            inputs[index + 2].value = dayMeals[2]; // Dinner
-            index += 3; // الانتقال إلى اليوم التالي
-        }
+// عند تحميل الصفحة، اعرض الخطة المحفوظة (لو موجودة)
+document.addEventListener('DOMContentLoaded', () => {
+    const saved = localStorage.getItem("mealPlan");
+    if (saved) {
+        displaySavedMealPlan(JSON.parse(saved));
     }
-}
+});
 
-// حفظ الخطة عند الضغط على زر الحفظ
 document.querySelector('.save-btn').addEventListener('click', saveMealPlan);
 
 function saveMealPlan() {
@@ -217,16 +206,19 @@ function saveMealPlan() {
             inputs[i + 1].value,  // Lunch
             inputs[i + 2].value   // Dinner
         ];
-        mealPlan.push(dayMeals.join(',')); // دمج الوجبات في نفس اليوم
+        mealPlan.push(dayMeals.join(','));
     }
 
-    // تخزين البيانات في localStorage
     localStorage.setItem("mealPlan", JSON.stringify(mealPlan));
     displaySavedMealPlan(mealPlan);
 }
 
-// عرض الخطة المحفوظة تحت الجدول
 function displaySavedMealPlan(mealPlan) {
+    // إزالة القسم القديم إن وجد
+    const oldSection = document.querySelector('.saved-plan');
+    if (oldSection) oldSection.remove();
+
+    // إنشاء القسم الجديد
     const displaySection = document.createElement('section');
     displaySection.classList.add('saved-plan');
     const heading = document.createElement('h3');
