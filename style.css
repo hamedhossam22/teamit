@@ -775,79 +775,74 @@ header {
   cursor: pointer;
 }
 
-
-/* Same header and base styles as before */
-body {
-  font-family: Arial, sans-serif;
+/* قسم المراجعات الكامل */
+.review-section {
   background-color: #fff8f0;
+  padding: 40px 20px;
+  font-family: Arial, sans-serif;
   color: #333;
-  margin: 0;
-  padding: 0;
 }
 
-header {
-  background-color: #ff914d;
-  padding: 20px;
-  text-align: center;
-  color: white;
-}
-
-/* Reviews Section */
-.review {
-  background-color: #fffaf5; /* لون خلفية خفيف برتقالي */
-  border: 1px solid #f6f5f4; /* إطار خفيف */
-  border-radius: 8px;
-  padding: 15px;
-  margin-bottom: 15px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05); /* ظل خفيف */
-}
-
-
-.review {
-  border-bottom: 1px solid #eee;
-  padding: 15px 0;
-}
-
-.review-header strong {
-  color: #0d0d0c; /* لون الاسم */
-}
-
-.stars {
-  color: #f39c12; /* لون النجوم */
-}
-
-/* Form Section */
-.add-review {
+/* صندوق إضافة المراجعة */
+.review-form-container {
   max-width: 700px;
-  margin: 30px auto;
-  padding: 20px;
-  background: #fff;
-  border-radius: 10px;
-  box-shadow: 0 0 10px #ddd;
+  margin: 0 auto;
+  padding: 25px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
-.add-review form {
+.review-form-container h2 {
+  margin-bottom: 20px;
+  color: #ff914d;
+  text-align: center;
+  font-size: 1.8rem;
+}
+
+/* تنسيق النموذج */
+.review-form-container form {
   display: flex;
   flex-direction: column;
 }
 
-.add-review input,
-.add-review select,
-.add-review textarea {
-  padding: 10px;
-  margin-bottom: 15px;
-  border-radius: 5px;
-  border: 1px solid #ccc;
+.review-form-container label {
+  font-weight: bold;
+  margin-bottom: 5px;
+  margin-top: 10px;
 }
 
-.add-review button {
-  background-color: #ff914d;
-  color: rgb(255, 248, 248);
-  border: none;
-  padding: 10px;
-  border-radius: 5px;
-  cursor: pointer;
+.review-form-container input,
+.review-form-container select,
+.review-form-container textarea {
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: border-color 0.3s;
 }
-.add-review button:hover {
+
+.review-form-container input:focus,
+.review-form-container select:focus,
+.review-form-container textarea:focus {
+  border-color: #ff914d;
+  outline: none;
+}
+
+/* زر الإرسال */
+.review-form-container button {
+  background-color: #ff914d;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.review-form-container button:hover {
   background-color: #e6732f;
 }
+
