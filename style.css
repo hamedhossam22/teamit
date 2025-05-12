@@ -793,29 +793,27 @@ header {
 }
 
 /* Reviews Section */
-.reviews {
-  max-width: 700px;
-  margin: 30px auto;
-  padding: 20px;
-  background: #fff;
-  border-radius: 10px;
-  box-shadow: 0 0 10px #ddd;
+.review {
+  background-color: #fffaf5; /* لون خلفية خفيف برتقالي */
+  border: 1px solid #f6f5f4; /* إطار خفيف */
+  border-radius: 8px;
+  padding: 15px;
+  margin-bottom: 15px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05); /* ظل خفيف */
 }
+
 
 .review {
   border-bottom: 1px solid #eee;
   padding: 15px 0;
 }
 
-.review-header {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 5px;
+.review-header strong {
+  color: #0d0d0c; /* لون الاسم */
 }
 
 .stars {
-  color: gold;
-  font-size: 16px;
+  color: #f39c12; /* لون النجوم */
 }
 
 /* Form Section */
@@ -844,7 +842,7 @@ header {
 
 .add-review button {
   background-color: #ff914d;
-  color: white;
+  color: rgb(255, 248, 248);
   border: none;
   padding: 10px;
   border-radius: 5px;
