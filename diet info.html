@@ -108,6 +108,29 @@
         font-size: 1.5rem;
       }
     }
+
+    /* New Style for the Diet Plan Table */
+    .diet-plan {
+      margin-top: 40px;
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    .diet-plan th, .diet-plan td {
+      padding: 12px;
+      text-align: left;
+      border-bottom: 2px solid var(--primary-color);
+    }
+
+    .diet-plan th {
+      background-color: var(--primary-color);
+      color: white;
+      font-size: 1.2rem;
+    }
+
+    .diet-plan td {
+      background-color: var(--card-bg);
+    }
   </style>
 </head>
 <body>
@@ -140,6 +163,37 @@
         <h3>High-Protein Diet</h3>
         <p>Emphasizes eating more protein-rich foods like meat, dairy, eggs, and legumes to build muscle and stay full.</p>
       </div>
+    </section>
+
+    <!-- Diet Plan Table -->
+    <section class="diet-plan-section">
+      <h2>Healthy Diet Plan</h2>
+      <table class="diet-plan">
+        <thead>
+          <tr>
+            <th>Meal</th>
+            <th>Menu</th>
+            <th>Ingredients</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Breakfast</td>
+            <td>Oatmeal with Fruits</td>
+            <td>Oats, Banana, Blueberries, Almonds, Honey</td>
+          </tr>
+          <tr>
+            <td>Lunch</td>
+            <td>Grilled Chicken Salad</td>
+            <td>Chicken Breast, Lettuce, Cucumber, Tomatoes, Olive Oil, Lemon</td>
+          </tr>
+          <tr>
+            <td>Dinner</td>
+            <td>Quinoa with Veggies</td>
+            <td>Quinoa, Bell Peppers, Zucchini, Broccoli, Olive Oil</td>
+          </tr>
+        </tbody>
+      </table>
     </section>
   </main>
 

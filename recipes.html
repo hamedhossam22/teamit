@@ -183,6 +183,20 @@ display: flex;
             font-weight: bold;
             color: #e65100;
         }
+         button {
+            background-color: #ed8f13; 
+            color: white;
+            font-size: 16px;
+            padding: 10px 20px;
+            border: none; 
+            cursor: pointer;
+            border-radius: 5px; 
+          
+        }
+
+        button:hover {
+            background-color: #bf7526; 
+        }
     </style>
 </head>
 <body>
@@ -193,161 +207,255 @@ display: flex;
         </div>
         <h2>RECIPES</h2>
         <div class="separator"></div>
-        
-        <!-- Product 1 -->
-        <div class="product">
-            <div class="product-row">
-                <img class="product-image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSstWM-fuZuYAcE1aJtdV2nqmQa6CFdPJiqTg&s" alt="Product 1">
-                <div class="product-info">
-                    <div class="product-title">EGGS</div>
-                    <br/>
-                    <div>Heat pan with a little fat. Crack egg in. Cook gently until white is set, yolk is runny. Slide onto plate. Enjoy!</div>
-                    <br/>
-                    <a href="https://youtu.be/neEqtzgm7Tw?si=jAQJn6Omz3CxF9oV" class="video-link">Recipe video</a>
-                    <button class="favorite-btn" onclick="addToFavorites('EGGS')">Add to Favorites</button>
-                </div>
-            </div>
-        </div>
-        
-       <!-- Product 2 -->
-        <div class="product">
-            <div class="product-row">
-                <img class="product-image" src="https://kitchen.sayidaty.net/uploads/small/42/423203a50a85745ee5ff98ff201043f7_w750_h500.jpg" alt="Product 2">
-                <div class="product-info">
-                    <div class="product-title">EGYPTIAN FAVE BEANS</div>
-                    <br/>
-                    <div>Ful medames is an Egyptian dish of slowly cooked fava beans. They are soaked, then cooked until tender, often mashed, and seasoned with olive oil, lemon, garlic, and spices. Served hot with fresh vegetables and pita bread, it's a popular and hearty meal. Enjoy!</div>
-                    <br/>
-                    <a href="https://www.youtube.com/watch?v=OJWkPSLzBis" class="video-link">Recipe video</a>
-                    <button class="favorite-btn" onclick="addToFavorites('EGYPTIAN FAVE BEANS')">Add to Favorites</button>
-                </div>
-            </div>
-        </div>
-        
-        <!-- Product 3 -->
-        <div class="product">
-            <div class="product-row">
-                <img class="product-image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTfdP38dsaYn6QONhBF-OFCmMc4f6ogKotXmg&s" alt="Product 3">
-                <div class="product-info">
-                    <div class="product-title">FLUFFY PANCAKE</div>
-                    <br/>
-                    <div>Mix flour, sugar, baking powder, and salt. Add milk, egg, and melted butter. Stir until just combined (don't overmix). Pour small amounts of batter onto a hot, lightly greased pan. Cook until bubbles appear and the edges are set, then flip and cook the other side until golden brown. Serve with your favorite toppings. Enjoy!</div>
-                    <br/>
-                    <a href="https://www.youtube.com/watch?v=9zCVCL4V8JQ&pp=0gcJCdgAo7VqN5tD" class="video-link">Recipe video</a>
-                    <button class="favorite-btn" onclick="addToFavorites('FLUFFY PANCAKE')">Add to Favorites</button>
-                </div>
-            </div>
-        </div>
-        
-        <!-- Product 4 -->
-        <div class="product">
-            <div class="product-row">
-                <img class="product-image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSR68sz5aFAMCK4M6kJ5qReB7XrabukZJTqVg&s" alt="Product 4">
-                <div class="product-info">
-                    <div class="product-title">LIVER SANDWICHES</div>
-                    <br/>
-                    <div>Sauté sliced liver with seasonings (and peppers/garlic for Alexandrian style). Put cooked liver in bread. Add desired toppings. Enjoy!</div>
-                    <br/>
-                    <a href="https://www.instagram.com/reel/ConWTknv39R/" class="video-link">Recipe video</a>
-                    <button class="favorite-btn" onclick="addToFavorites('LIVER SANDWICHES')">Add to Favorites</button>
+         <button onclick="window.location.href='https://www.talabat.com'">Shop now</button>
+ <!-- ======= EGGS ======= -->
+  <div class="product">
+    <div class="product-row">
+      <img class="product-image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSstWM-fuZuYAcE1aJtdV2nqmQa6CFdPJiqTg&s" alt="EGGS">
+      <div class="product-info">
+        <div class="product-title">EGGS</div>
+        <p>Heat pan with a little fat. Crack egg in. Cook gently until white is set, yolk is runny. Slide onto plate. Enjoy!</p>
 
+        <div class="ingredients-section">
+          <label>Servings: </label>
+          <input type="number" min="1" value="1" class="servings-input" oninput="updateIngredients(this)">
+          <ul class="ingredients-list">
+            <li><span class="ingredient-qty" data-base="1">1</span> egg</li>
+            <li><span class="ingredient-qty" data-base="10">10</span> g butter</li>
+            <li><span class="ingredient-qty" data-base="1">1</span> pinch salt</li>
+          </ul>
+        </div>
 
-</div>
-            </div>
-        </div>
-        
-        <!-- Product 5 -->
-        <div class="product">
-            <div class="product-row">
-                <img class="product-image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ22EcRdmgw7UrtZjougdmROnuooSxbcXzjAZ3uRltwq52NSFLAzAPGmhaZKS9DZPk1zH8&usqp=CAU" alt="Product 5">
-                <div class="product-info">
-                    <div class="product-title">CHEESE PIES</div>
-                    <br/>
-                    <div>"Feteer Bel Gebna" is Egyptian cheese pie made with layered dough and various cheeses, baked until golden and melty. Enjoy as a meal or snack. Enjoy!</div>
-                    <br/>
-                    <a href="https://www.youtube.com/watch?v=IZaMlU8OjJY" class="video-link">Recipe video</a>
-                    <button class="favorite-btn" onclick="addToFavorites('CHEESE PIES')">Add to Favorites</button>
-                </div>
-            </div>
-        </div>
-        
-        <!-- Product 6 -->
-        <div class="product">
-            <div class="product-row">
-                <img class="product-image" src="https://img.youm7.com/ArticleImgs/2023/10/23/123886-%D9%85%D8%B9%D8%AC%D9%86%D8%A7%D8%AA.jpg" alt="Product 6">
-                <div class="product-info">
-                    <div class="product-title">PASTRIES</div>
-                    <br/>
-                    <div>Pastries are made by combining flour, fat, liquid, and sometimes sugar/leavening. Flaky types need layering fat and dough. Richer doughs with fillings are also common. Bake until golden. Enjoy!</div>
-                    <br/>
-                    <a href="https://www.youtube.com/watch?v=SyWMFVyHGpk" class="video-link">Recipe video</a>
-                    <button class="favorite-btn" onclick="addToFavorites('PASTRIES')">Add to Favorites</button>
-                </div>
-            </div>
-        </div>
-        
-        <!-- Product 7 -->
-        <div class="product">
-            <div class="product-row">
-                <img class="product-image" src="https://www.theflavorbender.com/wp-content/uploads/2020/05/French-Croissants-SM-2363.jpg" alt="Product 7">
-                <div class="product-info">
-                    <div class="product-title">CROISSANTS</div>
-                    <br/>
-                    <div>Croissants are buttery, crescent-shaped flaky pastries. Layering cold butter into dough creates their airy texture. Bake until golden and crisp. Enjoy!</div>
-                    <br/>
-                    <a href="https://m.youtube.com/watch?v=UEurw7eo3H0&pp=ygUJI2Nyb3Nzb250" class="video-link">Recipe video</a>
-                    <button class="favorite-btn" onclick="addToFavorites('CROISSANTS')">Add to Favorites</button>
-                </div>
-            </div>
-        </div>
-        
-        <!-- Product 8 -->
-        <div class="product">
-            <div class="product-row">
-                <img class="product-image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTykTqFl_2TMxl132Au8UryDiIxuNeNP6PUQQ&s" alt="Product 8">
-                <div class="product-info">
-                    <div class="product-title">FETEER MESHALTET</div>
-                    <br/>
-                    <div>Feteer Meshaltet is Egyptian layered pastry made from stretched thin dough brushed with ghee. Multiple folds create many flaky layers. Bake until puffed and golden. Serve hot, plain or with toppings. Enjoy</div>
-                    <br/>
-                    <a href="https://www.youtube.com/watch?v=kAyexkTL9lI" class="video-link">Recipe video</a>
-                    <button class="favorite-btn" onclick="addToFavorites('FETEER MESHALTET')">Add to Favorites</button>
-                </div>
-            </div>
-        </div>
-        
-        <!-- Product 9 -->
-        <div class="product">
-            <div class="product-row">
-                <img class="product-image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTE8YWzsttfr1NYBjNletV4O3FEy7p-zJbEMg&s" alt="Product 9">
-                <div class="product-info">
-                    <div class="product-title">FRUIT SALAD</div>
-                    <br/>
-                    <div>Chop your favorite fruits. Mix them in a bowl. Add a squeeze of citrus (optional). Chill and serve. Enjoy!</div>
-
-
-<br/>
-                    <a href="https://www.youtube.com/watch?v=9Ys45QLKN4M" class="video-link">Recipe video</a>
-                    <button class="favorite-btn" onclick="addToFavorites('FRUIT SALAD')">Add to Favorites</button>
-                </div>
-            </div>
-        </div>
-        
-        <!-- Product 10 -->
-        <div class="product">
-            <div class="product-row">
-                <img class="product-image" src="https://images.akhbarelyom.com/images/images/large/20240527104531821.jpg" alt="Product 10">
-                <div class="product-info">
-                    <div class="product-title">AVOCADO TOAST</div>
-                    <br/>
-                    <div>Toast bread and mash avocado with salt and pepper (add lemon if you like). Spread on toast and enjoy!</div>
-                    <br/>
-                    <a href="https://www.youtube.com/watch?v=FV3asCDsf9U" class="video-link">Recipe video</a>
-                    <button class="favorite-btn" onclick="addToFavorites('AVOCADO TOAST')">Add to Favorites</button>
-                </div>
-            </div>
-        </div>
+        <a href="https://youtu.be/neEqtzgm7Tw?si=jAQJn6Omz3CxF9oV" class="video-link">Recipe video</a>
+        <button class="favorite-btn" onclick="addToFavorites('EGGS')">Add to Favorites</button>
+      </div>
     </div>
+  </div>
+
+  <!-- ======= EGYPTIAN FAVE BEANS ======= -->
+  <div class="product">
+    <div class="product-row">
+      <img class="product-image" src="https://kitchen.sayidaty.net/uploads/small/42/423203a50a85745ee5ff98ff201043f7_w750_h500.jpg" alt="FAVE BEANS">
+      <div class="product-info">
+        <div class="product-title">EGYPTIAN FAVE BEANS</div>
+        <p>Ful medames is an Egyptian dish of slowly cooked fava beans. Soaked, then cooked until tender and seasoned. Served hot with vegetables and pita bread.</p>
+
+        <div class="ingredients-section">
+          <label>Servings: </label>
+          <input type="number" min="1" value="1" class="servings-input" oninput="updateIngredients(this)">
+          <ul class="ingredients-list">
+            <li><span class="ingredient-qty" data-base="100">100</span> g fava beans</li>
+            <li><span class="ingredient-qty" data-base="1">1</span> tbsp olive oil</li>
+            <li><span class="ingredient-qty" data-base="1">1</span> clove garlic</li>
+            <li><span class="ingredient-qty" data-base="0.5">0.5</span> lemon</li>
+          </ul>
+        </div>
+
+        <a href="https://www.youtube.com/watch?v=OJWkPSLzBis" class="video-link">Recipe video</a>
+        <button class="favorite-btn" onclick="addToFavorites('EGYPTIAN FAVE BEANS')">Add to Favorites</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ======= FLUFFY PANCAKE ======= -->
+  <div class="product">
+    <div class="product-row">
+      <img class="product-image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTfdP38dsaYn6QONhBF-OFCmMc4f6ogKotXmg&s" alt="PANCAKE">
+      <div class="product-info">
+        <div class="product-title">FLUFFY PANCAKE</div>
+        <p>Mix dry ingredients. Add milk, egg, and butter. Stir until combined. Cook on pan until golden brown. Serve with toppings!</p>
+
+        <div class="ingredients-section">
+          <label>Servings: </label>
+          <input type="number" min="1" value="1" class="servings-input" oninput="updateIngredients(this)">
+          <ul class="ingredients-list">
+            <li><span class="ingredient-qty" data-base="60">60</span> g flour</li>
+            <li><span class="ingredient-qty" data-base="1">1</span> egg</li>
+            <li><span class="ingredient-qty" data-base="75">75</span> ml milk</li>
+            <li><span class="ingredient-qty" data-base="1">1</span> tsp sugar</li>
+            <li><span class="ingredient-qty" data-base="1">1</span> tsp butter</li>
+          </ul>
+        </div>
+
+        <a href="https://www.youtube.com/watch?v=9zCVCL4V8JQ&pp=0gcJCdgAo7VqN5tD" class="video-link">Recipe video</a>
+        <button class="favorite-btn" onclick="addToFavorites('FLUFFY PANCAKE')">Add to Favorites</button>
+      </div>
+    </div>
+  </div>
+        
+  <!-- ======= LIVER SANDWICHES ======= -->
+<div class="product">
+  <div class="product-row">
+    <img class="product-image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSR68sz5aFAMCK4M6kJ5qReB7XrabukZJTqVg&s" alt="LIVER SANDWICHES">
+    <div class="product-info">
+      <div class="product-title">LIVER SANDWICHES</div>
+      <p>Sauté sliced liver with seasonings (and peppers/garlic for Alexandrian style). Put cooked liver in bread. Add toppings. Enjoy!</p>
+
+      <div class="ingredients-section">
+        <label>Servings: </label>
+        <input type="number" min="1" value="1" class="servings-input" oninput="updateIngredients(this)">
+        <ul class="ingredients-list">
+          <li><span class="ingredient-qty" data-base="100">100</span> g liver</li>
+          <li><span class="ingredient-qty" data-base="1">1</span> garlic clove</li>
+          <li><span class="ingredient-qty" data-base="1">1</span> bun</li>
+          <li><span class="ingredient-qty" data-base="0.5">0.5</span> bell pepper</li>
+        </ul>
+      </div>
+
+      <a href="https://www.instagram.com/reel/ConWTknv39R/" class="video-link">Recipe video</a>
+      <button class="favorite-btn" onclick="addToFavorites('LIVER SANDWICHES')">Add to Favorites</button>
+    </div>
+  </div>
+</div>
+
+<!-- ======= CHEESE PIES ======= -->
+<div class="product">
+  <div class="product-row">
+    <img class="product-image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ22EcRdmgw7UrtZjougdmROnuooSxbcXzjAZ3uRltwq52NSFLAzAPGmhaZKS9DZPk1zH8&usqp=CAU" alt="CHEESE PIES">
+    <div class="product-info">
+      <div class="product-title">CHEESE PIES</div>
+      <p>"Feteer Bel Gebna" is Egyptian cheese pie made with layered dough and cheeses. Baked till golden. Enjoy as meal/snack.</p>
+
+      <div class="ingredients-section">
+        <label>Servings: </label>
+        <input type="number" min="1" value="1" class="servings-input" oninput="updateIngredients(this)">
+        <ul class="ingredients-list">
+          <li><span class="ingredient-qty" data-base="100">100</span> g dough</li>
+          <li><span class="ingredient-qty" data-base="50">50</span> g cheese</li>
+          <li><span class="ingredient-qty" data-base="1">1</span> tsp butter</li>
+        </ul>
+      </div>
+
+      <a href="https://www.youtube.com/watch?v=IZaMlU8OjJY" class="video-link">Recipe video</a>
+      <button class="favorite-btn" onclick="addToFavorites('CHEESE PIES')">Add to Favorites</button>
+    </div>
+  </div>
+</div>
+
+<!-- ======= PASTRIES ======= -->
+<div class="product">
+  <div class="product-row">
+    <img class="product-image" src="https://img.youm7.com/ArticleImgs/2023/10/23/123886-%D9%85%D8%B9%D8%AC%D9%86%D8%A7%D8%AA.jpg" alt="PASTRIES">
+    <div class="product-info">
+      <div class="product-title">PASTRIES</div>
+      <p>Pastries are made by combining flour, fat, liquid, and sometimes sugar/leavening. Bake until golden. Enjoy!</p>
+
+      <div class="ingredients-section">
+        <label>Servings: </label>
+        <input type="number" min="1" value="1" class="servings-input" oninput="updateIngredients(this)">
+        <ul class="ingredients-list">
+          <li><span class="ingredient-qty" data-base="100">100</span> g flour</li>
+          <li><span class="ingredient-qty" data-base="50">50</span> g butter</li>
+          <li><span class="ingredient-qty" data-base="30">30</span> ml water</li>
+          <li><span class="ingredient-qty" data-base="1">1</span> pinch salt</li>
+        </ul>
+      </div>
+
+      <a href="https://www.youtube.com/watch?v=SyWMFVyHGpk" class="video-link">Recipe video</a>
+      <button class="favorite-btn" onclick="addToFavorites('PASTRIES')">Add to Favorites</button>
+    </div>
+  </div>
+</div>
+
+        
+   <!-- ======= CROISSANTS ======= -->
+<div class="product">
+  <div class="product-row">
+    <img class="product-image" src="https://www.theflavorbender.com/wp-content/uploads/2020/05/French-Croissants-SM-2363.jpg" alt="CROISSANTS">
+    <div class="product-info">
+      <div class="product-title">CROISSANTS</div>
+      <p>Croissants are buttery, crescent-shaped flaky pastries. Bake until golden and crisp. Enjoy!</p>
+
+      <div class="ingredients-section">
+        <label>Servings: </label>
+        <input type="number" min="1" value="1" class="servings-input" oninput="updateIngredients(this)">
+        <ul class="ingredients-list">
+          <li><span class="ingredient-qty" data-base="100">100</span> g flour</li>
+          <li><span class="ingredient-qty" data-base="75">75</span> g cold butter</li>
+          <li><span class="ingredient-qty" data-base="30">30</span> ml milk</li>
+          <li><span class="ingredient-qty" data-base="1">1</span> tsp yeast</li>
+        </ul>
+      </div>
+
+      <a href="https://m.youtube.com/watch?v=UEurw7eo3H0&pp=ygUJI2Nyb3Nzb250" class="video-link">Recipe video</a>
+      <button class="favorite-btn" onclick="addToFavorites('CROISSANTS')">Add to Favorites</button>
+    </div>
+  </div>
+</div>
+
+<!-- ======= FETEER MESHALTET ======= -->
+<div class="product">
+  <div class="product-row">
+    <img class="product-image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTykTqFl_2TMxl132Au8UryDiIxuNeNP6PUQQ&s" alt="FETEER MESHALTET">
+    <div class="product-info">
+      <div class="product-title">FETEER MESHALTET</div>
+      <p>Egyptian layered pastry made from stretched dough brushed with ghee. Bake till golden. Enjoy!</p>
+
+      <div class="ingredients-section">
+        <label>Servings: </label>
+        <input type="number" min="1" value="1" class="servings-input" oninput="updateIngredients(this)">
+        <ul class="ingredients-list">
+          <li><span class="ingredient-qty" data-base="150">150</span> g flour</li>
+          <li><span class="ingredient-qty" data-base="50">50</span> g ghee</li>
+          <li><span class="ingredient-qty" data-base="60">60</span> ml water</li>
+        </ul>
+      </div>
+
+      <a href="https://www.youtube.com/watch?v=kAyexkTL9lI" class="video-link">Recipe video</a>
+      <button class="favorite-btn" onclick="addToFavorites('FETEER MESHALTET')">Add to Favorites</button>
+    </div>
+  </div>
+</div>
+
+<!-- ======= FRUIT SALAD ======= -->
+<div class="product">
+  <div class="product-row">
+    <img class="product-image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTE8YWzsttfr1NYBjNletV4O3FEy7p-zJbEMg&s" alt="FRUIT SALAD">
+    <div class="product-info">
+      <div class="product-title">FRUIT SALAD</div>
+      <p>Chop fruits. Mix in bowl. Add citrus juice (optional). Chill and enjoy!</p>
+
+      <div class="ingredients-section">
+        <label>Servings: </label>
+        <input type="number" min="1" value="1" class="servings-input" oninput="updateIngredients(this)">
+        <ul class="ingredients-list">
+          <li><span class="ingredient-qty" data-base="100">100</span> g apple</li>
+          <li><span class="ingredient-qty" data-base="100">100</span> g banana</li>
+          <li><span class="ingredient-qty" data-base="50">50</span> g grapes</li>
+          <li><span class="ingredient-qty" data-base="10">10</span> ml lemon juice</li>
+        </ul>
+      </div>
+
+      <a href="https://www.youtube.com/watch?v=9Ys45QLKN4M" class="video-link">Recipe video</a>
+      <button class="favorite-btn" onclick="addToFavorites('FRUIT SALAD')">Add to Favorites</button>
+    </div>
+  </div>
+</div>
+
+<!-- ======= AVOCADO TOAST ======= -->
+<div class="product">
+  <div class="product-row">
+    <img class="product-image" src="https://images.akhbarelyom.com/images/images/large/20240527104531821.jpg" alt="AVOCADO TOAST">
+    <div class="product-info">
+      <div class="product-title">AVOCADO TOAST</div>
+      <p>Toast bread. Mash avocado with salt/pepper. Spread and enjoy!</p>
+
+      <div class="ingredients-section">
+        <label>Servings: </label>
+        <input type="number" min="1" value="1" class="servings-input" oninput="updateIngredients(this)">
+        <ul class="ingredients-list">
+          <li><span class="ingredient-qty" data-base="1">1</span> toast slice</li>
+          <li><span class="ingredient-qty" data-base="0.5">0.5</span> avocado</li>
+          <li><span class="ingredient-qty" data-base="1">1</span> pinch salt</li>
+          <li><span class="ingredient-qty" data-base="1">1</span> pinch pepper</li>
+        </ul>
+      </div>
+
+      <a href="https://www.youtube.com/watch?v=FV3asCDsf9U" class="video-link">Recipe video</a>
+      <button class="favorite-btn" onclick="addToFavorites('AVOCADO TOAST')">Add to Favorites</button>
+    </div>
+  </div>
+</div>
 
         <!-- مفضلات المستخدم -->
         <div class="favorites-container">
@@ -357,69 +465,84 @@ display: flex;
     </div>
 
 <script>
-    function searchRecipes() {
-        const input = document.getElementById('searchInput')?.value.toLowerCase();
-        const products = document.querySelectorAll('.product');
-        let found = false;
+  function searchRecipes() {
+    const input = document.getElementById('searchInput')?.value.toLowerCase();
+    const products = document.querySelectorAll('.product');
+    let found = false;
 
-        products.forEach(product => {
-            const title = product.querySelector('.product-title')?.textContent.toLowerCase();
-            const description = product.querySelector('.product-info > div:nth-child(3)')?.textContent.toLowerCase();
+    products.forEach(product => {
+        const title = product.querySelector('.product-title')?.textContent.toLowerCase();
+        const description = product.querySelector('.product-info > div:nth-child(3)')?.textContent.toLowerCase();
 
-            if (title.includes(input) || description.includes(input)) {
-                product.style.display = 'block';
-                found = true;
-            } else {
-                product.style.display = 'none';
-            }
-        });
-
-        const noResults = document.querySelector('.no-results');
-        if (noResults) {
-            noResults.style.display = found ? 'none' : 'block';
+        if (title.includes(input) || description.includes(input)) {
+            product.style.display = 'block';
+            found = true;
+        } else {
+            product.style.display = 'none';
         }
+    });
+
+    const noResults = document.querySelector('.no-results');
+    if (noResults) {
+        noResults.style.display = found ? 'none' : 'block';
     }
+}
 
-    function addToFavorites(recipeName) {
-        let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+function addToFavorites(recipeName) {
+    let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
 
-        if (!favorites.includes(recipeName)) {
-            favorites.push(recipeName);
-            localStorage.setItem('favorites', JSON.stringify(favorites));
-            displayFavorites();
-        }
-    }
-
-    function removeFromFavorites(recipeName) {
-        let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
-        favorites = favorites.filter(item => item !== recipeName);
+    if (!favorites.includes(recipeName)) {
+        favorites.push(recipeName);
         localStorage.setItem('favorites', JSON.stringify(favorites));
         displayFavorites();
+        
     }
+}
 
-    function displayFavorites() {
-        const favoriteList = document.getElementById('favoriteList');
-        if (!favoriteList) return;
+function removeFromFavorites(recipeName) {
+    let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+    favorites = favorites.filter(item => item !== recipeName);
+    localStorage.setItem('favorites', JSON.stringify(favorites));
+    displayFavorites();
+}
 
-        favoriteList.innerHTML = '';
-        const favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+function displayFavorites() {
+    const favoriteList = document.getElementById('favoriteList');
+    if (!favoriteList) return;
 
-        favorites.forEach(item => {
-            const li = document.createElement('li');
-            li.textContent = item;
+    favoriteList.innerHTML = '';
+    const favorites = JSON.parse(localStorage.getItem('favorites')) || [];
 
-            const removeBtn = document.createElement('button');
-            removeBtn.textContent = '❌';
-            removeBtn.style.marginLeft = '10px';
-            removeBtn.onclick = () => removeFromFavorites(item);
+    favorites.forEach(item => {
+        const li = document.createElement('li');
+        li.textContent = item;
 
-            li.appendChild(removeBtn);
-            favoriteList.appendChild(li);
-        });
-    }
+        const removeBtn = document.createElement('button');
+        removeBtn.textContent = '❌';
+        removeBtn.style.marginLeft = '10px';
+        removeBtn.onclick = () => removeFromFavorites(item);
 
-    // عرض المفضلات عند التحميل
-    document.addEventListener('DOMContentLoaded', displayFavorites);
+        li.appendChild(removeBtn);
+        favoriteList.appendChild(li);
+    });
+}
+
+// عرض المفضلات عند التحميل
+document.addEventListener('DOMContentLoaded', displayFavorites);
+
+function updateIngredients(input) {
+    const servings = parseInt(input.value);
+    const productDiv = input.closest(".product");
+    const quantities = productDiv.querySelectorAll(".ingredient-qty");
+
+    quantities.forEach(qtySpan => {
+        const base = parseFloat(qtySpan.getAttribute("data-base"));
+        const newAmount = base * servings;
+        qtySpan.textContent = newAmount;
+    });
+}
+
+
 </script>
 
 
