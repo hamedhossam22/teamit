@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>AllRecipes - Blog</title>
   <style>
     body {
@@ -42,12 +42,15 @@
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
       display: flex;
       flex-direction: column;
-      justify-content: center;
+      align-items: center;
     }
 
     .post img {
-      max-width: 100%;
+      width: 300px;
+      height: 200px;
+      object-fit: cover;
       border-radius: 8px;
+      margin-bottom: 10px;
     }
 
     .post h2 {
@@ -58,6 +61,7 @@
     .post p {
       color: #555;
       line-height: 1.6;
+      text-align: center;
     }
 
     .post .read-more {
@@ -96,7 +100,7 @@
 
     <!-- Post 1 -->
     <div class="post">
-      <img src="https://via.placeholder.com/800x400" alt="Fresh Herbs">
+      <img src="./images.jpeg" alt="Herbs">
       <h2>Tip #1: Keep Your Herbs Fresh</h2>
       <p>Wrap herbs in a damp paper towel and store them in a ziplock bag in the fridge. This will help them stay fresh for longer!</p>
       <a href="#" class="read-more">Read More...</a>
@@ -104,7 +108,7 @@
 
     <!-- Post 2 -->
     <div class="post">
-      <img src="https://via.placeholder.com/800x400" alt="Knife Skills">
+      <img src="./knife.jpeg" alt="Knife Skills">
       <h2>Tip #2: Perfect Your Knife Skills</h2>
       <p>Learning how to use a chef’s knife correctly can make chopping and slicing much easier and faster. Here's a quick guide...</p>
       <a href="#" class="read-more">Read More...</a>
@@ -112,33 +116,36 @@
 
     <!-- Post 3 -->
     <div class="post">
-      <img src="https://via.placeholder.com/800x400" alt="Organized Kitchen">
+      <img src="./organize.jpeg" alt="Organized Kitchen">
       <h2>Tip #3: Keep Your Kitchen Organized</h2>
       <p>Keeping your kitchen organized not only saves time but also reduces stress when cooking. Try these simple organization tips...</p>
       <a href="#" class="read-more">Read More...</a>
     </div>
 
-    <!-- New Posts -->
+    <!-- Post 4 -->
     <div class="post">
-      <img src="https://via.placeholder.com/800x400" alt="Storing Spices">
+      <img src="./store.jpeg" alt="Storing Spices">
       <h2>Tip #4: Store Your Spices Correctly</h2>
       <p>Spices can lose their flavor over time if not stored properly. Here's how to store them to maximize freshness...</p>
       <a href="#" class="read-more">Read More...</a>
     </div>
 
+    <!-- Post 5 -->
     <div class="post">
-      <img src="https://via.placeholder.com/800x400" alt="Meal Prep">
+      <img src="./meal.jpeg" alt="Meal Prep">
       <h2>Tip #5: Meal Prep Like a Pro</h2>
       <p>Meal prepping can save time and reduce stress during the week. Here's how to prep meals efficiently...</p>
       <a href="#" class="read-more">Read More...</a>
     </div>
 
+    <!-- Post 6 -->
     <div class="post">
-      <img src="https://via.placeholder.com/800x400" alt="Perfect Rice">
+      <img src="./rice.jpeg" alt="Perfect Rice">
       <h2>Tip #6: How to Cook Perfect Rice</h2>
       <p>Cooking rice can be tricky. Learn the perfect method for fluffy, delicious rice every time...</p>
       <a href="#" class="read-more">Read More...</a>
     </div>
+
   </div>
 
   <footer>
