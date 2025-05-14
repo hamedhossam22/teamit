@@ -832,3 +832,148 @@ nav ul li a {
 .review-form-container button:hover {
   background-color: #e6732f;
 }
+
+
+
+
+
+
+
+
+.compare-section {
+  padding: 40px 20px;
+  background-color: #f9f9f9;
+  display: flex;
+  justify-content: center;
+}
+
+.compare-content {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  max-width: 1000px;
+  flex-wrap: wrap;
+}
+
+.compare-content img {
+  width: 400px;
+  height: 300px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  margin-right: 160px;
+}
+
+.compare-text {
+  max-width: 400px;
+}
+
+.compare-text h2 {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.compare-text p {
+  margin-bottom: 20px;
+  font-size: 16px;
+  color: #555;
+}
+
+.compare-button {
+  background-color: #ff7f50;
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  text-decoration: none;
+  font-size: 16px;
+  border-radius: 8px;
+  transition: background 0.3s;
+}
+
+.compare-button:hover {
+  background-color: #e5673c;
+}
+
+
+.featured-recipes {
+  background-color: #fdfaf6;
+  padding: 30px 40px;
+  border-top: 2px solid #eee;
+}
+
+.section-heading {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.section-heading h1 {
+  font-size: 32px;
+  color: #333;
+  margin: 0;
+  font-weight: bold;
+}
+
+.featured-content {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* 👇 كبرنا عرض الشمال */
+.left-featured {
+  flex: 0 0 700px; /* بدل 400px */
+  display: flex;
+  flex-direction: column;
+  margin-left: 150px;
+}
+
+.left-featured img {
+  width: 100%;
+  max-height: 550px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.featured-text {
+  margin-top: 12px;
+}
+
+.featured-text small {
+  font-size: 11px;
+  color: #888;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.featured-text h2 {
+  font-size: 20px;
+  color: #222;
+  margin-top: 5px;
+}
+
+.right-featured-list {
+  flex: 1 1 500px; /* زيادة الحجم */
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* زيادة المسافة بين العناصر */
+}
+
+.small-feature {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* زيادة المسافة بين الصورة والنص */
+}
+
+.small-feature img {
+  width: 100px; /* زيادة حجم الصورة */
+  height: 70px; /* زيادة ارتفاع الصورة */
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.small-feature p {
+  font-size: 15px; /* تكبير حجم الخط */
+  color: #333;
+  margin: 0;
+}
