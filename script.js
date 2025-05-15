@@ -236,4 +236,3 @@ function displaySavedMealPlan(mealPlan) {
     displaySection.appendChild(list);
     document.querySelector('main').appendChild(displaySection);
 }
-

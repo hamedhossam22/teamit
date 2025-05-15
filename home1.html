@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <title>وصفاتنا</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body dir="rtl">
+
+  <!-- Header -->
+  <header>
+    <div class="logo">وصفاتنا</div>
+    <nav>
+      <ul>
+        <li><a href="home.html" class="active">الرئيسية</a></li>
+        <li><a href="recipes.html">الوصفات</a></li>
+
+        <li class="dropdown">
+          <a href="#" class="dropbtn">المطابخ ▼</a>
+          <ul class="dropdown-content">
+            <li><a href="egyptian.html">مصري</a></li>
+            <li><a href="italian.html">إيطالي</a></li>
+            <li><a href="Korean.html">كوري</a></li>
+          </ul>
+        </li>
+        <li><a href="blog.html">المدونة</a></li>
+        <li><a href="contact.html">اتصل بنا</a></li>
+        <li><a href="Reviews.html">المراجعات</a></li>
+        <li><a href="weekly meal planner.html">مخطط الوجبات الأسبوعي</a></li>
+      </ul>
+    </nav>
+    <div class="auth-buttons">
+      <a href="login.html">تسجيل الدخول</a>
+      <a href="register.html">إنشاء حساب</a>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>اكتشف وصفات شهية كل يوم!</h1>
+      <p>استمتع بأشهى الأطباق من جميع أنحاء العالم بكل سهولة</p>
+      <button onclick="window.location.href='recipes.html'">استعرض الوصفات</button>
+    </div>
+  </section>
+
+  <!-- Trending Now Section -->
+  <div class="trending-container">
+    <header class="trending-header">
+      <h1>الشائع الآن</h1>
+    </header>
+
+    <div class="trending-grid">
+      <!-- Card 1 -->
+      <div class="trending-card">
+        <span class="category-tag food-news">أخبار الطعام والاتجاهات</span>
+        <h2>تعرف على MyRecipes: أسهل طريقة للاحتفاظ بكل وصفاتك المفضلة</h2>
+        <div class="card-image">
+          <img src="./8551629-BangBangPotatoes_DDMFS_45-4x3-e8321c7e22cb4fa698de74aaaab364bd.webp" alt="بطاطس بانج بانج">
+        </div>
+        <div class="card-footer">
+          <span class="save-count"><i class="far fa-bookmark"></i> 1.2K حفظ</span>
+          <a href="#" class="read-more">اقرأ المزيد <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="trending-card">
+        <span class="category-tag eggs">بيض</span>
+        <h2>أفضل 12 وصفة لبيض بنديكت - جربناها جميعًا</h2>
+        <div class="card-image">
+          <img src="./17205-eggs-benedict-DDMFS-4x3-a0042d5ae1da485fac3f468654187db0.webp" alt="بيض بنديكت">
+        </div>
+        <div class="card-footer">
+          <span class="save-count"><i class="far fa-bookmark"></i> 856 حفظ</span>
+          <a href="#" class="read-more">اقرأ المزيد <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="trending-card">
+        <span class="category-tag trends">اتجاهات</span>
+        <h2>أكثر وصفات عيد الأم حفظًا على الإطلاق</h2>
+        <div class="card-image">
+          <img src="./672049_Grandmas-Lemon-Meringue-Pie-4x3-011d17190e2e465eadc66234694e991a.webp" alt="فطيرة الليمون">
+        </div>
+        <div class="card-footer">
+          <span class="save-count"><i class="far fa-bookmark"></i> 3.4K حفظ</span>
+          <a href="#" class="read-more">اقرأ المزيد <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="trending-card">
+        <span class="category-tag reviews">مراجعات أدوات المطبخ</span>
+        <h2>طبق التقديم المناسب يجعل كل وجبة مميزة — إليك أفضل الخيارات</h2>
+        <div class="card-image">
+          <img src="./alr-our-place-gather-platters-aimee-broussard-3-f376357e572e4071951b1b5fb6a16b2b.webp" alt="أطباق تقديم">
+        </div>
+        <div class="card-footer">
+          <span class="save-count"><i class="far fa-bookmark"></i> 723 حفظ</span>
+          <a href="#" class="read-more">اقرأ المزيد <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section class="header-section">
+    <h1 class="header">
+      <a href="#">برانش 5 نجوم <span class="arrow">→</span></a>
+    </h1>
+  </section>
+
+  <!-- Recipes Section -->
+  <section class="recipes-section">
+    <!-- Recipe Cards -->
+    <article class="recipe-card">
+      <div class="image-wrapper">
+        <img src="./8607937_Naked-Eggs-Benedict_John-Mitzewich_4x3-b2aa6c8877a4431daf317bfa56797aa6.webp" alt="بيض بنديكت" class="recipe-image">
+        <button class="save-btn"><i class="far fa-heart"></i></button>
+      </div>
+      <div class="recipe-content">
+        <p class="recipe-category">إفطار وبرنش</p>
+        <h2 class="recipe-title">بيض بنديكت بالفرن من الشيف جون</h2>
+        <div class="recipe-rating">★ ★ ★ ★ ★ <span>9 تقييمات</span></div>
+      </div>
+    </article>
+
+  <article class="recipe-card">
+    <div class="image-wrapper">
+        <img src="./11699506_The-Best-Avocado-Toast-4x3-cropped-b8a832a381624e79a689acdb105657c5.webp" alt="توست أفوكادو" class="recipe-image">
+        <button class="save-btn"><i class="far fa-heart"></i></button>
+    </div>
+    <div class="recipe-content">
+        <p class="recipe-category">الفطور والغداء الخفيف</p>
+        <h2 class="recipe-title">أفضل توست أفوكادو</h2>
+        <div class="recipe-rating">★ ★ ★ ★ ★ <span>تقييمين</span></div>
+    </div>
+</article>
+
+<article class="recipe-card">
+    <div class="image-wrapper">
+        <img src="./ALR-recipe-16895-fluffy-french-toast-hero-01-ddmfs-4x3-7fd61e054f2c4f0f868b7ab0dd8767ae.webp" alt="توست فرنسي" class="recipe-image">
+        <button class="save-btn"><i class="far fa-heart"></i></button>
+    </div>
+    <div class="recipe-content">
+        <p class="recipe-category">وصفات التوست الفرنسي</p>
+        <h2 class="recipe-title">توست فرنسي هش</h2>
+        <div class="recipe-rating">★ ★ ★ ★ ★ <span>4,626 تقييم</span></div>
+    </div>
+</article>
+
+<article class="recipe-card">
+    <div class="image-wrapper">
+        <img src="./43475_Hash-Brown-Crust-Quiche-4x3-f96ec6cb95e4473ca82fcdf48a9f9c18.webp" alt="كيش بطاطس" class="recipe-image">
+        <button class="save-btn"><i class="far fa-heart"></i></button>
+    </div>
+    <div class="recipe-content">
+        <p class="recipe-category">وصفات البطاطس المبشورة</p>
+        <h2 class="recipe-title">كيش بقشرة من البطاطس المبشورة</h2>
+        <div class="recipe-rating">★ ★ ★ ★ ☆ <span>372 تقييم</span></div>
+    </div>
+</article>
+
+<article class="recipe-card">
+    <div class="image-wrapper">
+        <img src="./8706892_Lemon-Poppy-Seed-Pancakes-4x3-cropped-c64118c1a1444116aef8f6e850f2c541.webp" alt="بان كيك ليمون" class="recipe-image">
+        <button class="save-btn"><i class="far fa-heart"></i></button>
+    </div>
+    <div class="recipe-content">
+        <p class="recipe-category">وصفات البان كيك</p>
+        <h2 class="recipe-title">بان كيك الليمون وبذور الخشخاش</h2>
+        <div class="recipe-rating">★ ★ ★ ★ ☆ <span>5 تقييمات</span></div>
+    </div>
+</article>
+
+<article class="recipe-card">
+    <div class="image-wrapper">
+        <img src="./ALR-278529-orange-creamsicle-protein-shake-VAT-4x3-3c3996d7410c41f4b668a15197bd952c.webp" alt="مشروب بروتين" class="recipe-image">
+        <button class="save-btn"><i class="far fa-heart"></i></button>
+    </div>
+    <div class="recipe-content">
+        <p class="recipe-category">مشروبات</p>
+        <h2 class="recipe-title">مشروب بروتين برتقال وفانيليا</h2>
+        <div class="recipe-rating">★ ★ ★ ★ ★ <span>11 تقييم</span></div>
+    </div>
+</article>
+
+  </section>
+
+  <!-- Featured Recipes -->
+  <section class="featured-recipes">
+    <div class="section-heading">
+      <h1>صباح الخير! ☀️</h1>
+    </div>
+
+    <div class="featured-content">
+      <div class="left-featured">
+        <img src="./Breakfast-Casserole-4x3-c024cf859d094df0bfa754f32be2431c.webp" alt="كسرولة الفطور">
+        <div class="featured-text">
+          <small>وصفات كسرولة الفطور</small>
+          <h2>15 وصفة كسرولة برانش لأيام الربيع السهلة</h2>
+        </div>
+      </div>
+
+      <div class="right-featured-list">
+        <div class="small-feature">
+          <img src="./omlet.webp" alt="">
+          <p>14 وصفة أومليت لبداية صباح نشيط</p>
+        </div>
+        <div class="small-feature">
+          <img src="./optimized-chilaquiles.webp" alt="">
+          <p>17 وصفة إفطار مستوحاة من المطبخ المكسيكي</p>
+        </div>
+        <div class="small-feature">
+          <img src="./105013.webp" alt="">
+          <p>9 وصفات بان كيك بالزبادي هشة</p>
+        </div>
+        <div class="small-feature">
+          <img src="./105013.webp" alt="">
+          <p>15 فطور مالح بدون بيض</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Compare Section -->
+  <section class="compare-section">
+    <div class="compare-content">
+      <img src="./compare.jpeg" alt="قارن الوصفات" />
+      <div class="compare-text">
+        <h2>محتار بين وصفات؟</h2>
+        <p>قارن بين الوصفات واختر الأنسب لك!</p>
+        <a href="compare.html" class="compare-button">قارن الآن</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 وصفاتنا - جميع الحقوق محفوظة</p>
+    <p><a href="#">سياسة الخصوصية</a> | <a href="contact.html">اتصل بنا</a></p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
