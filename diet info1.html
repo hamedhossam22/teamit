@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>معلومات النظام الغذائي</title>
+  <style>
+    :root {
+      --primary-color: #ffa94d;
+      --secondary-color: #ffe0cc;
+      --text-color: #333;
+      --bg-color: #fffaf4;
+      --card-bg: #fffdfb;
+      --btn-color: #ff944d;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    main {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 20px;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+    }
+
+    .intro {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .intro h1 {
+      font-size: 2.5rem;
+      color: var(--primary-color);
+      margin-bottom: 10px;
+    }
+
+    .intro p {
+      font-size: 1.1rem;
+      color: #555;
+    }
+
+    .diet-types h2 {
+      font-size: 1.8rem;
+      color: var(--primary-color);
+      margin-bottom: 20px;
+      border-bottom: 2px solid var(--primary-color);
+      padding-bottom: 5px;
+    }
+
+    .diet-card {
+      background-color: var(--card-bg);
+      border-right: 6px solid var(--primary-color);
+      padding: 20px;
+      margin-bottom: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    }
+
+    .diet-card h3 {
+      font-size: 1.3rem;
+      margin-bottom: 8px;
+      color: var(--text-color);
+    }
+
+    .diet-card p {
+      font-size: 1rem;
+      color: #666;
+    }
+
+    .navigation {
+      text-align: center;
+      margin-top: 40px;
+    }
+
+    .btn {
+      display: inline-block;
+      background-color: var(--btn-color);
+      color: white;
+      padding: 12px 24px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background-color 0.3s, transform 0.2s;
+      box-shadow: 0 4px 12px rgba(255, 148, 77, 0.3);
+    }
+
+    .btn:hover {
+      background-color: #e67300;
+      transform: scale(1.05);
+    }
+
+    @media (max-width: 600px) {
+      .intro h1 {
+        font-size: 2rem;
+      }
+
+      .diet-card {
+        padding: 15px;
+      }
+
+      .diet-types h2 {
+        font-size: 1.5rem;
+      }
+    }
+
+    /* New Style for the Diet Plan Table */
+    .diet-plan {
+      margin-top: 40px;
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    .diet-plan th, .diet-plan td {
+      padding: 12px;
+      text-align: right;
+      border-bottom: 2px solid var(--primary-color);
+    }
+
+    .diet-plan th {
+      background-color: var(--primary-color);
+      color: white;
+      font-size: 1.2rem;
+    }
+
+    .diet-plan td {
+      background-color: var(--card-bg);
+    }
+  </style>
+</head>
+<body>
+
+  <main>
+    <section class="intro">
+      <h1>معلومات النظام الغذائي</h1>
+      <p>اكتشف أنواع الأنظمة الغذائية المختلفة وتعلّم كيف يمكن لكل منها مساعدتك في تحقيق أهدافك الصحية واللياقية.</p>
+    </section>
+
+    <section class="diet-types">
+      <h2>أنواع الأنظمة الغذائية</h2>
+
+      <div class="diet-card">
+        <h3>الحمية الكيتونية</h3>
+        <p>نظام منخفض الكربوهيدرات وعالي الدهون يهدف إلى تحفيز الكيتوزية في الجسم لحرق الدهون بكفاءة.</p>
+      </div>
+
+      <div class="diet-card">
+        <h3>الحمية المتوسطية</h3>
+        <p>تركز على الفواكه، الخضروات، الحبوب الكاملة، والدهون الصحية مثل زيت الزيتون. ممتازة لصحة القلب.</p>
+      </div>
+
+      <div class="diet-card">
+        <h3>الصيام المتقطع</h3>
+        <p>نمط أكل يعتمد على التناوب بين فترات الصيام وفترات تناول الطعام.</p>
+      </div>
+
+      <div class="diet-card">
+        <h3>النظام الغذائي عالي البروتين</h3>
+        <p>يؤكد على تناول المزيد من الأطعمة الغنية بالبروتين مثل اللحوم، الألبان، البيض، والبقوليات لبناء العضلات والشعور بالشبع.</p>
+      </div>
+    </section>
+
+    <!-- جدول خطة النظام الغذائي -->
+    <section class="diet-plan-section">
+      <h2>خطة النظام الغذائي الصحي</h2>
+      <table class="diet-plan">
+        <thead>
+          <tr>
+            <th>الوجبة</th>
+            <th>القائمة</th>
+            <th>المكونات</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>الإفطار</td>
+            <td>الشوفان مع الفواكه</td>
+            <td>الشوفان، الموز، التوت الأزرق، اللوز، العسل</td>
+          </tr>
+          <tr>
+            <td>الغداء</td>
+            <td>سلطة الدجاج المشوي</td>
+            <td>صدر الدجاج، الخس، الخيار، الطماطم، زيت الزيتون، الليمون</td>
+          </tr>
+          <tr>
+            <td>العشاء</td>
+            <td>الكينوا مع الخضروات</td>
+            <td>الكينوا، الفلفل الحلو، الكوسا، البروكلي، زيت الزيتون</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+  </main>
+
+</body>
+</html>
