@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <title>تفاصيل الوصفة - AllRecipes</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+  <style>
+               body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #fff8f1, #ffd8b8, #ffb56b, #ff8c00);
+            background-attachment: fixed;
+        }
+        /* أنماط جديدة للبحث */
+.search-container {
+    text-align: center;
+    margin: 20px 0 30px;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(255, 140, 0, 0.2);
+}
+
+#searchInput {
+    width: 80%;
+    max-width: 500px;
+    padding: 12px 20px;
+    border: 2px solid #ff8c00;
+    border-radius: 25px;
+    font-size: 16px;
+    outline: none;
+    transition: all 0.3s;
+}
+
+#searchInput:focus {
+    border-color: #e65100;
+    box-shadow: 0 0 8px rgba(230, 81, 0, 0.3);
+}
+
+.no-results {
+    color: #d84315;
+    text-align: center;
+    font-weight: bold;
+    padding: 20px;
+    display: none;
+}
+        .container {
+            max-width: 100%;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: #e65100;
+            border-bottom: 2px solid rgba(230, 81, 0, 0.3);
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+        }
+        h2 {
+            color: #bf360c;
+            margin-top: 30px;
+            border-left: 4px solid #ff8c00;
+            padding-left: 10px;
+        }
+        .product {
+            margin-bottom: 30px;
+            padding: 20px;
+            border: 1px solid rgba(255, 140, 0, 0.3);
+            border-radius: 8px;
+            background-color: rgba(255, 255, 255, 0.85);
+            width: 100%;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 4px 12px rgba(255, 140, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .product:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 16px rgba(255, 140, 0, 0.2);
+        }
+        .product-row {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 15px;
+        }
+        .product-title {
+            font-weight: bold;
+            font-size: 18px;
+            min-width: 120px;
+            color: #d84315;
+        }
+        .product-info {
+            color: #5d4037;
+            flex-grow: 1;
+        }
+        .product-image {
+            width: 150px;
+            height: 150px;
+            margin-right: 20px;
+            border: 1px solid rgba(255, 140, 0, 0.5);
+            object-fit: cover;
+            border-radius: 5px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .separator {
+            border-top: 1px dashed rgba(255, 140, 0, 0.5);
+            margin: 20px 0;
+        }
+        .video-link {
+            color: #e65100;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 10px;
+            font-weight: bold;
+            padding: 5px 10px;
+            border-radius: 4px;
+            background-color: rgba(255, 140, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        .video-link:hover {
+            text-decoration: none;
+            background-color: rgba(255, 140, 0, 0.2);
+            color: #bf360c;
+        }
+        .video-link::before {
+            content: "▶";
+            margin-right: 5px;
+            font-size: 0.8em;
+            color: #e65100;
+        }
+        .image-placeholder {
+            width: 150px;
+            height: 150px;
+            background-color: #ffecb3;
+display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #e65100;
+            margin-right: 20px;
+            border: 1px dashed #ff8c00;
+            border-radius: 5px;
+        }
+        .favorite-btn {
+            margin-top: 10px;
+            padding: 10px 15px;
+            background-color: #ff8c00;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .favorite-btn:hover {
+            background-color: #e65100;
+        }
+
+        .favorites-container {
+            margin-top: 30px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(255, 140, 0, 0.2);
+        }
+
+        .favorites-container h2 {
+            color: #e65100;
+        }
+
+        .favorite-list {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .favorite-list li {
+            background: #ffecb3;
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 5px;
+            font-weight: bold;
+            color: #e65100;
+        }
+         button {
+            background-color: #ed8f13; 
+            color: white;
+            font-size: 16px;
+            padding: 10px 20px;
+            border: none; 
+            cursor: pointer;
+            border-radius: 5px; 
+          
+        }
+
+        button:hover {
+            background-color: #bf7526; 
+        }
+    </style>
+<body>
+  <div class="container">
+    <h1>تعليمات مفصلة للوصفة</h1>
+    <div class="search-container">
+        <input type="text" id="searchInput" placeholder="ابحث عن وصفات" onkeyup="searchRecipes()">
+    </div>
+    <h2>الوصفات</h2>
+    <div class="separator"></div>
+    <button onclick="window.location.href='https://www.talabat.com'">تسوق الآن</button>
+
+    <!-- ======= البيض ======= -->
+    <div class="product">
+        <div class="product-row">
+            <img class="product-image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSstWM-fuZuYAcE1aJtdV2nqmQa6CFdPJiqTg&s" alt="البيض">
+            <div class="product-info">
+                <div class="product-title">البيض</div>
+                <p>سخن المقلاة مع قليل من الدهن. اكسر البيضة في المقلاة. اطبخها بلطف حتى يتماسك البياض ويظل الصفار سائلاً. انقلها إلى الطبق واستمتع!</p>
+
+                <div class="ingredients-section">
+                    <label>عدد الحصص:</label>
+                    <input type="number" min="1" value="1" class="servings-input" oninput="updateIngredients(this)">
+                    <ul class="ingredients-list">
+                        <li><span class="ingredient-qty" data-base="1">1</span> بيضة</li>
+                        <li><span class="ingredient-qty" data-base="10">10</span> جرام زبدة</li>
+                        <li><span class="ingredient-qty" data-base="1">1</span> رشة ملح</li>
+                    </ul>
+                </div>
+
+                <a href="https://youtu.be/neEqtzgm7Tw?si=jAQJn6Omz3CxF9oV" class="video-link">فيديو الوصفة</a>
+                <button class="favorite-btn" onclick="addToFavorites('البيض')">أضف إلى المفضلة</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ======= الفول المصري ======= -->
+    <div class="product">
+        <div class="product-row">
+            <img class="product-image" src="https://kitchen.sayidaty.net/uploads/small/42/423203a50a85745ee5ff98ff201043f7_w750_h500.jpg" alt="الفول">
+            <div class="product-info">
+                <div class="product-title">الفول المصري</div>
+                <p>الفول المدمس هو طبق مصري يتم فيه طهي الفول ببطء حتى ينضج تماماً، ثم يُتبل ويُقدم ساخناً مع الخضار والخبز البلدي.</p>
+
+                <div class="ingredients-section">
+                    <label>عدد الحصص:</label>
+                    <input type="number" min="1" value="1" class="servings-input" oninput="updateIngredients(this)">
+                    <ul class="ingredients-list">
+                        <li><span class="ingredient-qty" data-base="100">100</span> جرام فول</li>
+                        <li><span class="ingredient-qty" data-base="1">1</span> ملعقة كبيرة زيت زيتون</li>
+                        <li><span class="ingredient-qty" data-base="1">1</span> فص ثوم</li>
+                        <li><span class="ingredient-qty" data-base="0.5">0.5</span> ليمونة</li>
+                    </ul>
+                </div>
+
+                <a href="https://www.youtube.com/watch?v=OJWkPSLzBis" class="video-link">فيديو الوصفة</a>
+                <button class="favorite-btn" onclick="addToFavorites('الفول المصري')">أضف إلى المفضلة</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ======= بان كيك هش ======= -->
+    <div class="product">
+        <div class="product-row">
+            <img class="product-image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTfdP38dsaYn6QONhBF-OFCmMc4f6ogKotXmg&s" alt="بان كيك">
+            <div class="product-info">
+                <div class="product-title">بان كيك هش</div>
+                <p>اخلط المكونات الجافة. أضف الحليب والبيض والزبدة. قلب حتى تمتزج. اطبخها في المقلاة حتى تصبح ذهبية. قدمها مع الإضافات المفضلة!</p>
+
+                <div class="ingredients-section">
+                    <label>عدد الحصص:</label>
+                    <input type="number" min="1" value="1" class="servings-input" oninput="updateIngredients(this)">
+                    <ul class="ingredients-list">
+                        <li><span class="ingredient-qty" data-base="60">60</span> جرام دقيق</li>
+                        <li><span class="ingredient-qty" data-base="1">1</span> بيضة</li>
+                        <li><span class="ingredient-qty" data-base="75">75</span> مل حليب</li>
+                        <li><span class="ingredient-qty" data-base="1">1</span> ملعقة صغيرة سكر</li>
+                        <li><span class="ingredient-qty" data-base="1">1</span> ملعقة صغيرة زبدة</li>
+                    </ul>
+                </div>
+
+                <a href="https://www.youtube.com/watch?v=9zCVCL4V8JQ&pp=0gcJCdgAo7VqN5tD" class="video-link">فيديو الوصفة</a>
+                <button class="favorite-btn" onclick="addToFavorites('بان كيك هش')">أضف إلى المفضلة</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- ======= ساندويتشات الكبدة ======= -->
+<div class="product" data-product-id="liver_sandwiches">
+  <div class="product-row">
+    <img class="product-image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSR68sz5aFAMCK4M6kJ5qReB7XrabukZJTqVg&s" alt="ساندويتشات الكبدة">
+    <div class="product-info">
+      <div class="product-title">ساندويتشات الكبدة</div>
+      <p>اقلي شرائح الكبدة مع التوابل (والفلفل/الثوم على الطريقة الإسكندرانية). ضع الكبدة المطبوخة في الخبز. أضف الإضافات. استمتع!</p>
+
+      <div class="ingredients-section">
+        <label>عدد الحصص: </label>
+        <input type="number" min="1" value="1" class="servings-input" oninput="updateIngredients(this)">
+        <ul class="ingredients-list">
+          <li><span class="ingredient-qty" data-base="100">100</span> جرام كبدة</li>
+          <li><span class="ingredient-qty" data-base="1">1</span> فص ثوم</li>
+          <li><span class="ingredient-qty" data-base="1">1</span> خبزة</li>
+          <li><span class="ingredient-qty" data-base="0.5">0.5</span> فلفل رومي</li>
+        </ul>
+      </div>
+
+      <a href="https://www.instagram.com/reel/ConWTknv39R/" class="video-link">فيديو الوصفة</a>
+      <button class="favorite-btn" onclick="addToFavorites('liver_sandwiches')">أضف للمفضلة</button>
+    </div>
+  </div>
+</div>
+
+<!-- ======= فطائر الجبنة ======= -->
+<div class="product" data-product-id="cheese_pies">
+  <div class="product-row">
+    <img class="product-image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ22EcRdmgw7UrtZjougdmROnuooSxbcXzjAZ3uRltwq52NSFLAzAPGmhaZKS9DZPk1zH8&usqp=CAU" alt="فطائر الجبنة">
+    <div class="product-info">
+      <div class="product-title">فطائر الجبنة</div>
+      <p>فطير بالجبنة هو فطيرة مصرية مصنوعة من طبقات العجين والجبنة. تُخبز حتى تحمر. استمتع كوجبة أو وجبة خفيفة.</p>
+
+      <div class="ingredients-section">
+        <label>عدد الحصص: </label>
+        <input type="number" min="1" value="1" class="servings-input" oninput="updateIngredients(this)">
+        <ul class="ingredients-list">
+          <li><span class="ingredient-qty" data-base="100">100</span> جرام عجين</li>
+          <li><span class="ingredient-qty" data-base="50">50</span> جرام جبنة</li>
+          <li><span class="ingredient-qty" data-base="1">1</span> ملعقة صغيرة زبدة</li>
+        </ul>
+      </div>
+
+      <a href="https://www.youtube.com/watch?v=IZaMlU8OjJY" class="video-link">فيديو الوصفة</a>
+      <button class="favorite-btn" onclick="addToFavorites('cheese_pies')">أضف للمفضلة</button>
+    </div>
+  </div>
+</div>
+
+<!-- ======= المعجنات ======= -->
+<div class="product" data-product-id="pastries">
+  <div class="product-row">
+    <img class="product-image" src="https://img.youm7.com/ArticleImgs/2023/10/23/123886-%D9%85%D8%B9%D8%AC%D9%86%D8%A7%D8%AA.jpg" alt="المعجنات">
+    <div class="product-info">
+      <div class="product-title">المعجنات</div>
+      <p>المعجنات تصنع من خلط الدقيق، الدهون، السوائل، وأحيانًا السكر/المُخمرات. تُخبز حتى تحمر. استمتع!</p>
+
+      <div class="ingredients-section">
+        <label>عدد الحصص: </label>
+        <input type="number" min="1" value="1" class="servings-input" oninput="updateIngredients(this)">
+        <ul class="ingredients-list">
+          <li><span class="ingredient-qty" data-base="100">100</span> جرام دقيق</li>
+          <li><span class="ingredient-qty" data-base="50">50</span> جرام زبدة</li>
+          <li><span class="ingredient-qty" data-base="30">30</span> مل ماء</li>
+          <li><span class="ingredient-qty" data-base="1">1</span> رشة ملح</li>
+        </ul>
+      </div>
+
+      <a href="https://www.youtube.com/watch?v=SyWMFVyHGpk" class="video-link">فيديو الوصفة</a>
+      <button class="favorite-btn" onclick="addToFavorites('pastries')">أضف للمفضلة</button>
+    </div>
+  </div>
+</div>
+
+<!-- ======= الكرواسون ======= -->
+<div class="product" data-product-id="croissants">
+  <div class="product-row">
+    <img class="product-image" src="https://www.theflavorbender.com/wp-content/uploads/2020/05/French-Croissants-SM-2363.jpg" alt="الكرواسون">
+    <div class="product-info">
+      <div class="product-title">الكرواسون</div>
+      <p>الكرواسون هو معجنات زبدية الشكل الهلالي الهش. تُخبز حتى تصبح ذهبية ومقرمشة. استمتع!</p>
+
+      <div class="ingredients-section">
+        <label>عدد الحصص: </label>
+        <input type="number" min="1" value="1" class="servings-input" oninput="updateIngredients(this)">
+        <ul class="ingredients-list">
+          <li><span class="ingredient-qty" data-base="100">100</span> جرام دقيق</li>
+          <li><span class="ingredient-qty" data-base="75">75</span> جرام زبدة باردة</li>
+          <li><span class="ingredient-qty" data-base="30">30</span> مل حليب</li>
+          <li><span class="ingredient-qty" data-base="1">1</span> ملعقة صغيرة خميرة</li>
+        </ul>
+      </div>
+
+      <a href="https://m.youtube.com/watch?v=UEurw7eo3H0&pp=ygUJI2Nyb3Nzb250" class="video-link">فيديو الوصفة</a>
+      <button class="favorite-btn" onclick="addToFavorites('croissants')">أضف للمفضلة</button>
+    </div>
+  </div>
+</div>
+
+<!-- ======= فطير مشلتت ======= -->
+<div class="product" data-product-id="feteer_meshaltet">
+  <div class="product-row">
+    <img class="product-image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTykTqFl_2TMxl132Au8UryDiIxuNeNP6PUQQ&s" alt="فطير مشلتت">
+    <div class="product-info">
+      <div class="product-title">فطير مشلتت</div>
+      <p>فطير مصري طبقات من العجين الممدود والمُدهن بالسمن. يُخبز حتى يصبح ذهبيًا. استمتع!</p>
+
+      <div class="ingredients-section">
+        <label>عدد الحصص: </label>
+        <input type="number" min="1" value="1" class="servings-input" oninput="updateIngredients(this)">
+        <ul class="ingredients-list">
+          <li><span class="ingredient-qty" data-base="150">150</span> جرام دقيق</li>
+          <li><span class="ingredient-qty" data-base="50">50</span> جرام سمن</li>
+          <li><span class="ingredient-qty" data-base="60">60</span> مل ماء</li>
+        </ul>
+      </div>
+
+      <a href="https://www.youtube.com/watch?v=kAyexkTL9lI" class="video-link">فيديو الوصفة</a>
+      <button class="favorite-btn" onclick="addToFavorites('feteer_meshaltet')">أضف للمفضلة</button>
+    </div>
+  </div>
+</div>
+
+<!-- ======= سلطة الفواكه ======= -->
+<div class="product" data-product-id="fruit_salad">
+  <div class="product-row">
+    <img class="product-image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTE8YWzsttfr1NYBjNletV4O3FEy7p-zJbEMg&s" alt="سلطة الفواكه">
+    <div class="product-info">
+      <div class="product-title">سلطة الفواكه</div>
+      <p>قطع الفواكه. اخلط في وعاء. أضف عصير حمضيات (اختياري). برد واستمتع!</p>
+
+      <div class="ingredients-section">
+        <label>عدد الحصص: </label>
+        <input type="number" min="1" value="1" class="servings-input" oninput="updateIngredients(this)">
+        <ul class="ingredients-list">
+          <li><span class="ingredient-qty" data-base="100">100</span> جرام تفاح</li>
+          <li><span class="ingredient-qty" data-base="100">100</span> جرام موز</li>
+          <li><span class="ingredient-qty" data-base="50">50</span> جرام عنب</li>
+          <li><span class="ingredient-qty" data-base="10">10</span> مل عصير ليمون</li>
+        </ul>
+      </div>
+
+      <a href="https://www.youtube.com/watch?v=9Ys45QLKN4M" class="video-link">فيديو الوصفة</a>
+      <button class="favorite-btn" onclick="addToFavorites('fruit_salad')">أضف للمفضلة</button>
+    </div>
+  </div>
+</div>
+
+<!-- ======= توست الأفوكادو ======= -->
+<div class="product" data-product-id="avocado_toast">
+  <div class="product-row">
+    <img class="product-image" src="https://images.akhbarelyom.com/images/images/large/20240527104531821.jpg" alt="توست الأفوكادو">
+    <div class="product-info">
+      <div class="product-title">توست الأفوكادو</div>
+      <p>اشوي الخبز. اهرس الأفوكادو مع الملح والفلفل. افرده واستمتع!</p>
+
+      <div class="ingredients-section">
+        <label>عدد الحصص: </label>
+        <input type="number" min="1" value="1" class="servings-input" oninput="updateIngredients(this)">
+        <ul class="ingredients-list">
+          <li><span class="ingredient-qty" data-base="1">1</span> شريحة توست</li>
+          <li><span class="ingredient-qty" data-base="0.5">0.5</span> أفوكادو</li>
+          <li><span class="ingredient-qty" data-base="1">1</span> رشة ملح</li>
+          <li><span class="ingredient-qty" data-base="1">1</span> رشة فلفل</li>
+        </ul>
+      </div>
+
+      <a href="https://www.youtube.com/watch?v=FV3asCDsf9U" class="video-link">فيديو الوصفة</a>
+      <button class="favorite-btn" onclick="addToFavorites('avocado_toast')">أضف للمفضلة</button>
+    </div>
+  </div>
+</div>
+
+<!-- مفضلات المستخدم -->
+<div class="favorites-container">
+  <h2>مفضلاتك</h2>
+  <ul id="favoriteList" class="favorite-list"></ul>
+</div>
+
+    <footer>
+        <p>&copy; 2025 AllRecipes. جميع الحقوق محفوظة.</p>
+    </footer>
+    <script>
+  // دالة البحث عن الوصفات
+  function searchRecipes() {
+    const input = document.getElementById('searchInput')?.value.toLowerCase();
+    const products = document.querySelectorAll('.product');
+    let found = false;
+
+    products.forEach(product => {
+        const title = product.querySelector('.product-title')?.textContent.toLowerCase();
+        const description = product.querySelector('.product-info > div:nth-child(3)')?.textContent.toLowerCase();
+
+        if (title.includes(input) || description.includes(input)) {
+            product.style.display = 'block'; // عرض المنتج
+            found = true;
+        } else {
+            product.style.display = 'none';  // إخفاء المنتج
+        }
+    });
+
+    const noResults = document.querySelector('.no-results');
+    if (noResults) {
+        noResults.style.display = found ? 'none' : 'block'; // إظهار رسالة لا توجد نتائج أو إخفائها
+    }
+  }
+
+  // إضافة وصفة إلى المفضلة
+  function addToFavorites(recipeName) {
+    let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+
+    if (!favorites.includes(recipeName)) {
+        favorites.push(recipeName);
+        localStorage.setItem('favorites', JSON.stringify(favorites));
+        displayFavorites(); // عرض المفضلات بعد الإضافة
+    }
+  }
+
+  // إزالة وصفة من المفضلة
+  function removeFromFavorites(recipeName) {
+    let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+    favorites = favorites.filter(item => item !== recipeName);
+    localStorage.setItem('favorites', JSON.stringify(favorites));
+    displayFavorites(); // تحديث عرض المفضلات بعد الحذف
+  }
+
+  // عرض المفضلات على الصفحة
+  function displayFavorites() {
+    const favoriteList = document.getElementById('favoriteList');
+    if (!favoriteList) return;
+
+    favoriteList.innerHTML = '';
+    const favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+
+    favorites.forEach(item => {
+        const li = document.createElement('li');
+        li.textContent = item;
+
+        const removeBtn = document.createElement('button');
+        removeBtn.textContent = '❌'; // زر الحذف
+        removeBtn.style.marginLeft = '10px';
+        removeBtn.onclick = () => removeFromFavorites(item);
+
+        li.appendChild(removeBtn);
+        favoriteList.appendChild(li);
+    });
+  }
+
+  // عرض المفضلات عند تحميل الصفحة
+  document.addEventListener('DOMContentLoaded', displayFavorites);
+
+  // تحديث كميات المكونات بناءً على عدد الحصص
+  function updateIngredients(input) {
+    const servings = parseInt(input.value);
+    const productDiv = input.closest(".product");
+    const quantities = productDiv.querySelectorAll(".ingredient-qty");
+
+    quantities.forEach(qtySpan => {
+        const base = parseFloat(qtySpan.getAttribute("data-base"));
+        const newAmount = base * servings;
+        qtySpan.textContent = newAmount; // تحديث النص بالكمية الجديدة
+    });
+  }
+</script>
+
+</body>
+</html>
