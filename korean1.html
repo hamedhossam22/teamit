@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <title>وصفات للجميع - المطبخ الكوري</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f9f9f9;
+      direction: rtl;
+    }
+
+    .main-header {
+      background-color: #ff9800;
+      padding: 15px 30px;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .container {
+      padding: 30px;
+    }
+
+    h1 {
+      text-align: center;
+      color: #333;
+      margin-bottom: 40px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .card {
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .card-content {
+      padding: 15px;
+    }
+
+    .card-content h3 {
+      margin-top: 0;
+      color: #ff9800;
+    }
+
+    .card-content p {
+      margin: 10px 0 0;
+      color: #555;
+      font-size: 14px;
+    }
+
+    @media (max-width: 992px) {
+      .cards {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 600px) {
+      .cards {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="main-header">
+    <div class="logo">وصفات للجميع</div>
+    <div>المطبخ الكوري</div>
+  </header>
+
+  <div class="container">
+    <h1>أشهر الأطباق الكورية التقليدية</h1>
+
+    <div class="cards">
+      <div class="card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZAAfncADTmNs3cg5ZqK3sUh9TuUarLbJm9Q&s" alt="كيمتشي">
+        <div class="card-content">
+          <h3>كيمتشي</h3>
+          <p>ملفوف حار مُخمر، وهو طبق أساسي في كوريا.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGlbQauzIljIdjUr9skDTx1UsMWnvf_IJU9g&s" alt="بيبيمباب">
+        <div class="card-content">
+          <h3>بيبيمباب</h3>
+          <p>أرز مع خضروات متنوعة ومعجون الفلفل الحار.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3GKFmb1_gDhdTLC3dhsGgWh-ng1xC88p72Q&s" alt="بولجوجي">
+        <div class="card-content">
+          <h3>بولجوجي</h3>
+          <p>شرائح لحم بقر متبلة ومشوية.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSULDIvH4gxWwqOmkjZZl-XrKN2A4y2IzNq-A&s" alt="جابشي">
+        <div class="card-content">
+          <h3>جابشي</h3>
+          <p>نودلز زجاجية مقلية مع الخضار واللحم.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6jahUyYakZM4I93a7T9FLTDG2KEws4Hcajg&s" alt="تيوكبوككي">
+        <div class="card-content">
+          <h3>تيوكبوككي</h3>
+          <p>كعكات الأرز الحارة مع صوص الكوتشوجانج.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSMMDNbZJxXmCvpituTmtiSaSDYMbyhYA5g8g&s" alt="سامغيوبسال">
+        <div class="card-content">
+          <h3>سامغيوبسال</h3>
+          <p>شرائح لحم الخنزير المشوي مع صلصات جانبية.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSMMDNbZJxXmCvpituTmtiSaSDYMbyhYA5g8g&s" alt="حساء التوفو الناعم">
+        <div class="card-content">
+          <h3>سوندوبو جيجيه</h3>
+          <p>حساء التوفو الناعم بالخضار واللحم أو المأكولات البحرية.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSMMDNbZJxXmCvpituTmtiSaSDYMbyhYA5g8g&s" alt="كيمباب">
+        <div class="card-content">
+          <h3>كيمباب</h3>
+          <p>لفائف الأرز والأعشاب البحرية بحشوات متنوعة.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>أل ريسيبز - المطبخ المصري</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f9f9f9;
+      direction: rtl;
+    }
+
+    .main-header {
+      background-color: #ff9800;
+      padding: 15px 30px;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .container {
+      padding: 30px;
+    }
+
+    h1 {
+      text-align: center;
+      color: #333;
+      margin-bottom: 40px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .card {
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .card-content {
+      padding: 15px;
+    }
+
+    .card-content h3 {
+      margin-top: 0;
+      color: #ff9800;
+    }
+
+    .card-content p {
+      margin: 10px 0 0;
+      color: #555;
+      font-size: 14px;
+    }
+
+    @media (max-width: 992px) {
+      .cards {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 600px) {
+      .cards {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="main-header">
+    <div class="logo">أل ريسيبز</div>
+    <div>المطبخ المصري</div>
+  </header>
+
+  <div class="container">
+    <h1>أطباق مصرية تقليدية</h1>
+
+    <div class="cards">
+      <div class="card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-2OKA9wdLpuPtgyPMtNLey0O0lazOtblEXSfEeslS8pIfKQo5mT-hCas&s" alt="كشري">
+        <div class="card-content">
+          <h3>كشري</h3>
+          <p>مزيج من الأرز والمكرونة والعدس والبصل.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRcoQl43buuYtOvp7tkOSXprdX8xxAcH8Yw6g&s" alt="ملوخية">
+        <div class="card-content">
+          <h3>ملوخية</h3>
+          <p>أوراق خضراء تُطهى بالمرق والثوم.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSlQU0aj5f-18RWvjLym1eST_0B8SdYiZx390tBk5x8BAYrL3ZN9gbZkUk&s" alt="محشي">
+        <div class="card-content">
+          <h3>محشي</h3>
+          <p>خضروات محشوة بالأرز والأعشاب.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQM-VpQOSNnlAN1UNsbkFUERM9meQujOQ_5XA&s" alt="طعمية">
+        <div class="card-content">
+          <h3>طعمية</h3>
+          <p>فلافل مصرية مصنوعة من الفول.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQXZ35JT2dom7G62SxcF5RTm_p1CtItjq9HIQ&s" alt="فتة">
+        <div class="card-content">
+          <h3>فتة</h3>
+          <p>أرز وخبز بصلصة الثوم والخل.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTfBkYKaYh6WoiofZAjVdZ3xsDpl1TxQjkw3Q&s" alt="بامية">
+        <div class="card-content">
+          <h3>بامية</h3>
+          <p>يخنة بامية باللحم أو الدجاج.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQrfaKPI3BcpiRdprSn4JWtDHWfYdddRhr-TQ&s" alt="ملوخية باللحم">
+        <div class="card-content">
+          <h3>ملوخية باللحم</h3>
+          <p>ملوخية تُقدم مع لحم وأرز.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSgWn3PRRCPugws1pG8RzEpzH3kjvA0uHyU9Q&s" alt="شاورما">
+        <div class="card-content">
+          <h3>شاورما</h3>
+          <p>لحم مشوي يُقدم في خبز أو مع أرز.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

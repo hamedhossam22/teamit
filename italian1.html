@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>أل ريسيبز - المطبخ الإيطالي</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f9f9f9;
+      direction: rtl;
+    }
+
+    .main-header {
+      background-color: #ff9800;
+      padding: 15px 30px;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .container {
+      padding: 30px;
+    }
+
+    h1 {
+      text-align: center;
+      color: #333;
+      margin-bottom: 40px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .card {
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .card-content {
+      padding: 15px;
+    }
+
+    .card-content h3 {
+      margin-top: 0;
+      color: #ff9800;
+    }
+
+    .card-content p {
+      margin: 10px 0 0;
+      color: #555;
+      font-size: 14px;
+    }
+
+    @media (max-width: 992px) {
+      .cards {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 600px) {
+      .cards {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="main-header">
+    <div class="logo">أل ريسيبز</div>
+    <div>المطبخ الإيطالي</div>
+  </header>
+
+  <div class="container">
+    <h1>أطباق إيطالية تقليدية</h1>
+
+    <div class="cards">
+      <div class="card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQnEANJLlfF4DSnSBTzHluNytHMZGfhNIt7RQ&s" alt="بيتزا مارغريتا">
+        <div class="card-content">
+          <h3>بيتزا مارغريتا</h3>
+          <p>بيتزا كلاسيكية بالطماطم والموزاريلا والريحان.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROewJsX0pmR300EV0R8GJtZmrq6AmfsjOrzg&s" alt="سباغيتي كاربونارا">
+        <div class="card-content">
+          <h3>سباغيتي كاربونارا</h3>
+          <p>معكرونة بالبيض والجبن والبانسيتا والفلفل.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYhOGJ9Z4EcdQHblIn_ZMkkFLpJt9U6s8kcQ&s" alt="لازانيا">
+        <div class="card-content">
+          <h3>لازانيا</h3>
+          <p>طبقات من المعكرونة وصلصة اللحم والجبن.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEA8BPtXtjrCOxXNqyHq2ysmmlG8PDyrX5kw&s" alt="ريزوتو">
+        <div class="card-content">
+          <h3>ريزوتو</h3>
+          <p>طبق أرز كريمي، غالبًا مع الفطر أو المأكولات البحرية.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTzNShEAFdmxjaAUST8irsTLrdJSHowauI4tw&s" alt="تيراميسو">
+        <div class="card-content">
+          <h3>تيراميسو</h3>
+          <p>حلوى بطبقات من القهوة والماسكاربوني والكاكاو.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS10eo-oGL7_eDKt17eaNMAPUQLvihrFPqXMQ&s" alt="فوكاتشيا">
+        <div class="card-content">
+          <h3>فوكاتشيا</h3>
+          <p>خبز إيطالي مسطح، غالبًا ما يُتبّل بالأعشاب وزيت الزيتون.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-ieEvk6AY3Z3mIjtM-ak0KvwIwUcquz03Gw&s" alt="باستا بريمافيرا">
+        <div class="card-content">
+          <h3>باستا بريمافيرا</h3>
+          <p>معكرونة بالخضار الطازجة وصلصة خفيفة.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOnuEtIhuI3JcXtYTrB8VUjs2ClDvXLEv4XA&s" alt="نيوكي">
+        <div class="card-content">
+          <h3>نيوكي</h3>
+          <p>زلابية طرية من البطاطس تُقدم غالبًا مع الصلصة.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>مخطط الوجبات الأسبوعي</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #fffaf4;
+    }
+
+    .planner {
+      padding: 40px 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .diet-btn {
+      align-self: flex-end;
+      background-color: #4CAF50;
+      color: white;
+      font-size: 1.1rem;
+      padding: 10px 20px;
+      margin-bottom: 30px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    .diet-btn:hover {
+      background-color: #45a049;
+    }
+
+    .meal-table {
+      width: 100%;
+      max-width: 900px;
+      border-collapse: collapse;
+      background-color: #fff;
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+    }
+
+    .meal-table thead th {
+      background-color: #ffa94d;
+      color: white;
+      padding: 16px;
+      font-size: 18px;
+      text-align: center;
+    }
+
+    .meal-table tbody td {
+      padding: 14px;
+      text-align: center;
+      border-bottom: 1px solid #ffe0cc;
+      background-color: #fffdfb;
+    }
+
+    .meal-input {
+      width: 90%;
+      padding: 10px;
+      font-size: 15px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      background-color: #fffefc;
+      transition: border-color 0.3s;
+    }
+
+    .meal-input:focus {
+      outline: none;
+      border-color: #ffa94d;
+      box-shadow: 0 0 5px rgba(255, 169, 77, 0.4);
+    }
+
+    .savee-btn {
+      margin-top: 30px;
+      padding: 14px 40px;
+      background-color: #ff944d;
+      color: white;
+      font-size: 17px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+      box-shadow: 0 5px 15px rgba(255, 148, 77, 0.4);
+    }
+
+    .savee-btn:hover {
+      background-color: #e67300;
+      transform: scale(1.05);
+    }
+
+    .saved-plan {
+      margin-top: 30px;
+      background-color: #f4f4f9;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 900px;
+    }
+
+    .saved-plan h3 {
+      text-align: center;
+      font-size: 1.5rem;
+      margin-bottom: 15px;
+    }
+
+    .saved-plan ul {
+      list-style-type: none;
+      padding-left: 0;
+    }
+
+    .saved-plan li {
+      margin: 8px 0;
+      font-size: 1.1rem;
+    }
+  </style>
+</head>
+<body>
+
+  <main class="planner">
+    <a href="diet info.html" class="diet-btn">← العودة إلى معلومات الحمية</a>
+
+    <table class="meal-table">
+      <thead>
+        <tr>
+          <th>اليوم</th>
+          <th>الإفطار</th>
+          <th>الغداء</th>
+          <th>العشاء</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>الاثنين</td><td><input class="meal-input"></td><td><input class="meal-input"></td><td><input class="meal-input"></td></tr>
+        <tr><td>الثلاثاء</td><td><input class="meal-input"></td><td><input class="meal-input"></td><td><input class="meal-input"></td></tr>
+        <tr><td>الأربعاء</td><td><input class="meal-input"></td><td><input class="meal-input"></td><td><input class="meal-input"></td></tr>
+        <tr><td>الخميس</td><td><input class="meal-input"></td><td><input class="meal-input"></td><td><input class="meal-input"></td></tr>
+        <tr><td>الجمعة</td><td><input class="meal-input"></td><td><input class="meal-input"></td><td><input class="meal-input"></td></tr>
+        <tr><td>السبت</td><td><input class="meal-input"></td><td><input class="meal-input"></td><td><input class="meal-input"></td></tr>
+        <tr><td>الأحد</td><td><input class="meal-input"></td><td><input class="meal-input"></td><td><input class="meal-input"></td></tr>
+      </tbody>
+    </table>
+
+    <button class="savee-btn" onclick="savePlan()">حفظ الخطة</button>
+
+    <section class="saved-plan" id="savedPlanSection">
+      <h3>الخطة المحفوظة</h3>
+      <ul id="savedPlanList"></ul>
+    </section>
+  </main>
+
+  <script>
+    function savePlan() {
+      const days = ["الاثنين", "الثلاثاء", "الأربعاء", "الخميس", "الجمعة", "السبت", "الأحد"];
+      const rows = document.querySelectorAll(".meal-table tbody tr");
+      const savedList = document.getElementById("savedPlanList");
+      savedList.innerHTML = "";
+
+      rows.forEach((row, index) => {
+        const inputs = row.querySelectorAll("input");
+        const breakfast = inputs[0].value || "—";
+        const lunch = inputs[1].value || "—";
+        const dinner = inputs[2].value || "—";
+
+        const li = document.createElement("li");
+        li.textContent = `${days[index]}: 🍳 ${breakfast} | 🍽️ ${lunch} | 🌙 ${dinner}`;
+        savedList.appendChild(li);
+      });
+    }
+  </script>
+
+</body>
+</html>

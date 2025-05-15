@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>مراجعات المستخدمين – وصفات للجميع</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- قسم إضافة مراجعة -->
+  <section class="review-section">
+    <div class="review-form-container">
+      <h2>اترك مراجعة</h2>
+      <form id="reviewForm">
+        <label for="username">اسمك:</label>
+        <input type="text" id="username" required />
+
+        <label for="rating">التقييم (من 1 إلى 5):</label>
+        <select id="rating" required>
+          <option value="">اختر</option>
+          <option value="1">⭐</option>
+          <option value="2">⭐⭐</option>
+          <option value="3">⭐⭐⭐</option>
+          <option value="4">⭐⭐⭐⭐</option>
+          <option value="5">⭐⭐⭐⭐⭐</option>
+        </select>
+
+        <label for="review">مراجعتك:</label>
+        <textarea id="review" required></textarea>
+
+        <button type="submit">إرسال المراجعة</button>
+      </form>
+    </div>
+  </section>
+
+  <script>
+    document.getElementById('reviewForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      const name = document.getElementById('username').value.trim();
+      const rating = document.getElementById('rating').value;
+      const reviewText = document.getElementById('review').value.trim();
+
+      if (!name || !rating || !reviewText) return;
+
+      console.log("تم إرسال المراجعة:", { name, rating, reviewText });
+
+      this.reset();
+    });
+  </script>
+
+</body>
+</html>
