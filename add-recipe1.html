@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>إضافة وصفة جديدة</title>
+  <style>
+    /* Container العام */
+    .container {
+      max-width: 600px;
+      margin: 40px auto;
+      padding: 30px 20px;
+      background-color: #fff;
+      border-radius: 12px;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    /* الهيدر */
+    .container header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 30px;
+    }
+
+    .container header h1 {
+      font-size: 1.8rem;
+      color: #333;
+    }
+
+    .container header a {
+      text-decoration: none;
+      color: #ff6b3e;
+      font-weight: 600;
+      border: 2px solid #ff6b3e;
+      padding: 8px 15px;
+      border-radius: 8px;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    .container header a:hover {
+      background-color: #ff6b3e;
+      color: #fff;
+    }
+
+    /* الفورم */
+    .recipe-form form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 600;
+      color: #444;
+    }
+
+    .form-group input[type="text"],
+    .form-group input[type="file"],
+    .form-group textarea {
+      width: 100%;
+      padding: 12px 15px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      font-size: 1rem;
+      font-family: inherit;
+      transition: border-color 0.3s;
+    }
+
+    .form-group input[type="text"]:focus,
+    .form-group input[type="file"]:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: #ff6b3e;
+    }
+
+    /* Textarea إعدادات */
+    .form-group textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    /* زر الإرسال */
+    button[type="submit"] {
+      background-color: #ff6b3e;
+      color: white;
+      border: none;
+      padding: 14px;
+      font-size: 1.1rem;
+      font-weight: 700;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    button[type="submit"]:hover {
+      background-color: #e55b30;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>إضافة وصفة جديدة</h1>
+      <a href="recipes.html">عرض الوصفات</a>
+    </header>
+
+    <section class="recipe-form">
+      <form id="recipeForm">
+        <div class="form-group">
+          <label for="recipeName">اسم الوصفة</label>
+          <input type="text" id="recipeName" required>
+        </div>
+        <div class="form-group">
+          <label for="recipeImage">صورة الوصفة</label>
+          <input type="file" id="recipeImage" accept="image/*" required>
+        </div>
+        <div class="form-group">
+          <label for="recipeDetails">تفاصيل الوصفة</label>
+          <textarea id="recipeDetails" required></textarea>
+        </div>
+        <button type="submit">إضافة الوصفة</button>
+      </form>
+    </section>
+  </div>
+
+  <script>
+    const form = document.getElementById('recipeForm');
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const name = document.getElementById('recipeName').value;
+      const details = document.getElementById('recipeDetails').value;
+      const imageFile = document.getElementById('recipeImage').files[0];
+
+      if (!name || !details || !imageFile) {
+        alert("الرجاء ملء جميع الحقول");
+        return;
+      }
+
+      const reader = new FileReader();
+      reader.readAsDataURL(imageFile);
+      reader.onload = function() {
+        const recipe = {
+          id: Date.now(),
+          name,
+          details,
+          image: reader.result
+        };
+
+        let recipes = JSON.parse(localStorage.getItem('recipes')) || [];
+        recipes.push(recipe);
+        localStorage.setItem('recipes', JSON.stringify(recipes));
+
+        alert("تم إضافة الوصفة بنجاح!");
+        form.reset();
+      };
+    });
+  </script>
+</body>
+</html>

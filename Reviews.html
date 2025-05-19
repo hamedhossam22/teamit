@@ -5,6 +5,31 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>User Reviews – All Recipes</title>
   <link rel="stylesheet" href="style.css" />
+  <style>
+    /* إضافة شوية ستايل بسيط للمراجعات */
+    .reviews-container {
+      margin-top: 30px;
+      max-width: 600px;
+      padding: 10px;
+      border-top: 2px solid #ccc;
+    }
+    .single-review {
+      border-bottom: 1px solid #ddd;
+      padding: 10px 0;
+    }
+    .single-review:last-child {
+      border-bottom: none;
+    }
+    .review-name {
+      font-weight: bold;
+    }
+    .review-rating {
+      color: #f5c518; /* لون النجوم */
+    }
+    .review-text {
+      margin-top: 5px;
+    }
+  </style>
 </head>
 <body>
 
@@ -32,6 +57,12 @@
         <button type="submit">Submit Review</button>
       </form>
     </div>
+
+    <!-- هنا حنعرض المراجعات -->
+    <div class="reviews-container" id="reviewsContainer">
+      <h3>User Reviews:</h3>
+      <!-- مراجعات المستخدمين هتضاف هنا -->
+    </div>
   </section>
 
   <script>
@@ -44,8 +75,24 @@
 
       if (!name || !rating || !reviewText) return;
 
-      console.log("Review Submitted:", { name, rating, reviewText });
+      // انشئ div جديد للمراجعة
+      const reviewDiv = document.createElement('div');
+      reviewDiv.classList.add('single-review');
 
+      // شكل النجوم حسب التقييم
+      const stars = '⭐'.repeat(rating);
+
+      // محتوى المراجعة
+      reviewDiv.innerHTML = `
+        <div class="review-name">${name}</div>
+        <div class="review-rating">${stars}</div>
+        <div class="review-text">${reviewText}</div>
+      `;
+
+      // اضف المراجعة الجديدة الى الحاوية
+      document.getElementById('reviewsContainer').appendChild(reviewDiv);
+
+      // اعادة تعيين الفورم
       this.reset();
     });
   </script>

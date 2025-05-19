@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>وصفاتي</title>
+  <style>
+    /* Container العام */
+    .container {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 30px 20px;
+      background-color: #fff;
+      border-radius: 12px;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    /* الهيدر */
+    .container header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 30px;
+    }
+
+    .container header h1 {
+      font-size: 2rem;
+      color: #333;
+    }
+
+    .container header a {
+      text-decoration: none;
+      color: #ff6b3e;
+      font-weight: 600;
+      border: 2px solid #ff6b3e;
+      padding: 8px 15px;
+      border-radius: 8px;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    .container header a:hover {
+      background-color: #ff6b3e;
+      color: #fff;
+    }
+
+    /* قسم الوصفات */
+    .recipes-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      min-height: 150px;
+    }
+
+    /* رسالة عدم وجود وصفات */
+    .no-recipes {
+      font-size: 1.3rem;
+      color: #777;
+      text-align: center;
+      width: 100%;
+      padding: 40px 0;
+    }
+
+    /* بطاقة وصفة */
+    .recipe-card {
+      background-color: #fafafa;
+      border: 1px solid #ddd;
+      border-radius: 12px;
+      padding: 20px;
+      width: calc(33% - 20px);
+      box-sizing: border-box;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      transition: box-shadow 0.3s;
+      cursor: pointer;
+      position: relative;
+    }
+
+    .recipe-card:hover {
+      box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+    }
+
+    .recipe-card h3 {
+      margin-top: 0;
+      color: #333;
+    }
+
+    .recipe-card p {
+      color: #555;
+      font-size: 0.9rem;
+    }
+    .recipe-card img {
+      width: 200px;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-bottom: 10px;
+      display: block;
+    }
+    
+    /* زر الحذف */
+    .delete-btn {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      background-color: #ff3e3e;
+      color: white;
+      border: none;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      font-size: 14px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background-color 0.3s;
+    }
+    
+    .delete-btn:hover {
+      background-color: #e50000;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>وصفاتي</h1>
+      <a href="add-recipe.html">إضافة وصفة جديدة</a>
+    </header>
+
+    <section>
+      <div class="recipes-container" id="recipesContainer">
+        <div class="no-recipes" id="noRecipes">لا توجد وصفات مضافة بعد.</div>
+      </div>
+    </section>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const recipesContainer = document.getElementById('recipesContainer');
+      const noRecipesMessage = document.getElementById('noRecipes');
+      
+      // دالة لعرض الوصفات
+      function displayRecipes() {
+        const recipes = JSON.parse(localStorage.getItem('recipes')) || [];
+        
+        recipesContainer.innerHTML = '';
+        
+        if (recipes.length === 0) {
+          noRecipesMessage.style.display = 'block';
+          recipesContainer.appendChild(noRecipesMessage);
+        } else {
+          noRecipesMessage.style.display = 'none';
+
+          recipes.forEach((recipe, index) => {
+            const card = document.createElement('div');
+            card.className = 'recipe-card';
+            card.innerHTML = `
+              <button class="delete-btn" data-index="${index}">×</button>
+              <img src="${recipe.image}" class="recipe-image" alt="${recipe.name}">
+              <div class="recipe-content">
+                <h3 class="recipe-name">${recipe.name}</h3>
+                <p class="recipe-details">${recipe.details}</p>
+              </div>
+            `;
+            recipesContainer.appendChild(card);
+          });
+          
+          // إضافة حدث النقر لأزرار الحذف
+          document.querySelectorAll('.delete-btn').forEach(btn => {
+            btn.addEventListener('click', function(e) {
+              e.stopPropagation();
+              const index = this.getAttribute('data-index');
+              deleteRecipe(index);
+            });
+          });
+        }
+      }
+      
+      // دالة حذف الوصفة
+      function deleteRecipe(index) {
+        if(confirm('هل أنت متأكد من حذف هذه الوصفة؟')) {
+          let recipes = JSON.parse(localStorage.getItem('recipes')) || [];
+          recipes.splice(index, 1);
+          localStorage.setItem('recipes', JSON.stringify(recipes));
+          displayRecipes(); // إعادة عرض الوصفات بعد الحذف
+        }
+      }
+      
+      // عرض الوصفات عند تحميل الصفحة
+      displayRecipes();
+    });
+  </script>
+</body>
+</html>

@@ -1,194 +1,345 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8">
-  <title>وصفاتنا</title>
+  <title>أول ريسيبس - وصفات طبخ من حول العالم</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+    /* إضافة بعض الأنماط الأساسية للغة العربية */
+    body {
+      font-family: 'Tahoma', Arial, sans-serif;
+      text-align: right;
+    }
+    .logo {
+      font-weight: bold;
+      font-size: 24px;
+    }
+    nav ul {
+      padding-right: 0;
+    }
+  </style>
 </head>
-<body dir="rtl">
+<body>
 
-  <!-- Header -->
+  <!-- الهيدر -->
   <header>
-    <div class="logo">وصفاتنا</div>
+    <div class="logo">كل الوصفات</div>
+
     <nav>
       <ul>
         <li><a href="home1.html" class="active">الرئيسية</a></li>
-        <li><a href="recipes1.html">الوصفات</a></li>
 
         <li class="dropdown">
-          <a href="#" class="dropbtn">المطابخ ▼</a>
-          <ul class="dropdown-content">
-            <li><a href="egyption1.html">مصري</a></li>
-            <li><a href="italian1.html">إيطالي</a></li>
-            <li><a href="Korean1.html">كوري</a></li>
-          </ul>
+          <a href="#" class="dropbtn">الوصفات ▼</a>
+          <div class="dropdown-content">
+            <a href="recipes1.html">كل الوصفات</a>
+            <a href="add-recipe1.html">إضافة وصفة</a>
+            <a href="my-recipes1.html">وصفاتي</a>
+          </div>
         </li>
+
+        <li class="dropdown">
+          <a href="#" class="dropbtn">المطابخ العالمية ▼</a>
+          <div class="dropdown-content">
+            <a href="egyptian1.html">المطبخ المصري</a>
+            <a href="italian1.html">المطبخ الإيطالي</a>
+            <a href="korean1.html">المطبخ الكوري</a>
+          </div>
+        </li>
+
         <li><a href="blog1.html">المدونة</a></li>
-        <li><a href="./contact1.html">اتصل بنا</a></li>
-        <li><a href="Reviews1.html">المراجعات</a></li>
-        <li><a href="weekly meal planner1.html">مخطط الوجبات الأسبوعي</a></li>
+        <li><a href="contact1.html">اتصل بنا</a></li>
+        <li><a href="Reviews1.html">التقييمات</a></li>
+        <li><a href="weekly meal planner1.html">خطة الوجبات الأسبوعية</a></li>
       </ul>
     </nav>
+
     <div class="auth-buttons">
-      <a href="login.html">تسجيل الدخول</a>
-      <a href="register.html">إنشاء حساب</a>
+      <a href="login1.html">تسجيل الدخول</a>
+      <a href="register1.html">تسجيل جديد</a>
+      <a href="home.html">EN</a>
     </div>
   </header>
 
-  <!-- Hero Section -->
+  <!-- قسم البطل الرئيسي -->
   <section class="hero">
     <div class="hero-content">
-      <h1>اكتشف وصفات شهية كل يوم!</h1>
-      <p>استمتع بأشهى الأطباق من جميع أنحاء العالم بكل سهولة</p>
-      <button onclick="window.location.href='recipes1.html'">استعرض الوصفات</button>
+      <h1>اكتشف وصفات لذيذة كل يوم!</h1>
+      <p>استكشف أطباقًا من حول العالم بسهولة</p>
+      <button onclick="window.location.href='recipes.html'">استكشف الوصفات</button>
     </div>
   </section>
 
-  <!-- Trending Now Section -->
+  <!-- قسم التريند الآن -->
   <div class="trending-container">
     <header class="trending-header">
-      <h1>الشائع الآن</h1>
+      <h1>الأكثر شيوعًا الآن</h1>
     </header>
 
     <div class="trending-grid">
-      <!-- Card 1 -->
+      <!-- البطاقة 1 -->
       <div class="trending-card">
-        <span class="category-tag food-news">أخبار الطعام والاتجاهات</span>
-        <h2>تعرف على MyRecipes: أسهل طريقة للاحتفاظ بكل وصفاتك المفضلة</h2>
+        <span class="category-tag food-news">أخبار واتجاهات الطعام</span>
+        <h2>تعرف على MyRecipes: أسهل طريقة لتتبع جميع وصفاتك المفضلة</h2>
         <div class="card-image">
           <img src="./8551629-BangBangPotatoes_DDMFS_45-4x3-e8321c7e22cb4fa698de74aaaab364bd.webp" alt="بطاطس بانج بانج">
         </div>
         <div class="card-footer">
           <span class="save-count"><i class="far fa-bookmark"></i> 1.2K حفظ</span>
-          <a href="#" class="read-more">اقرأ المزيد <i class="fas fa-arrow-right"></i></a>
+          <a class="read-more" aria-label="اقرأ المزيد عن بطاطس بانج بانج">اقرأ المزيد <i class="fas fa-arrow-left"></i></a>
         </div>
       </div>
 
-      <!-- Card 2 -->
+      <!-- البطاقة 2 -->
       <div class="trending-card">
         <span class="category-tag eggs">بيض</span>
-        <h2>أفضل 12 وصفة لبيض بنديكت - جربناها جميعًا</h2>
+        <h2>أفضل 12 وصفة لبيض بنديكت اختبرناها</h2>
         <div class="card-image">
           <img src="./17205-eggs-benedict-DDMFS-4x3-a0042d5ae1da485fac3f468654187db0.webp" alt="بيض بنديكت">
         </div>
         <div class="card-footer">
           <span class="save-count"><i class="far fa-bookmark"></i> 856 حفظ</span>
-          <a href="#" class="read-more">اقرأ المزيد <i class="fas fa-arrow-right"></i></a>
+          <a class="read-more" aria-label="اقرأ المزيد عن بيض بنديكت">اقرأ المزيد <i class="fas fa-arrow-left"></i></a>
         </div>
       </div>
 
-      <!-- Card 3 -->
+      <!-- البطاقة 3 -->
       <div class="trending-card">
         <span class="category-tag trends">اتجاهات</span>
-        <h2>أكثر وصفات عيد الأم حفظًا على الإطلاق</h2>
+        <h2>الوصفة الأكثر حفظًا ليوم الأم على الإطلاق "رائعة"</h2>
         <div class="card-image">
-          <img src="./672049_Grandmas-Lemon-Meringue-Pie-4x3-011d17190e2e465eadc66234694e991a.webp" alt="فطيرة الليمون">
+          <img src="./672049_Grandmas-Lemon-Meringue-Pie-4x3-011d17190e2e465eadc66234694e991a.webp" alt="فطيرة ليمون ميرينج">
         </div>
         <div class="card-footer">
           <span class="save-count"><i class="far fa-bookmark"></i> 3.4K حفظ</span>
-          <a href="#" class="read-more">اقرأ المزيد <i class="fas fa-arrow-right"></i></a>
+          <a class="read-more" aria-label="اقرأ المزيد عن فطيرة ليمون ميرينج">اقرأ المزيد <i class="fas fa-arrow-left"></i></a>
         </div>
       </div>
 
-      <!-- Card 4 -->
+      <!-- البطاقة 4 -->
       <div class="trending-card">
         <span class="category-tag reviews">مراجعات أدوات المطبخ</span>
-        <h2>طبق التقديم المناسب يجعل كل وجبة مميزة — إليك أفضل الخيارات</h2>
+        <h2>طبق التقديم الجيد يجعل كل وجبة مميزة - اختبرنا الأفضل</h2>
         <div class="card-image">
           <img src="./alr-our-place-gather-platters-aimee-broussard-3-f376357e572e4071951b1b5fb6a16b2b.webp" alt="أطباق تقديم">
         </div>
         <div class="card-footer">
           <span class="save-count"><i class="far fa-bookmark"></i> 723 حفظ</span>
-          <a href="#" class="read-more">اقرأ المزيد <i class="fas fa-arrow-right"></i></a>
+          <a class="read-more" aria-label="اقرأ المزيد عن أطباق تقديم">اقرأ المزيد <i class="fas fa-arrow-left"></i></a>
         </div>
       </div>
     </div>
   </div>
 
+  <!-- قسم ماذا نحفظ في وصفاتي -->
+  <section class="saving-my-recipes">
+    <div class="saved-section-header">
+      <h1>ما نحمله في "وصفاتي"</h1>
+      <span class="saved-section-arrow">←</span>
+    </div>
+    <div class="saved-recipes-grid">
+      <!-- الصف 1 -->
+      <div class="saved-recipe-card">
+        <img src="./chiken.webp" alt="شاورما الدجاج" class="saved-recipe-image">
+        <div class="saved-favorite-icon">♡</div>
+        <div class="saved-category-label">دجاج</div>
+        <h2 class="saved-recipe-title">شاورما الدجاج المشدود للشيف جون</h2>
+        <div class="saved-rating">
+          <span class="saved-stars">★★★★★</span>
+          <span class="saved-review-count">تقييم واحد</span>
+        </div>
+      </div>
+
+      <div class="saved-recipe-card">
+        <img src="./coffee.webp" alt="بانا كوتا القهوة" class="saved-recipe-image">
+        <div class="saved-favorite-icon">♡</div>
+        <div class="saved-category-label">حلويات</div>
+        <h2 class="saved-recipe-title">بانا كوتا القهوة</h2>
+        <div class="saved-rating">
+          <span class="saved-stars">★★★★★</span>
+          <span class="saved-review-count">تقييم واحد</span>
+        </div>
+      </div>
+
+      <div class="saved-recipe-card">
+        <img src="./burger.jpg" alt="برجر ميشيغان" class="saved-recipe-image">
+        <div class="saved-favorite-icon">♡</div>
+        <div class="saved-category-label">وصفات تشيز برجر</div>
+        <h2 class="saved-recipe-title">برجر ميشيغان بالزيتون</h2>
+        <div class="saved-rating">
+          <span class="saved-stars">★★★★★</span>
+          <span class="saved-review-count">تقييم واحد</span>
+        </div>
+      </div>
+
+      <!-- الصف 2 -->
+      <div class="saved-recipe-card">
+        <img src="./frawla.webp" alt="حلوى الفراولة" class="saved-recipe-image">
+        <div class="saved-favorite-icon">♡</div>
+        <div class="saved-category-label">حلويات</div>
+        <h2 class="saved-recipe-title">حلوى الفراولة والراوند</h2>
+        <div class="saved-rating">
+          <span class="saved-stars">★★★★★</span>
+          <span class="saved-review-count">تقييم واحد</span>
+        </div>
+      </div>
+
+      <div class="saved-recipe-card">
+        <img src="./Hot-Honey-Drumsticks_.webp" alt="أفخاذ دجاج بالعسل الحار" class="saved-recipe-image">
+        <div class="saved-favorite-icon">♡</div>
+        <div class="saved-category-label">وصفات أفخاذ الدجاج</div>
+        <h2 class="saved-recipe-title">أفخاذ دجاج بالعسل الحار</h2>
+        <div class="saved-rating">
+          <span class="saved-stars">★★★★★</span>
+          <span class="saved-review-count">تقييم واحد</span>
+        </div>
+      </div>
+
+      <div class="saved-recipe-card">
+        <img src="./Bloody-Mary-Pasta-Salad-ddmfs-3x4-101-fac2a384b0af4126acdcc5899458a82c.webp" alt="سلطة باستا بلودي ماري" class="saved-recipe-image">
+        <div class="saved-favorite-icon">♡</div>
+        <div class="saved-category-label">وصفات سلطة باستا الطماطم</div>
+        <h2 class="saved-recipe-title">سلطة باستا بلودي ماري</h2>
+        <div class="saved-rating">
+          <span class="saved-stars">★★★★★</span>
+          <span class="saved-review-count">تقييم واحد</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- قسم أيام مايو -->
+  <div class="wrapper">
+    <!-- الشريط العلوي -->
+    <div class="top-bar">
+      <a href="#" class="link-wrapper">
+        <h2 class="top-title">أيام مايو</h2>
+        <span class="icon-right">←</span>
+      </a>
+    </div>
+
+    <!-- الشبكة الرئيسية -->
+    <div class="grid-box">
+      <!-- العمود الأيسر -->
+      <div class="left-side">
+        <div class="card-item">
+          <img src="./bondok.webp" alt="حلويات البوتلاك" class="thumb">
+          <a href="#" class="card-title">أفضل 20 وصفة لحلويات البوتلاك على الإطلاق ستجعلك أسطورة</a>
+        </div>
+
+        <div class="card-item">
+          <img src="./Party-Pinwheels.webp" alt="طعام حفلة التخرج" class="thumb">
+          <a href="#" class="card-title">30 نوع طعام لحفلات التخرج لاحتفال مميز</a>
+        </div>
+
+        <div class="card-item">
+          <img src="./LEMON.webp" alt="وصفات عصير الليمون" class="thumb">
+          <a href="#" class="card-title">28 وصفة منعشة لعصير الليمون لإرواء عطشك</a>
+        </div>
+
+        <div class="card-item">
+          <img src="./Homemade.webp" alt="وصفات يوم الذكرى" class="thumb">
+          <a href="#" class="card-title">وصفات يوم الذكرى التي يمكنك تحضيرها في طبق 9x13</a>
+        </div>
+      </div>
+
+      <!-- العمود الأيمن -->
+      <div class="right-side">
+        <img src="./eggggg.webp" alt="ساندويتش يوم الذكرى" class="main-img">
+        <div class="label-small">يوم الذكرى</div>
+        <h3 class="main-title">25 وصفة لنزهة يوم الذكرى</h3>
+      </div>
+    </div>
+  </div>
+
+  <!-- قسم برانش 5 نجوم -->
   <section class="header-section">
     <h1 class="header">
-      <a href="#">برانش 5 نجوم <span class="arrow">→</span></a>
+      <a href="#">برانش 5 نجوم <span class="arrow">←</span></a>
     </h1>
   </section>
 
-  <!-- Recipes Section -->
   <section class="recipes-section">
-    <!-- Recipe Cards -->
+    <!-- الوصفة 1 -->
     <article class="recipe-card">
       <div class="image-wrapper">
         <img src="./8607937_Naked-Eggs-Benedict_John-Mitzewich_4x3-b2aa6c8877a4431daf317bfa56797aa6.webp" alt="بيض بنديكت" class="recipe-image">
         <button class="save-btn"><i class="far fa-heart"></i></button>
       </div>
       <div class="recipe-content">
-        <p class="recipe-category">إفطار وبرنش</p>
-        <h2 class="recipe-title">بيض بنديكت بالفرن من الشيف جون</h2>
+        <p class="recipe-category">الإفطار والبرانش</p>
+        <h2 class="recipe-title">بيض بنديكت بالفرن للشيف جون</h2>
         <div class="recipe-rating">★ ★ ★ ★ ★ <span>9 تقييمات</span></div>
       </div>
     </article>
 
-  <article class="recipe-card">
-    <div class="image-wrapper">
-        <img src="./11699506_The-Best-Avocado-Toast-4x3-cropped-b8a832a381624e79a689acdb105657c5.webp" alt="توست أفوكادو" class="recipe-image">
+    <!-- الوصفة 2 -->
+    <article class="recipe-card">
+      <div class="image-wrapper">
+        <img src="./11699506_The-Best-Avocado-Toast-4x3-cropped-b8a832a381624e79a689acdb105657c5.webp" alt="توست الأفوكادو" class="recipe-image">
         <button class="save-btn"><i class="far fa-heart"></i></button>
-    </div>
-    <div class="recipe-content">
-        <p class="recipe-category">الفطور والغداء الخفيف</p>
+      </div>
+      <div class="recipe-content">
+        <p class="recipe-category">الإفطار والبرانش</p>
         <h2 class="recipe-title">أفضل توست أفوكادو</h2>
-        <div class="recipe-rating">★ ★ ★ ★ ★ <span>تقييمين</span></div>
-    </div>
-</article>
+        <div class="recipe-rating">★ ★ ★ ★ ★ <span>2 تقييمات</span></div>
+      </div>
+    </article>
 
-<article class="recipe-card">
-    <div class="image-wrapper">
+    <!-- الوصفة 3 -->
+    <article class="recipe-card">
+      <div class="image-wrapper">
         <img src="./ALR-recipe-16895-fluffy-french-toast-hero-01-ddmfs-4x3-7fd61e054f2c4f0f868b7ab0dd8767ae.webp" alt="توست فرنسي" class="recipe-image">
         <button class="save-btn"><i class="far fa-heart"></i></button>
-    </div>
-    <div class="recipe-content">
+      </div>
+      <div class="recipe-content">
         <p class="recipe-category">وصفات التوست الفرنسي</p>
-        <h2 class="recipe-title">توست فرنسي هش</h2>
+        <h2 class="recipe-title">توست فرنسي رقيق</h2>
         <div class="recipe-rating">★ ★ ★ ★ ★ <span>4,626 تقييم</span></div>
-    </div>
-</article>
+      </div>
+    </article>
 
-<article class="recipe-card">
-    <div class="image-wrapper">
-        <img src="./43475_Hash-Brown-Crust-Quiche-4x3-f96ec6cb95e4473ca82fcdf48a9f9c18.webp" alt="كيش بطاطس" class="recipe-image">
+    <!-- الوصفة 4 -->
+    <article class="recipe-card">
+      <div class="image-wrapper">
+        <img src="./43475_Hash-Brown-Crust-Quiche-4x3-f96ec6cb95e4473ca82fcdf48a9f9c18.webp" alt="كيش بقشرة البطاطس" class="recipe-image">
         <button class="save-btn"><i class="far fa-heart"></i></button>
-    </div>
-    <div class="recipe-content">
-        <p class="recipe-category">وصفات البطاطس المبشورة</p>
-        <h2 class="recipe-title">كيش بقشرة من البطاطس المبشورة</h2>
+      </div>
+      <div class="recipe-content">
+        <p class="recipe-category">وصفات بطاطس الهاش براون</p>
+        <h2 class="recipe-title">كيش بقشرة البطاطس</h2>
         <div class="recipe-rating">★ ★ ★ ★ ☆ <span>372 تقييم</span></div>
-    </div>
-</article>
+      </div>
+    </article>
 
-<article class="recipe-card">
-    <div class="image-wrapper">
-        <img src="./8706892_Lemon-Poppy-Seed-Pancakes-4x3-cropped-c64118c1a1444116aef8f6e850f2c541.webp" alt="بان كيك ليمون" class="recipe-image">
+    <!-- الوصفة 5 -->
+    <article class="recipe-card">
+      <div class="image-wrapper">
+        <img src="./8706892_Lemon-Poppy-Seed-Pancakes-4x3-cropped-c64118c1a1444116aef8f6e850f2c541.webp" alt="بانكيك بذور الخشخاش" class="recipe-image">
         <button class="save-btn"><i class="far fa-heart"></i></button>
-    </div>
-    <div class="recipe-content">
-        <p class="recipe-category">وصفات البان كيك</p>
-        <h2 class="recipe-title">بان كيك الليمون وبذور الخشخاش</h2>
+      </div>
+      <div class="recipe-content">
+        <p class="recipe-category">وصفات البانكيك</p>
+        <h2 class="recipe-title">بانكيك بذور الخشخاش والليمون</h2>
         <div class="recipe-rating">★ ★ ★ ★ ☆ <span>5 تقييمات</span></div>
-    </div>
-</article>
+      </div>
+    </article>
 
-<article class="recipe-card">
-    <div class="image-wrapper">
-        <img src="./ALR-278529-orange-creamsicle-protein-shake-VAT-4x3-3c3996d7410c41f4b668a15197bd952c.webp" alt="مشروب بروتين" class="recipe-image">
+    <!-- الوصفة 6 -->
+    <article class="recipe-card">
+      <div class="image-wrapper">
+        <img src="./ALR-278529-orange-creamsicle-protein-shake-VAT-4x3-3c3996d7410c41f4b668a15197bd952c.webp" alt="مخفوق البروتين" class="recipe-image">
         <button class="save-btn"><i class="far fa-heart"></i></button>
-    </div>
-    <div class="recipe-content">
+      </div>
+      <div class="recipe-content">
         <p class="recipe-category">مشروبات</p>
-        <h2 class="recipe-title">مشروب بروتين برتقال وفانيليا</h2>
+        <h2 class="recipe-title">مخفوق البروتين بنكهة الآيس كريم البرتقالي</h2>
         <div class="recipe-rating">★ ★ ★ ★ ★ <span>11 تقييم</span></div>
-    </div>
-</article>
-
+      </div>
+    </article>
   </section>
 
-  <!-- Featured Recipes -->
+  <!-- قسم وصفات مميزة -->
   <section class="featured-recipes">
     <div class="section-heading">
       <h1>صباح الخير! ☀️</h1>
@@ -196,50 +347,78 @@
 
     <div class="featured-content">
       <div class="left-featured">
-        <img src="./Breakfast-Casserole-4x3-c024cf859d094df0bfa754f32be2431c.webp" alt="كسرولة الفطور">
+        <img src="./Breakfast-Casserole-4x3-c024cf859d094df0bfa754f32be2431c.webp" alt="أطباق برانش">
         <div class="featured-text">
-          <small>وصفات كسرولة الفطور</small>
-          <h2>15 وصفة كسرولة برانش لأيام الربيع السهلة</h2>
+          <small>وصفات أطباق الإفطار</small>
+          <h2>15 طبق برانش لأسابيع ربيعية سهلة</h2>
         </div>
       </div>
 
       <div class="right-featured-list">
         <div class="small-feature">
-          <img src="./omlet.webp" alt="">
-          <p>14 وصفة أومليت لبداية صباح نشيط</p>
+          <img src="./omlet.webp" alt="أومليت">
+          <p>14 وصفة أومليت ستجعل صباحك رائعًا بالتأكيد</p>
         </div>
         <div class="small-feature">
-          <img src="./optimized-chilaquiles.webp" alt="">
+          <img src="./optimized-chilaquiles.webp" alt="أطباق مكسيكية">
           <p>17 وصفة إفطار مستوحاة من المطبخ المكسيكي</p>
         </div>
         <div class="small-feature">
-          <img src="./105013.webp" alt="">
-          <p>9 وصفات بان كيك بالزبادي هشة</p>
+          <img src="./105013.webp" alt="بانكيك الزبادي">
+          <p>9 وصفات بانكيك بالزبادي الرقيق</p>
         </div>
         <div class="small-feature">
-          <img src="./105013.webp" alt="">
-          <p>15 فطور مالح بدون بيض</p>
+          <img src="./105013.webp" alt="إفطار غير بيض">
+          <p>15 وصفة إفطار لذيذة بدون بيض</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Compare Section -->
+  <!-- بانر الوصفات المصرية -->
+  <div class="recipe-banner">
+    <div class="content-card">
+      <span class="category-label">مصري</span>
+      <h2 class="content-title"> <a href="egyptian.html">وصفات مصرية أصيلة</a></h2>
+      <p class="content-description">استكشف المطبخ المصري المتنوع مع هذه الوصفات المجربة، من الفطائر البسيطة إلى وصفات الملوخية والكشري والفتة.</p>
+    </div>
+  </div>
+
+  <!-- قسم المقارنة -->
   <section class="compare-section">
     <div class="compare-content">
-      <img src="./compare.jpeg" alt="قارن الوصفات" />
+      <img src="./compare.jpeg" alt="مقارنة الأطباق" />
       <div class="compare-text">
-        <h2>محتار بين وصفات؟</h2>
-        <p>قارن بين الوصفات واختر الأنسب لك!</p>
+        <h2>محتار بين الأطباق؟</h2>
+        <p>قارن الوصفات جنبًا إلى جنب واختر الأفضل لك!</p>
         <a href="compare.html" class="compare-button">قارن الآن</a>
       </div>
     </div>
   </section>
 
-  <!-- Footer -->
+  <!-- الفوتر -->
   <footer>
-    <p>© 2025 وصفاتنا - جميع الحقوق محفوظة</p>
+    <p>© 2025 أول ريسيبس - جميع الحقوق محفوظة</p>
     <p><a href="#">سياسة الخصوصية</a> | <a href="contact.html">اتصل بنا</a></p>
+    
+    <!-- أيقونات التواصل الاجتماعي -->
+    <div class="card-social">
+      <a href="#" class="socialContainer containerOne">
+        <svg class="socialSvg instagramSvg" viewBox="0 0 16 16"> <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"></path> </svg>
+      </a>
+      
+      <a href="#" class="socialContainer containerTwo">
+        <svg class="socialSvg twitterSvg" viewBox="0 0 16 16"> <path d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z"></path> </svg>              
+      </a>
+      
+      <a href="#" class="socialContainer containerThree">
+        <svg class="socialSvg linkdinSvg" viewBox="0 0 448 512"><path d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"></path></svg>
+      </a>
+      
+      <a href="#" class="socialContainer containerFour">
+        <svg class="socialSvg whatsappSvg" viewBox="0 0 16 16"> <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"></path> </svg>
+      </a>
+    </div>             
   </footer>
 
   <script src="script.js"></script>

@@ -1,24 +1,76 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>مراجعات المستخدمين – وصفات للجميع</title>
+  <title>تقييمات المستخدمين - أول ريسيبس</title>
   <link rel="stylesheet" href="style.css" />
+  <style>
+    /* ستايلات مخصصة للغة العربية */
+    body {
+      font-family: 'Tahoma', Arial, sans-serif;
+      text-align: right;
+    }
+    
+    .reviews-container {
+      margin-top: 30px;
+      max-width: 600px;
+      padding: 10px;
+      border-top: 2px solid #ccc;
+    }
+    .single-review {
+      border-bottom: 1px solid #ddd;
+      padding: 10px 0;
+    }
+    .single-review:last-child {
+      border-bottom: none;
+    }
+    .review-name {
+      font-weight: bold;
+    }
+    .review-rating {
+      color: #f5c518; /* لون النجوم */
+      direction: ltr; /* النجوم تبقى من اليسار لليمين */
+      display: inline-block;
+    }
+    .review-text {
+      margin-top: 5px;
+    }
+    .review-form-container {
+      text-align: right;
+    }
+    label {
+      display: block;
+      margin-top: 10px;
+    }
+    input, select, textarea {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+    }
+    button {
+      margin-top: 15px;
+      padding: 10px 20px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+  </style>
 </head>
 <body>
 
   <!-- قسم إضافة مراجعة -->
   <section class="review-section">
     <div class="review-form-container">
-      <h2>اترك مراجعة</h2>
+      <h2>أضف تقييمك</h2>
       <form id="reviewForm">
         <label for="username">اسمك:</label>
         <input type="text" id="username" required />
 
         <label for="rating">التقييم (من 1 إلى 5):</label>
         <select id="rating" required>
-          <option value="">اختر</option>
+          <option value="">اختر التقييم</option>
           <option value="1">⭐</option>
           <option value="2">⭐⭐</option>
           <option value="3">⭐⭐⭐</option>
@@ -26,11 +78,17 @@
           <option value="5">⭐⭐⭐⭐⭐</option>
         </select>
 
-        <label for="review">مراجعتك:</label>
+        <label for="review">تقييمك:</label>
         <textarea id="review" required></textarea>
 
-        <button type="submit">إرسال المراجعة</button>
+        <button type="submit">إرسال التقييم</button>
       </form>
+    </div>
+
+    <!-- عرض التقييمات -->
+    <div class="reviews-container" id="reviewsContainer">
+      <h3>تقييمات المستخدمين:</h3>
+      <!-- التقييمات ستضاف هنا تلقائيا -->
     </div>
   </section>
 
@@ -44,8 +102,24 @@
 
       if (!name || !rating || !reviewText) return;
 
-      console.log("تم إرسال المراجعة:", { name, rating, reviewText });
+      // إنشاء عنصر التقييم الجديد
+      const reviewDiv = document.createElement('div');
+      reviewDiv.classList.add('single-review');
 
+      // إنشاء النجوم حسب التقييم
+      const stars = '⭐'.repeat(rating);
+
+      // محتوى التقييم
+      reviewDiv.innerHTML = `
+        <div class="review-name">${name}</div>
+        <div class="review-rating">${stars}</div>
+        <div class="review-text">${reviewText}</div>
+      `;
+
+      // إضافة التقييم الجديد
+      document.getElementById('reviewsContainer').appendChild(reviewDiv);
+
+      // إعادة تعيين النموذج
       this.reset();
     });
   </script>
