@@ -37,55 +37,20 @@ document.querySelectorAll('.recipe-card').forEach(card => {
     card.querySelector('.save-count span').innerText = parseInt(card.querySelector('.save-count span').innerText) + 1;
   }
 });
-document.addEventListener("DOMContentLoaded", () => {
-  const registerForm = document.getElementById("registerForm");
 
-  if (registerForm) {
-    registerForm.addEventListener("submit", function (e) {
-      e.preventDefault();
 
-      const name = registerForm.querySelector('input[placeholder="Full Name"]').value.trim();
-      const email = registerForm.querySelector('input[placeholder="Email"]').value.trim();
-      const password = registerForm.querySelectorAll('input[placeholder="Password"]')[0].value;
-      const confirmPassword = registerForm.querySelector('input[placeholder="Confirm Password"]').value;
+// حماية الصفحة
+const isLoggedIn = localStorage.getItem("isLoggedIn");
 
-      if (!name || !email || !password || !confirmPassword) {
-        alert("Please fill in all fields.");
-        return;
-      }
+if (!isLoggedIn || isLoggedIn !== "true") {
+  window.location.href = "login.html";
+}
 
-      if (password !== confirmPassword) {
-        alert("Passwords do not match.");
-        return;
-      }
+function logout() {
+  localStorage.removeItem("isLoggedIn");
+  window.location.href = "login.html";
+}
 
-      localStorage.setItem("user", JSON.stringify({ name, email, password }));
-      alert("Registration successful!");
-      window.location.href = "login.html";
-    });
-  }
-
-  const loginForm = document.getElementById("loginForm");
-
-  if (loginForm) {
-    loginForm.addEventListener("submit", function (e) {
-      e.preventDefault();
-
-      const email = loginForm.querySelector('input[placeholder="Email"]').value.trim();
-      const password = loginForm.querySelector('input[placeholder="Password"]').value;
-
-      const storedUser = JSON.parse(localStorage.getItem("user"));
-
-      if (!storedUser || storedUser.email !== email || storedUser.password !== password) {
-        alert("Invalid email or password.");
-        return;
-      }
-
-      alert(`Welcome back, ${storedUser.name}!`);
-      window.location.href = "home.html"; 
-    });
-  }
-});
 const recipes = {
   eggsBenedict: {
     name: "Eggs Benedict",

@@ -23,7 +23,32 @@
     </form>
     <p>Don't have an account? <a href="register.html">Register here</a></p>
   </div>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+  const loginForm = document.getElementById("loginForm");
 
-  <script src="script.js"></script>
+  if (loginForm) {
+    loginForm.addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const email = loginForm.querySelector('input[placeholder="Email"]').value.trim();
+      const password = loginForm.querySelector('input[placeholder="Password"]').value;
+
+      const storedUser = JSON.parse(localStorage.getItem("user"));
+
+      if (!storedUser || storedUser.email !== email || storedUser.password !== password) {
+        alert("Invalid email or password.");
+        return;
+      }
+
+      alert(`Welcome back, ${storedUser.name}!`);
+      localStorage.setItem("isLoggedIn", "true");
+      window.location.href = "home.html";
+    });
+  }
+});
+
+  </script>
+  
 </body>
 </html>

@@ -2,30 +2,58 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Register - AllRecipes</title>
-   <link rel="stylesheet" href="style.css">
+  <title>Register</title>
+  <link rel="stylesheet" href="style.css">
 </head>
-<style>
-    body{
-    background-image: url(./drew-coffman-1872.jpg);
-  background-size: cover;
-  background-position: center center;
-  }
-</style>
+<style> body {
+      background-image: url(./drew-coffman-1872.jpg);
+      background-size: cover;
+      background-position: center center;
+      font-family: 'Tahoma', Arial, sans-serif;
+    }
+    .auth-container {
+      text-align: right;
+    }
+  </style></style>
 <body>
   <div class="auth-container">
     <h2>Register</h2>
-    <form id="registerForm">
-      <input type="text" placeholder="Full Name" required>
-      <input type="email" placeholder="Email" required>
-      <input type="password" placeholder="Password" required>
-      <input type="password" placeholder="Confirm Password" required>
-      <button type="submit">Register</button>
-    </form>
-    <p>Already have an account? <a href="login.html">Login here</a></p>
+  <form id="registerForm">
+    <input type="text" placeholder="Name" required><br><br>
+    <input type="email" placeholder="Email" required><br><br>
+    <input type="password" placeholder="Password" required><br><br>
+    <button type="submit">Register</button>
+  </form>
   </div>
+  
 
-  <script src="script.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const registerForm = document.getElementById("registerForm");
+
+      if (registerForm) {
+        registerForm.addEventListener("submit", function (e) {
+          e.preventDefault();
+
+          const name = registerForm.querySelector('input[placeholder="Name"]').value.trim();
+          const email = registerForm.querySelector('input[placeholder="Email"]').value.trim();
+          const password = registerForm.querySelector('input[placeholder="Password"]').value;
+
+          if (!name || !email || !password) {
+           alert("Please fill in all fields.");
+            return;
+          }
+
+          const user = { name, email, password };
+
+          localStorage.setItem("user", JSON.stringify(user));
+
+         alert("Account created successfully!");
+
+          window.location.href = "login.html";
+        });
+      }
+    });
+  </script>
 </body>
 </html>
