@@ -6,13 +6,7 @@ navLinks.forEach(link => {
   }
 });
 
-// Redirect user to the recipe details page on card click
-document.querySelectorAll('.trending-card').forEach(card => {
-  card.addEventListener('click', function() {
-    const recipeId = this.dataset.recipeId;  // Get recipe ID from data attribute
-    window.location.href = `recipe-detail.html?id=${recipeId}`;
-  });
-});
+
 
 // Save recipe to localStorage and update the save count
 document.querySelectorAll('.save-btn').forEach(button => {
@@ -187,52 +181,3 @@ function compareSelected() {
 
 
 
-// عند تحميل الصفحة، اعرض الخطة المحفوظة (لو موجودة)
-document.addEventListener('DOMContentLoaded', () => {
-    const saved = localStorage.getItem("mealPlan");
-    if (saved) {
-        displaySavedMealPlan(JSON.parse(saved));
-    }
-});
-
-document.querySelector('.save-btn').addEventListener('click', saveMealPlan);
-
-function saveMealPlan() {
-    const mealPlan = [];
-    const inputs = document.querySelectorAll('.meal-input');
-    for (let i = 0; i < inputs.length; i += 3) {
-        const dayMeals = [
-            inputs[i].value,      // Breakfast
-            inputs[i + 1].value,  // Lunch
-            inputs[i + 2].value   // Dinner
-        ];
-        mealPlan.push(dayMeals.join(','));
-    }
-
-    localStorage.setItem("mealPlan", JSON.stringify(mealPlan));
-    displaySavedMealPlan(mealPlan);
-}
-
-function displaySavedMealPlan(mealPlan) {
-    // إزالة القسم القديم إن وجد
-    const oldSection = document.querySelector('.saved-plan');
-    if (oldSection) oldSection.remove();
-
-    // إنشاء القسم الجديد
-    const displaySection = document.createElement('section');
-    displaySection.classList.add('saved-plan');
-    const heading = document.createElement('h3');
-    heading.textContent = 'Saved Meal Plan';
-    displaySection.appendChild(heading);
-
-    const list = document.createElement('ul');
-    mealPlan.forEach((day, index) => {
-        const dayMeals = day.split(',');
-        const listItem = document.createElement('li');
-        listItem.textContent = `Day ${index + 1}: Breakfast - ${dayMeals[0]}, Lunch - ${dayMeals[1]}, Dinner - ${dayMeals[2]}`;
-        list.appendChild(listItem);
-    });
-
-    displaySection.appendChild(list);
-    document.querySelector('main').appendChild(displaySection);
-}
