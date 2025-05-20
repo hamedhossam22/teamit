@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <title>وصفاتي</title>
   <style>
-    /* Container العام */
+    
     .container {
       max-width: 800px;
       margin: 40px auto;
@@ -15,7 +15,7 @@
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
 
-    /* الهيدر */
+    
     .container header {
       display: flex;
       justify-content: space-between;
@@ -43,7 +43,7 @@
       color: #fff;
     }
 
-    /* قسم الوصفات */
+   
     .recipes-container {
       display: flex;
       flex-wrap: wrap;
@@ -51,7 +51,7 @@
       min-height: 150px;
     }
 
-    /* رسالة عدم وجود وصفات */
+    
     .no-recipes {
       font-size: 1.3rem;
       color: #777;
@@ -60,7 +60,7 @@
       padding: 40px 0;
     }
 
-    /* بطاقة وصفة */
+   
     .recipe-card {
       background-color: #fafafa;
       border: 1px solid #ddd;
@@ -96,7 +96,7 @@
       display: block;
     }
     
-    /* زر الحذف */
+    
     .delete-btn {
       position: absolute;
       top: 10px;
@@ -139,7 +139,7 @@
       const recipesContainer = document.getElementById('recipesContainer');
       const noRecipesMessage = document.getElementById('noRecipes');
       
-      // دالة لعرض الوصفات
+      
       function displayRecipes() {
         const recipes = JSON.parse(localStorage.getItem('recipes')) || [];
         
@@ -165,7 +165,7 @@
             recipesContainer.appendChild(card);
           });
           
-          // إضافة حدث النقر لأزرار الحذف
+          
           document.querySelectorAll('.delete-btn').forEach(btn => {
             btn.addEventListener('click', function(e) {
               e.stopPropagation();
@@ -176,17 +176,17 @@
         }
       }
       
-      // دالة حذف الوصفة
+      
       function deleteRecipe(index) {
         if(confirm('هل أنت متأكد من حذف هذه الوصفة؟')) {
           let recipes = JSON.parse(localStorage.getItem('recipes')) || [];
           recipes.splice(index, 1);
           localStorage.setItem('recipes', JSON.stringify(recipes));
-          displayRecipes(); // إعادة عرض الوصفات بعد الحذف
+          displayRecipes(); 
         }
       }
       
-      // عرض الوصفات عند تحميل الصفحة
+    
       displayRecipes();
     });
   </script>

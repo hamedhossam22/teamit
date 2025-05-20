@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <title>My Recipes</title>
   <style>
-    /* Main Container */
+    
     .container {
       max-width: 800px;
       margin: 40px auto;
@@ -20,7 +20,7 @@
   background-position: center center;
   }
   
-    /* Header */
+   
     .container header {
       display: flex;
       justify-content: space-between;
@@ -48,7 +48,7 @@
       color: #fff;
     }
 
-    /* Recipes Section */
+   
     .recipes-container {
       display: flex;
       flex-wrap: wrap;
@@ -56,7 +56,7 @@
       min-height: 150px;
     }
 
-    /* No Recipes Message */
+   
     .no-recipes {
       font-size: 1.3rem;
       color: #777;
@@ -65,7 +65,7 @@
       padding: 40px 0;
     }
 
-    /* Recipe Card */
+   
     .recipe-card {
       background-color: #fafafa;
       border: 1px solid #ddd;
@@ -101,7 +101,7 @@
       display: block;
     }
     
-    /* Delete Button */
+    
     .delete-btn {
       position: absolute;
       top: 10px;
@@ -144,7 +144,7 @@
       const recipesContainer = document.getElementById('recipesContainer');
       const noRecipesMessage = document.getElementById('noRecipes');
       
-      // Function to display recipes
+      
       function displayRecipes() {
         const recipes = JSON.parse(localStorage.getItem('recipes')) || [];
         
@@ -170,7 +170,7 @@
             recipesContainer.appendChild(card);
           });
           
-          // Add click event for delete buttons
+          
           document.querySelectorAll('.delete-btn').forEach(btn => {
             btn.addEventListener('click', function(e) {
               e.stopPropagation();
@@ -181,17 +181,17 @@
         }
       }
       
-      // Function to delete recipe
+      
       function deleteRecipe(index) {
         if(confirm('Are you sure you want to delete this recipe?')) {
           let recipes = JSON.parse(localStorage.getItem('recipes')) || [];
           recipes.splice(index, 1);
           localStorage.setItem('recipes', JSON.stringify(recipes));
-          displayRecipes(); // Refresh the recipe list
+          displayRecipes(); 
         }
       }
       
-      // Display recipes when page loads
+      
       displayRecipes();
     });
   </script>

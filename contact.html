@@ -13,7 +13,7 @@
     <p>Contact Us & Live Chat Support</p>
   </header>
 
-  <!-- Contact Form Section -->
+ 
   <section class="contact-form">
     <h2>Get in Touch</h2>
     <form id="contactForm">
@@ -30,7 +30,7 @@
     </form>
   </section>
 
-  <!-- Live Chat Widget -->
+  
   <div class="live-chat">
     <div class="chat-header">Live Chat Support</div>
     <div class="chat-body" id="chatBody">
@@ -42,17 +42,17 @@
     </div>
   </div>
 
-  <!-- JavaScript -->
+  
   <script>
-    // Contact form submit handler
+    
     document.getElementById('contactForm').addEventListener('submit', function(e) {
       e.preventDefault(); // Prevent page reload
       const name = document.getElementById('name').value;
       alert('Thank you, ' + name + '! Your message has been sent.');
-      this.reset(); // Clear the form
+      this.reset();
     });
 
-    // Live chat handler
+    
     function sendChat() {
       const input = document.getElementById('chatInput');
       const message = input.value.trim();
@@ -63,7 +63,7 @@
       userMessage.innerHTML = `<strong>You:</strong> ${message}`;
       chatBody.appendChild(userMessage);
 
-      // Fake support reply
+    
       const supportReply = document.createElement('p');
       supportReply.innerHTML = `<strong>Support:</strong> We'll get back to you shortly!`;
       chatBody.appendChild(supportReply);
