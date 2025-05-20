@@ -13,7 +13,6 @@
             background: linear-gradient(135deg, #fff8f1, #ffd8b8, #ffb56b, #ff8c00);
             background-attachment: fixed;
         }
-        /* أنماط جديدة للبحث */
 .search-container {
     text-align: center;
     margin: 20px 0 30px;
@@ -209,7 +208,6 @@ display: flex;
     <div class="separator"></div>
     <button onclick="window.location.href='https://www.talabat.com'">تسوق الآن</button>
 
-    <!-- ======= البيض ======= -->
     <div class="product">
         <div class="product-row">
             <img class="product-image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSstWM-fuZuYAcE1aJtdV2nqmQa6CFdPJiqTg&s" alt="البيض">
@@ -233,7 +231,6 @@ display: flex;
         </div>
     </div>
 
-    <!-- ======= الفول المصري ======= -->
     <div class="product">
         <div class="product-row">
             <img class="product-image" src="https://kitchen.sayidaty.net/uploads/small/42/423203a50a85745ee5ff98ff201043f7_w750_h500.jpg" alt="الفول">
@@ -258,7 +255,6 @@ display: flex;
         </div>
     </div>
 
-    <!-- ======= بان كيك هش ======= -->
     <div class="product">
         <div class="product-row">
             <img class="product-image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTfdP38dsaYn6QONhBF-OFCmMc4f6ogKotXmg&s" alt="بان كيك">
@@ -284,7 +280,6 @@ display: flex;
         </div>
     </div>
 </div>
-<!-- ======= ساندويتشات الكبدة ======= -->
 <div class="product" data-product-id="liver_sandwiches">
   <div class="product-row">
     <img class="product-image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSR68sz5aFAMCK4M6kJ5qReB7XrabukZJTqVg&s" alt="ساندويتشات الكبدة">
@@ -309,7 +304,6 @@ display: flex;
   </div>
 </div>
 
-<!-- ======= فطائر الجبنة ======= -->
 <div class="product" data-product-id="cheese_pies">
   <div class="product-row">
     <img class="product-image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ22EcRdmgw7UrtZjougdmROnuooSxbcXzjAZ3uRltwq52NSFLAzAPGmhaZKS9DZPk1zH8&usqp=CAU" alt="فطائر الجبنة">
@@ -333,7 +327,6 @@ display: flex;
   </div>
 </div>
 
-<!-- ======= المعجنات ======= -->
 <div class="product" data-product-id="pastries">
   <div class="product-row">
     <img class="product-image" src="https://img.youm7.com/ArticleImgs/2023/10/23/123886-%D9%85%D8%B9%D8%AC%D9%86%D8%A7%D8%AA.jpg" alt="المعجنات">
@@ -358,7 +351,6 @@ display: flex;
   </div>
 </div>
 
-<!-- ======= الكرواسون ======= -->
 <div class="product" data-product-id="croissants">
   <div class="product-row">
     <img class="product-image" src="https://www.theflavorbender.com/wp-content/uploads/2020/05/French-Croissants-SM-2363.jpg" alt="الكرواسون">
@@ -383,7 +375,6 @@ display: flex;
   </div>
 </div>
 
-<!-- ======= فطير مشلتت ======= -->
 <div class="product" data-product-id="feteer_meshaltet">
   <div class="product-row">
     <img class="product-image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTykTqFl_2TMxl132Au8UryDiIxuNeNP6PUQQ&s" alt="فطير مشلتت">
@@ -407,7 +398,6 @@ display: flex;
   </div>
 </div>
 
-<!-- ======= سلطة الفواكه ======= -->
 <div class="product" data-product-id="fruit_salad">
   <div class="product-row">
     <img class="product-image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTE8YWzsttfr1NYBjNletV4O3FEy7p-zJbEMg&s" alt="سلطة الفواكه">
@@ -432,7 +422,6 @@ display: flex;
   </div>
 </div>
 
-<!-- ======= توست الأفوكادو ======= -->
 <div class="product" data-product-id="avocado_toast">
   <div class="product-row">
     <img class="product-image" src="https://images.akhbarelyom.com/images/images/large/20240527104531821.jpg" alt="توست الأفوكادو">
@@ -457,7 +446,6 @@ display: flex;
   </div>
 </div>
 
-<!-- مفضلات المستخدم -->
 <div class="favorites-container">
   <h2>مفضلاتك</h2>
   <ul id="favoriteList" class="favorite-list"></ul>
@@ -467,7 +455,6 @@ display: flex;
         <p>&copy; 2025 AllRecipes. جميع الحقوق محفوظة.</p>
     </footer>
     <script>
-  // دالة البحث عن الوصفات
   function searchRecipes() {
     const input = document.getElementById('searchInput')?.value.toLowerCase();
     const products = document.querySelectorAll('.product');
@@ -478,39 +465,36 @@ display: flex;
         const description = product.querySelector('.product-info > div:nth-child(3)')?.textContent.toLowerCase();
 
         if (title.includes(input) || description.includes(input)) {
-            product.style.display = 'block'; // عرض المنتج
+            product.style.display = 'block'; 
             found = true;
         } else {
-            product.style.display = 'none';  // إخفاء المنتج
+            product.style.display = 'none';  
         }
     });
 
     const noResults = document.querySelector('.no-results');
     if (noResults) {
-        noResults.style.display = found ? 'none' : 'block'; // إظهار رسالة لا توجد نتائج أو إخفائها
+        noResults.style.display = found ? 'none' : 'block'; 
     }
   }
 
-  // إضافة وصفة إلى المفضلة
   function addToFavorites(recipeName) {
     let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
 
     if (!favorites.includes(recipeName)) {
         favorites.push(recipeName);
         localStorage.setItem('favorites', JSON.stringify(favorites));
-        displayFavorites(); // عرض المفضلات بعد الإضافة
+        displayFavorites(); 
     }
   }
 
-  // إزالة وصفة من المفضلة
   function removeFromFavorites(recipeName) {
     let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
     favorites = favorites.filter(item => item !== recipeName);
     localStorage.setItem('favorites', JSON.stringify(favorites));
-    displayFavorites(); // تحديث عرض المفضلات بعد الحذف
+    displayFavorites(); 
   }
 
-  // عرض المفضلات على الصفحة
   function displayFavorites() {
     const favoriteList = document.getElementById('favoriteList');
     if (!favoriteList) return;
@@ -523,7 +507,7 @@ display: flex;
         li.textContent = item;
 
         const removeBtn = document.createElement('button');
-        removeBtn.textContent = '❌'; // زر الحذف
+        removeBtn.textContent = '❌'; 
         removeBtn.style.marginLeft = '10px';
         removeBtn.onclick = () => removeFromFavorites(item);
 
@@ -532,10 +516,8 @@ display: flex;
     });
   }
 
-  // عرض المفضلات عند تحميل الصفحة
   document.addEventListener('DOMContentLoaded', displayFavorites);
 
-  // تحديث كميات المكونات بناءً على عدد الحصص
   function updateIngredients(input) {
     const servings = parseInt(input.value);
     const productDiv = input.closest(".product");
@@ -544,7 +526,7 @@ display: flex;
     quantities.forEach(qtySpan => {
         const base = parseFloat(qtySpan.getAttribute("data-base"));
         const newAmount = base * servings;
-        qtySpan.textContent = newAmount; // تحديث النص بالكمية الجديدة
+        qtySpan.textContent = newAmount; 
     });
   }
 </script>

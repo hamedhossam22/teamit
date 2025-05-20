@@ -6,7 +6,6 @@
   <title>تقييمات المستخدمين - أول ريسيبس</title>
   <link rel="stylesheet" href="style.css" />
   <style>
-    /* ستايلات مخصصة للغة العربية */
     body {
       font-family: 'Tahoma', Arial, sans-serif;
       text-align: right;
@@ -29,8 +28,8 @@
       font-weight: bold;
     }
     .review-rating {
-      color: #f5c518; /* لون النجوم */
-      direction: ltr; /* النجوم تبقى من اليسار لليمين */
+      color: #f5c518; 
+      direction: ltr; 
       display: inline-block;
     }
     .review-text {
@@ -60,7 +59,6 @@
 </head>
 <body>
 
-  <!-- قسم إضافة مراجعة -->
   <section class="review-section">
     <div class="review-form-container">
       <h2>أضف تقييمك</h2>
@@ -85,10 +83,9 @@
       </form>
     </div>
 
-    <!-- عرض التقييمات -->
     <div class="reviews-container" id="reviewsContainer">
       <h3>تقييمات المستخدمين:</h3>
-      <!-- التقييمات ستضاف هنا تلقائيا -->
+      
     </div>
   </section>
 
@@ -102,24 +99,19 @@
 
       if (!name || !rating || !reviewText) return;
 
-      // إنشاء عنصر التقييم الجديد
       const reviewDiv = document.createElement('div');
       reviewDiv.classList.add('single-review');
 
-      // إنشاء النجوم حسب التقييم
       const stars = '⭐'.repeat(rating);
 
-      // محتوى التقييم
       reviewDiv.innerHTML = `
         <div class="review-name">${name}</div>
         <div class="review-rating">${stars}</div>
         <div class="review-text">${reviewText}</div>
       `;
 
-      // إضافة التقييم الجديد
       document.getElementById('reviewsContainer').appendChild(reviewDiv);
 
-      // إعادة تعيين النموذج
       this.reset();
     });
   </script>

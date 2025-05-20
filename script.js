@@ -1,4 +1,3 @@
-// Highlight active nav link based on current page
 const navLinks = document.querySelectorAll('nav a');
 navLinks.forEach(link => {
   if (link.href === window.location.href || link.href === window.location.origin + window.location.pathname) {
@@ -8,16 +7,14 @@ navLinks.forEach(link => {
 
 
 
-// Save recipe to localStorage and update the save count
 document.querySelectorAll('.save-btn').forEach(button => {
   button.addEventListener('click', function(e) {
-    e.stopPropagation();  // Prevent redirect when clicking save button
+    e.stopPropagation();  
     
-    const recipeCard = this.closest('.recipe-card');  // Find closest recipe card
-    const recipeId = recipeCard.dataset.recipeId;  // Get recipe ID
+    const recipeCard = this.closest('.recipe-card');  
+    const recipeId = recipeCard.dataset.recipeId;  
     let saveCount = parseInt(recipeCard.querySelector('.save-count span').innerText);
 
-    // Toggle saved state and update count
     if (localStorage.getItem(recipeId)) {
       localStorage.removeItem(recipeId);
       saveCount -= 1;
@@ -26,24 +23,21 @@ document.querySelectorAll('.save-btn').forEach(button => {
       saveCount += 1;
     }
     
-    // Update the save count in the UI
     recipeCard.querySelector('.save-count span').innerText = saveCount;
-    this.querySelector('i').classList.toggle('far');  // Toggle heart icon
-    this.querySelector('i').classList.toggle('fas');  // Toggle filled heart icon
+    this.querySelector('i').classList.toggle('far');  
+    this.querySelector('i').classList.toggle('fas');  
   });
 });
 
-// Initialize save buttons based on localStorage
 document.querySelectorAll('.recipe-card').forEach(card => {
   const recipeId = card.dataset.recipeId;
   if (localStorage.getItem(recipeId)) {
     const saveButton = card.querySelector('.save-btn');
-    saveButton.querySelector('i').classList.add('fas');  // Set heart icon as filled
+    saveButton.querySelector('i').classList.add('fas');  
     card.querySelector('.save-count span').innerText = parseInt(card.querySelector('.save-count span').innerText) + 1;
   }
 });
 document.addEventListener("DOMContentLoaded", () => {
-  // ========== Register ==========
   const registerForm = document.getElementById("registerForm");
 
   if (registerForm) {
@@ -71,7 +65,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // ========== Login ==========
   const loginForm = document.getElementById("loginForm");
 
   if (loginForm) {
@@ -89,7 +82,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
 
       alert(`Welcome back, ${storedUser.name}!`);
-      window.location.href = "home.html"; // عدل المسار حسب اسم صفحة الهوم عندك
+      window.location.href = "home.html"; 
     });
   }
 });
@@ -148,7 +141,6 @@ function compareSelected() {
   const checkboxes = document.querySelectorAll("input[type='checkbox']:checked");
   const comparisonDiv = document.getElementById("comparisonTable");
 
-  // If less than two recipes are selected, hide the comparison table
   if (checkboxes.length < 2) {
     comparisonDiv.classList.add("hidden");
     return;
