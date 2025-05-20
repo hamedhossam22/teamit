@@ -1,134 +1,171 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>Add Recipe</title>
-  
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #f5f5f5;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    /* Layout الرئيسي */
+    .page-wrapper {
+      display: flex;
+      min-height: 100vh;
+    }
+
+    /* الفورم */
+    .container {
+      flex: 1;
+      max-width: 600px;
+      padding: 40px 30px;
+      background-color: #fff;
+      border-radius: 0 0 0 12px;
+      box-shadow: 4px 0 18px rgba(0, 0, 0, 0.1);
+    }
+
+    .container header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 30px;
+    }
+
+    .container header h1 {
+      font-size: 1.8rem;
+      color: #333;
+    }
+
+    .container header a {
+      text-decoration: none;
+      color: #ff6b3e;
+      font-weight: 600;
+      border: 2px solid #ff6b3e;
+      padding: 8px 15px;
+      border-radius: 8px;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    .container header a:hover {
+      background-color: #ff6b3e;
+      color: #fff;
+    }
+
+    .recipe-form form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 600;
+      color: #444;
+    }
+
+    .form-group input[type="text"],
+    .form-group input[type="file"],
+    .form-group textarea {
+      width: 100%;
+      padding: 12px 15px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      font-size: 1rem;
+      transition: border-color 0.3s;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: #ff6b3e;
+    }
+
+    .form-group textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    button[type="submit"] {
+      background-color: #ff6b3e;
+      color: white;
+      border: none;
+      padding: 14px;
+      font-size: 1.1rem;
+      font-weight: 700;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    button[type="submit"]:hover {
+      background-color: #e55b30;
+    }
+
+    /* الصورة */
+    .side-image {
+      flex: 1;
+    
+      background-image: url('\./cheeeeef.jpg');
+      background-size: cover;
+      background-position: center;
+      border-radius: 0 0 0 0;
+    }
+
+    @media (max-width: 768px) {
+      .page-wrapper {
+        flex-direction: column;
+      }
+
+      .side-image {
+        height: 250px;
+        border-radius: 0;
+      }
+
+      .container {
+        border-radius: 0;
+        box-shadow: none;
+      }
+    }
+  </style>
 </head>
-<style>
-  /* Container العام */
-.container {
-  max-width: 600px;
-  margin: 40px auto;
-  padding: 30px 20px;
-  background-color: #fff;
-  border-radius: 12px;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-/* الهيدر */
-.container header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 30px;
-}
-
-.container header h1 {
-  font-size: 1.8rem;
-  color: #333;
-}
-
-.container header a {
-  text-decoration: none;
-  color: #ff6b3e;
-  font-weight: 600;
-  border: 2px solid #ff6b3e;
-  padding: 8px 15px;
-  border-radius: 8px;
-  transition: background-color 0.3s, color 0.3s;
-}
-
-.container header a:hover {
-  background-color: #ff6b3e;
-  color: #fff;
-}
-
-/* الفورم */
-.recipe-form form {
-  display: flex;
-  flex-direction: column;
-}
-
-.form-group {
-  margin-bottom: 20px;
-}
-
-.form-group label {
-  display: block;
-  margin-bottom: 8px;
-  font-weight: 600;
-  color: #444;
-}
-
-.form-group input[type="text"],
-.form-group input[type="file"],
-.form-group textarea {
-  width: 100%;
-  padding: 12px 15px;
-  border: 1px solid #ccc;
-  border-radius: 10px;
-  font-size: 1rem;
-  font-family: inherit;
-  transition: border-color 0.3s;
-}
-
-.form-group input[type="text"]:focus,
-.form-group input[type="file"]:focus,
-.form-group textarea:focus {
-  outline: none;
-  border-color: #ff6b3e;
-}
-
-/* Textarea إعدادات */
-.form-group textarea {
-  min-height: 120px;
-  resize: vertical;
-}
-
-/* زر الإرسال */
-button[type="submit"] {
-  background-color: #ff6b3e;
-  color: white;
-  border: none;
-  padding: 14px;
-  font-size: 1.1rem;
-  font-weight: 700;
-  border-radius: 10px;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-button[type="submit"]:hover {
-  background-color: #e55b30;
-}
-
-</style>
 <body>
-  <div class="container">
-    <header>
-      <h1>Add a New Recipe</h1>
-      <a href="recipes.html">View Recipes</a>
-    </header>
+  <div class="page-wrapper">
+    <!-- الفورم -->
+    <div class="container">
+      <header>
+        <h1>Add a New Recipe</h1>
+        <a href="recipes.html">View Recipes</a>
+      </header>
 
-    <section class="recipe-form">
-      <form id="recipeForm">
-        <div class="form-group">
-          <label for="recipeName">Recipe Name</label>
-          <input type="text" id="recipeName" required>
-        </div>
-        <div class="form-group">
-          <label for="recipeImage">Image</label>
-          <input type="file" id="recipeImage" accept="image/*" required>
-        </div>
-        <div class="form-group">
-          <label for="recipeDetails">Details</label>
-          <textarea id="recipeDetails" required></textarea>
-        </div>
-        <button type="submit">Add Recipe</button>
-      </form>
-    </section>
+      <section class="recipe-form">
+        <form id="recipeForm">
+          <div class="form-group">
+            <label for="recipeName">Recipe Name</label>
+            <input type="text" id="recipeName" required>
+          </div>
+          <div class="form-group">
+            <label for="recipeImage">Image</label>
+            <input type="file" id="recipeImage" accept="image/*" required>
+          </div>
+          <div class="form-group">
+            <label for="recipeDetails">Details</label>
+            <textarea id="recipeDetails" required></textarea>
+          </div>
+          <button type="submit">Add Recipe</button>
+        </form>
+      </section>
+    </div>
+
+    <!-- صورة جانبية -->
+    <div class="side-image">
+    </div>
   </div>
 
   <script>

@@ -16,7 +16,7 @@
   <!-- Contact Form Section -->
   <section class="contact-form">
     <h2>Get in Touch</h2>
-    <form>
+    <form id="contactForm">
       <label for="name">Name:</label>
       <input type="text" id="name" placeholder="Your Name" required />
 
@@ -30,17 +30,49 @@
     </form>
   </section>
 
-  <!-- Live Chat Widget (Fake for design only) -->
+  <!-- Live Chat Widget -->
   <div class="live-chat">
     <div class="chat-header">Live Chat Support</div>
-    <div class="chat-body">
+    <div class="chat-body" id="chatBody">
       <p><strong>Support:</strong> Hello! How can we help you today?</p>
     </div>
     <div class="chat-input">
-      <input type="text" placeholder="Type your message..." />
-      <button>Send</button>
+      <input type="text" id="chatInput" placeholder="Type your message..." />
+      <button onclick="sendChat()">Send</button>
     </div>
   </div>
 
+  <!-- JavaScript -->
+  <script>
+    // Contact form submit handler
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+      e.preventDefault(); // Prevent page reload
+      const name = document.getElementById('name').value;
+      alert('Thank you, ' + name + '! Your message has been sent.');
+      this.reset(); // Clear the form
+    });
+
+    // Live chat handler
+    function sendChat() {
+      const input = document.getElementById('chatInput');
+      const message = input.value.trim();
+      if (message === '') return;
+
+      const chatBody = document.getElementById('chatBody');
+      const userMessage = document.createElement('p');
+      userMessage.innerHTML = `<strong>You:</strong> ${message}`;
+      chatBody.appendChild(userMessage);
+
+      // Fake support reply
+      const supportReply = document.createElement('p');
+      supportReply.innerHTML = `<strong>Support:</strong> We'll get back to you shortly!`;
+      chatBody.appendChild(supportReply);
+
+      input.value = '';
+      chatBody.scrollTop = chatBody.scrollHeight; // Scroll to bottom
+    }
+  </script>
+
 </body>
 </html>
+

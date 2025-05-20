@@ -6,26 +6,101 @@
   <title>User Reviews – All Recipes</title>
   <link rel="stylesheet" href="style.css" />
   <style>
-    /* إضافة شوية ستايل بسيط للمراجعات */
-    .reviews-container {
-      margin-top: 30px;
-      max-width: 600px;
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #fffaf5;
+      margin: 0;
+      padding: 0;
+    }
+
+    .main-layout {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 40px;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+
+    .side-image {
+      width: 550px;
+      height: 700px;
+      height: auto;
+      border-radius: 10px;
+      object-fit: cover;
+    }
+
+    .review-form-container {
+      max-width: 500px;
+      background-color: #fff;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+      flex: 1;
+    }
+
+    .review-form-container h2 {
+      margin-top: 0;
+    }
+
+    form label {
+      display: block;
+      margin-top: 15px;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+
+    form input,
+    form select,
+    form textarea {
+      width: 100%;
       padding: 10px;
+      font-size: 1rem;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
+
+    form textarea {
+      min-height: 100px;
+      resize: vertical;
+    }
+
+    form button {
+      margin-top: 20px;
+      padding: 12px;
+      background-color: #ff6b3e;
+      color: white;
+      border: none;
+      font-size: 1rem;
+      font-weight: bold;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    form button:hover {
+      background-color: #e55b30;
+    }
+
+    .reviews-container {
+      max-width: 800px;
+      margin: 30px auto;
+      padding: 20px;
       border-top: 2px solid #ccc;
     }
+
     .single-review {
       border-bottom: 1px solid #ddd;
       padding: 10px 0;
     }
-    .single-review:last-child {
-      border-bottom: none;
-    }
+
     .review-name {
       font-weight: bold;
     }
+
     .review-rating {
-      color: #f5c518; /* لون النجوم */
+      color: #f5c518;
     }
+
     .review-text {
       margin-top: 5px;
     }
@@ -33,8 +108,8 @@
 </head>
 <body>
 
-  <!-- قسم إضافة مراجعة -->
-  <section class="review-section">
+  <section class="main-layout">
+    <!-- الفورم عالشمال -->
     <div class="review-form-container">
       <h2>Leave a Review</h2>
       <form id="reviewForm">
@@ -58,12 +133,14 @@
       </form>
     </div>
 
-    <!-- هنا حنعرض المراجعات -->
-    <div class="reviews-container" id="reviewsContainer">
-      <h3>User Reviews:</h3>
-      <!-- مراجعات المستخدمين هتضاف هنا -->
-    </div>
+    <!-- الصورة عاليمين -->
+    <img src="./reviewwww.jpeg" alt="Right Side" class="side-image" />
   </section>
+
+  <!-- المراجعات -->
+  <div class="reviews-container" id="reviewsContainer">
+    <h3>User Reviews:</h3>
+  </div>
 
   <script>
     document.getElementById('reviewForm').addEventListener('submit', function (e) {
@@ -75,24 +152,18 @@
 
       if (!name || !rating || !reviewText) return;
 
-      // انشئ div جديد للمراجعة
       const reviewDiv = document.createElement('div');
       reviewDiv.classList.add('single-review');
 
-      // شكل النجوم حسب التقييم
       const stars = '⭐'.repeat(rating);
 
-      // محتوى المراجعة
       reviewDiv.innerHTML = `
         <div class="review-name">${name}</div>
         <div class="review-rating">${stars}</div>
         <div class="review-text">${reviewText}</div>
       `;
 
-      // اضف المراجعة الجديدة الى الحاوية
       document.getElementById('reviewsContainer').appendChild(reviewDiv);
-
-      // اعادة تعيين الفورم
       this.reset();
     });
   </script>
